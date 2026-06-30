@@ -16,6 +16,8 @@
 
 **Связь:** `drawings-to-vor` — это **Stage 1** пайплайна. Его выход (`ВОР.xlsx`) — это **единственный вход** для `smeta` (Stage 2).
 
+**Eval — обязательный:** ВОР без eval = черновик. Передавать в smeta нельзя.
+
 ---
 
 ## Быстрый старт (полный пайплайн)
@@ -33,19 +35,25 @@ python3 src/create_vor_template.py
 # 3. Заполнить ВОР (вручную или с LLM)
 # → открыть templates/ВОР_шаблон.xlsx, заполнить
 
-# 4. Валидировать ВОР
+# 4. Валидировать ВОР (проверка на дубли, единицы, итоги)
 python3 src/validate_vor.py --vor ВОР.xlsx --drawing_pages pages/
+
+# 5. Eval ВОР — сравнение с профессиональным эталоном
+#    Проверяет: структуру, элементы, формулы, коэффициенты уплотнения
+python3 scripts/eval_vor.py --vor ВОР.xlsx --example data/vor_structure_example.json
+# → Если FAIL: исправить ВОР, перезапустить eval
+# → Если PASS: можно передавать в smeta
 
 # === STAGE 2: ВОР → Смета ===
 cd ../smeta
 
-# 5. Скопировать ВОР в data проекта
+# 6. Скопировать ВОР в data проекта
 cp ../drawings-to-vor/ВОР.xlsx data/<object>/ВОР.xlsx
 
-# 6. Составить смету
+# 7. Составить смету
 # → использовать SKILL.md smeta (БИМ-методика, ФЕР-2020)
 
-# 7. Проверить
+# 8. Проверить смету
 python3 eval_smeta.py --smeta смета.xlsx --vor data/<object>/ВОР.xlsx
 ```
 
@@ -61,11 +69,17 @@ drawings-to-vor/
 ├── Makefile                  # Автоматизация
 ├── requirements.txt          # Зависимости Python
 │
+├── data/
+│   └── vor_structure_example.json  # Эталонная структура ВОР (профи)
+│
 ├── src/                      # Исходный код
 │   ├── prepare_drawing.py    # PDF → PNG, определение масштаба
-│   ├── validate_vor.py       # Валидация ВОР
+│   ├── validate_vor.py       # Валидация ВОР (дубли, единицы)
 │   ├── create_vor_template.py # Генератор шаблона ВОР
-│   └── ocr_pipeline.py       # OCR: 3 уровня fallback (NEW)
+│   └── ocr_pipeline.py       # OCR: 3 уровня fallback
+│
+├── scripts/
+│   └── eval_vor.py           # Eval ВОР — сравнение с профи (NEW)
 │
 ├── templates/
 │   └── ВОР_шаблон.xlsx       # Шаблон Ведомости объёмов работ
@@ -91,7 +105,7 @@ drawings-to-vor/
 
 | Компонент | Версия | Репозиторий |
 |-----------|--------|-------------|
-| drawings-to-vor | 1.2 | `github.com/kimicito/drawings-to-vor` |
+| drawings-to-vor | 1.3 | `github.com/kimicito/drawings-to-vor` |
 | smeta | 3.0+ | `github.com/kimicito/openclaw-workspace/skills/smeta` |
 
 **Требования:**
@@ -101,12 +115,38 @@ drawings-to-vor/
 
 ---
 
+## Eval ВОР (проверка качества)
+
+**Команда:**
+```bash
+python3 scripts/eval_vor.py --vor ВОР.xlsx --example data/vor_structure_example.json
+```
+
+**Проверяет (8 пунктов):**
+1. Структура разделов (Земляные, Фундаменты, Отмостка)
+2. Подразделы фундаментов (ПФм1, Фом1, Фом2, Фом3, Крыльцо, Деформационные швы)
+3. Обязательные элементы (бетон, арматура, опалубка, закладные, гидроизоляция, утеплитель)
+4. Формулы расчёта (коэфф. уплотнения 1.18×1.01, перевод в 100/1000)
+5. Единицы измерения (стандартные ФЕР-2020)
+6. Коэффициенты уплотнения ПГС (1.18×1.01)
+7. Расчёт арматуры (количество × масса п.м. / 1000)
+8. Полнота (ожидается ~134 позиции для типового фундамента)
+
+**Результаты:**
+- `PASS` — ВОР можно передавать в smeta
+- `WARN` — есть замечания, но не критичные
+- `FAIL` — критические ошибки, доработать ВОР
+
+**Эталон:** `data/vor_structure_example.json` — сохраняет структуру профессиональной ВОР
+
+---
+
 ## Статус
 
-- **Version:** 1.2
+- **Version:** 1.3
 - **Last updated:** 2026-06-30
 - **Integration:** smeta v3.0
-- **Pipeline:** `[Чертежи] → [drawings-to-vor v1.2] → [ВОР.xlsx] → [smeta v3.0+] → [Смета]`
+- **Pipeline:** `[Чертежи] → [drawings-to-vor v1.3] → [ВОР.xlsx] → [smeta v3.0+] → [Смета]`
 
 ---
 
