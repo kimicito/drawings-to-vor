@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+*.log
+.tiles/
+tiles/
+output/
+*.tmp
+.DS_Store
+venv/
+node_modules/
