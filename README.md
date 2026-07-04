@@ -46,6 +46,9 @@ python scripts/tile_ocr.py --tiles-dir ./tiles/ --output ./output/ocr.json
 ## Установка
 
 ```bash
+cd projects/drawings-to-vor
+python3 -m venv venv
+source venv/bin/activate  # Windows: venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
@@ -53,8 +56,22 @@ pip install -r requirements.txt
 
 1. Идём на https://www.alibabacloud.com/help/en/model-studio/get-api-key
 2. Регистрируемся (trial — бесплатно)
-3. Копируем API ключ
-4. `export DASHSCOPE_API_KEY=sk-ваш-ключ`
+3. **Активируем сервис** в консоли: https://dashscope.console.aliyun.com — пополняем баланс (минимум ¥1 или free trial credits)
+4. Копируем API ключ
+5. `export DASHSCOPE_API_KEY=sk-ваш-ключ`
+
+## Troubleshooting
+
+### 403 Access Denied
+Если получаешь `AccessDenied.Unpurchased` — аккаунт создан, но не активирован:
+- Зайди в консоль https://dashscope.console.aliyun.com
+- Пополни баланс или активируй trial (обычно дают ¥50–100 бесплатно)
+- Без этого **никакие модели** не работают (даже текстовые)
+
+### Альтернативы (если Alibaba не работает)
+- **Mistral Free Tier**: https://console.mistral.ai/ — Pixtral (vision, 25 msg/день, без карты)
+- **NVIDIA Nemotron OCR v2**: Требует локальной NVIDIA GPU, полностью бесплатно
+- **OpenRouter**: https://openrouter.ai/ — агрегирует бесплатные модели (нужен API ключ)
 
 ## RAM Usage
 
