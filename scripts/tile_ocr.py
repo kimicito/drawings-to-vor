@@ -1,15 +1,16 @@
 #!/usr/bin/env python3
 """
-tile_ocr.py — Send tiles to Alibaba Qwen-VL-OCR and collect structured text/tables.
+tile_ocr.py — Send tiles to Mistral Pixtral and collect structured text/tables/dimensions.
 
 Features:
 - Base64 encoding (no external upload needed)
 - Retry with exponential backoff
 - Deduplication by overlap area
-- Outputs JSON + CSV
+- Structured output: text, dimensions, tables, labels
+- Outputs JSON + TXT + CSV
 
 Usage:
-    export DASHSCOPE_API_KEY=sk-xxx
+    export MISTRAL_API_KEY=mk-xxx
     python tile_ocr.py --tiles-dir ./tiles/ --output result.json
 """
 
@@ -37,8 +38,8 @@ def encode_image_to_base64(image_path: Path) -> str:
     return f"data:{mime};base64,{b64}"
 
 
-def call_qwen_ocr(api_key: str, base64_image: str, prompt: str = None) -> dict:
-    """Call Alibaba Qwen-VL-OCR API. Returns parsed response."""
+def call_mistral_vision(api_key: str, base64_image: str, prompt: str = None) -> dict:
+    """Call Mistral Pixtral API. Returns parsed response."""
     try:
         from openai import OpenAI
     except ImportError:
@@ -47,14 +48,18 @@ def call_qwen_ocr(api_key: str, base64_image: str, prompt: str = None) -> dict:
 
     client = OpenAI(
         api_key=api_key,
-        base_url="https://dashscope.aliyuncs.com/compatible-mode/v1",
+        base_url="https://api.mistral.ai/v1",
     )
 
     default_prompt = (
-        "Extract all text, numbers, dimensions, and tables from this engineering drawing fragment. "
-        "Output as structured JSON with fields: 'text_lines' (array of strings), "
-        "'dimensions' (array of {value, unit}), 'tables' (array of rows). "
-        "If no text found, return empty arrays."
+        "Extract all information from this engineering drawing fragment. "
+        "Return structured data in this format:\n\n"
+        "TEXT_LINES: List all text lines found (labels, notes, titles).\n"
+        "DIMENSIONS: List all dimension numbers with units (e.g., '416 mm', '380.7').\n"
+        "TABLES: List any table rows or cells visible.\n"
+        "CODES: List any codes, standards, or references (e.g., 'ГОСТ 1221330.2016').\n"
+        "GEOLOGY: List any geological markers (e.g., 'QIV', 'C-26').\n"
+        "\nIf nothing found, write 'No text found'."
     )
 
     messages = [
@@ -63,11 +68,7 @@ def call_qwen_ocr(api_key: str, base64_image: str, prompt: str = None) -> dict:
             "content": [
                 {
                     "type": "image_url",
-                    "image_url": {
-                        "url": base64_image,
-                        "min_pixels": 32 * 32 * 3,
-                        "max_pixels": 32 * 32 * 8192,
-                    },
+                    "image_url": {"url": base64_image},
                 },
                 {"type": "text", "text": prompt or default_prompt},
             ],
@@ -79,22 +80,43 @@ def call_qwen_ocr(api_key: str, base64_image: str, prompt: str = None) -> dict:
     for attempt in range(max_retries):
         try:
             completion = client.chat.completions.create(
-                model="qwen-vl-ocr-2025-11-20",
+                model="pixtral-12b-2409",
                 messages=messages,
+                max_tokens=800,
             )
             content = completion.choices[0].message.content
-            # Try parse JSON
-            try:
-                return json.loads(content)
-            except json.JSONDecodeError:
-                # Return raw text wrapped
-                return {"_raw_text": content, "text_lines": [content], "dimensions": [], "tables": []}
+            return {
+                "_raw_text": content,
+                "text_lines": extract_section(content, "TEXT_LINES"),
+                "dimensions": extract_section(content, "DIMENSIONS"),
+                "tables": extract_section(content, "TABLES"),
+                "codes": extract_section(content, "CODES"),
+                "geology": extract_section(content, "GEOLOGY"),
+                "_tokens": completion.usage.total_tokens if completion.usage else None,
+            }
         except Exception as e:
             print(f"  API error (attempt {attempt + 1}/{max_retries}): {e}")
             if attempt < max_retries - 1:
                 time.sleep(2 ** attempt)
             else:
-                return {"_error": str(e), "text_lines": [], "dimensions": [], "tables": []}
+                return {"_error": str(e), "text_lines": [], "dimensions": [], "tables": [], "codes": [], "geology": []}
+
+
+def extract_section(text: str, section_name: str) -> list:
+    """Extract lines from a section like 'TEXT_LINES:' to next section or end."""
+    lines = text.split('\n')
+    result = []
+    in_section = False
+    for line in lines:
+        if line.strip().startswith(section_name + ':'):
+            in_section = True
+            continue
+        if in_section:
+            if any(line.strip().startswith(s + ':') for s in ['TEXT_LINES', 'DIMENSIONS', 'TABLES', 'CODES', 'GEOLOGY']):
+                break
+            if line.strip() and not line.strip().startswith('---'):
+                result.append(line.strip().lstrip('- ').strip())
+    return result
 
 
 def deduplicate_results(results: list) -> list:
@@ -115,9 +137,9 @@ def deduplicate_results(results: list) -> list:
 def process_tiles(tiles_dir: Path, output_path: Path, api_key: str = None):
     """Process all tiles in directory and save results."""
     if api_key is None:
-        api_key = os.environ.get("DASHSCOPE_API_KEY")
+        api_key = os.environ.get("MISTRAL_API_KEY")
     if not api_key:
-        print("ERROR: Set DASHSCOPE_API_KEY environment variable", file=sys.stderr)
+        print("ERROR: Set MISTRAL_API_KEY environment variable", file=sys.stderr)
         sys.exit(1)
 
     tiles = sorted(tiles_dir.glob("*.png"))
@@ -128,11 +150,12 @@ def process_tiles(tiles_dir: Path, output_path: Path, api_key: str = None):
     print(f"Found {len(tiles)} tiles to process")
 
     all_results = []
+    total_tokens = 0
     for i, tile_path in enumerate(tiles):
         print(f"[{i + 1}/{len(tiles)}] {tile_path.name}")
 
         b64 = encode_image_to_base64(tile_path)
-        result = call_qwen_ocr(api_key, b64)
+        result = call_mistral_vision(api_key, b64)
 
         # Add metadata
         result["_tile"] = tile_path.name
@@ -142,6 +165,7 @@ def process_tiles(tiles_dir: Path, output_path: Path, api_key: str = None):
             result["_x"] = int(m.group(1))
             result["_y"] = int(m.group(2))
 
+        total_tokens += result.get("_tokens", 0) or 0
         all_results.append(result)
 
         # Rate limit: be nice to API
@@ -151,6 +175,7 @@ def process_tiles(tiles_dir: Path, output_path: Path, api_key: str = None):
     print("Deduplicating...")
     deduped = deduplicate_results(all_results)
     print(f"Reduced from {len(all_results)} to {len(deduped)} unique results")
+    print(f"Total tokens used: {total_tokens}")
 
     # Save JSON
     output_path.parent.mkdir(parents=True, exist_ok=True)
@@ -163,17 +188,35 @@ def process_tiles(tiles_dir: Path, output_path: Path, api_key: str = None):
     with open(txt_path, "w", encoding="utf-8") as f:
         for r in deduped:
             f.write(f"--- {r.get('_tile', '?')} ---\n")
-            for line in r.get("text_lines", []):
-                f.write(line + "\n")
+            f.write(f"TEXT: {r.get('text_lines', [])}\n")
+            f.write(f"DIMS: {r.get('dimensions', [])}\n")
+            f.write(f"CODES: {r.get('codes', [])}\n")
+            f.write(f"GEO: {r.get('geology', [])}\n")
+            f.write(f"RAW: {r.get('_raw_text', '')[:200]}\n")
             f.write("\n")
     print(f"Saved text: {txt_path}")
 
+    # Save CSV with coordinates
+    csv_path = output_path.with_suffix(".csv")
+    with open(csv_path, "w", encoding="utf-8") as f:
+        f.write("tile,x,y,text_lines,dimensions,codes,geology\n")
+        for r in deduped:
+            tile = r.get("_tile", "")
+            x = r.get("_x", "")
+            y = r.get("_y", "")
+            texts = " | ".join(r.get("text_lines", []))
+            dims = " | ".join(r.get("dimensions", []))
+            codes = " | ".join(r.get("codes", []))
+            geo = " | ".join(r.get("geology", []))
+            f.write(f'"{tile}",{x},{y},"{texts}","{dims}","{codes}","{geo}"\n')
+    print(f"Saved CSV: {csv_path}")
+
 
 def main():
-    parser = argparse.ArgumentParser(description="OCR tiles via Alibaba Qwen-VL-OCR")
+    parser = argparse.ArgumentParser(description="OCR tiles via Mistral Pixtral")
     parser.add_argument("--tiles-dir", default="./tiles", help="Directory with PNG tiles")
     parser.add_argument("--output", default="./output/ocr_result.json", help="Output JSON path")
-    parser.add_argument("--api-key", help="Alibaba DashScope API key (or set DASHSCOPE_API_KEY)")
+    parser.add_argument("--api-key", help="Mistral API key (or set MISTRAL_API_KEY)")
     args = parser.parse_args()
 
     process_tiles(Path(args.tiles_dir), Path(args.output), args.api_key)

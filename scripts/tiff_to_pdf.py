@@ -25,8 +25,8 @@ from PIL import Image, TiffImagePlugin
 def get_paper_size_mm(width_px: int, height_px: int, dpi: float) -> str:
     """Guess ISO paper size from pixel dimensions and DPI."""
     mm_per_inch = 25.4
-    w_mm = (width_px / dpi) * mm_per_inch
-    h_mm = (height_px / dpi) * mm_per_inch
+    w_mm = (width_px / float(dpi)) * mm_per_inch
+    h_mm = (height_px / float(dpi)) * mm_per_inch
 
     sizes = {
         "A0": (841, 1189),
@@ -73,8 +73,8 @@ def convert_single_tiff(input_path: Path, output_path: Path):
     metas = []
 
     for frame, page_num, (xdpi, ydpi) in tiff_page_generator(input_path):
-        paper = get_paper_size_mm(frame.width, frame.height, xdpi)
-        print(f"  Page {page_num + 1}: {frame.width}x{frame.height} @ {xdpi:.0f} DPI → {paper}")
+        paper = get_paper_size_mm(frame.width, frame.height, float(xdpi))
+        print(f"  Page {page_num + 1}: {frame.width}x{frame.height} @ {float(xdpi):.0f} DPI → {paper}")
 
         # For 1-bit images, keep mode; for others convert to RGB if needed
         if frame.mode == "1":
@@ -117,8 +117,8 @@ def convert_folder(input_folder: Path, output_path: Path):
     for tiff_path in tiffs:
         print(f"Processing: {tiff_path.name}")
         for frame, page_num, (xdpi, ydpi) in tiff_page_generator(tiff_path):
-            paper = get_paper_size_mm(frame.width, frame.height, xdpi)
-            print(f"  Page {page_num + 1}: {frame.width}x{frame.height} @ {xdpi:.0f} DPI → {paper}")
+            paper = get_paper_size_mm(frame.width, frame.height, float(xdpi))
+            print(f"  Page {page_num + 1}: {frame.width}x{frame.height} @ {float(xdpi):.0f} DPI → {paper}")
 
             if frame.mode == "1":
                 im = frame
