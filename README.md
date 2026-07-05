@@ -10,7 +10,7 @@ Lossless TIFF → PDF → OCR → ВОР pipeline для инженерных ч
 TIFF (300 DPI, A1) → tiff_to_pdf.py → PDF (lossless)
                    → preprocess.py → PNG tiles (1000×1000, overlap 100px)
                    → tile_ocr.py → JSON/TXT/CSV (Mistral Pixtral ИЛИ Alibaba Qwen-VL-OCR)
-                   → (manual/extract_tables.py) → CSV/Excel → ВОР
+                   → extract_vor.py → CSV/Excel/TXT → ВОР
 ```
 
 ## Сравнение провайдеров OCR
@@ -86,6 +86,55 @@ python scripts/tile_ocr.py --tiles-dir ./tiles/ --output ./output/ocr_result.jso
 | `--output` | Путь к JSON | `./output/ocr_result.json` |
 | `--api-key` | API ключ (или env var) | — |
 | `--base-url` | Base URL (только Qwen) | — |
+
+### 4. extract_vor.py — Автоматический расчёт ВОР
+
+Извлекает объёмы работ из OCR-результатов и формирует Ведомость объёмов работ (ВОР).
+
+**Поддерживаемые типы работ:**
+- **Буронабивные сваи** — бурение, бетонирование, армирование, выбурка грунта
+- Автоматический расчёт по формулам (π×r²×h)
+- Коэффициент разрыхления грунта (1.15)
+- Расчёт арматуры (~120 кг/м³)
+
+**Форматы выхода:** CSV, Excel (.xlsx), TXT
+
+```bash
+python scripts/extract_vor.py \
+  --ocr-json ./output/piles_qwen.json \
+  --type piles \
+  --output ./output/vor_piles.xlsx
+```
+
+**Результат:**
+```
+ВЕДОМОСТЬ ОБЪЁМОВ РАБОТ
+1. [Е2-196] Бурение скважин D=450мм, L=12м (СБН12-450) — 295.82 м³
+2. [Е4-48] Установка арматурных каркасов — 155 шт, ~35.5 т
+3. [Е4-1] Бетонирование — 295.82 м³
+4. [Е2-120] Выбурка грунта — 340.19 м³
+total: Бетон: 326.51 м³ | Арм.: 39.18 т | Выбурка: 375.49 м³
+```
+
+## Полный pipeline (TIFF → ВОР)
+
+```bash
+# 1. Конвертация
+python scripts/tiff_to_pdf.py drawing.tiff output/drawing.pdf
+
+# 2. Нарезка
+python scripts/preprocess.py drawing.tiff --out-dir ./tiles --tile-size 1000 --overlap 100
+
+# 3. OCR (Qwen)
+export DASHSCOPE_API_KEY=sk-xxx
+export DASHSCOPE_COMPATIBLE_URL=https://xxx/compatible-mode/v1
+python scripts/tile_ocr.py --provider qwen --model qwen-vl-ocr \
+  --tiles-dir ./tiles --output ./output/ocr.json
+
+# 4. ВОР
+python scripts/extract_vor.py --ocr-json ./output/ocr.json \
+  --type piles --output ./output/vor.xlsx
+```
 
 ## Установка
 
