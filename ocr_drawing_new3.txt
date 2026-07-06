@@ -1,0 +1,4399 @@
+--- page01_tile0000_x00000_y00000.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0001_x00400_y00000.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0002_x00800_y00000.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0003_x01200_y00000.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0004_x01600_y00000.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0005_x02000_y00000.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0006_x02400_y00000.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0007_x02800_y00000.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0008_x03200_y00000.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0009_x03600_y00000.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0010_x04000_y00000.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0011_x04400_y00000.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0012_x04800_y00000.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0013_x05200_y00000.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0014_x05600_y00000.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0015_x06000_y00000.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0016_x06400_y00000.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0017_x06800_y00000.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0018_x07200_y00000.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0019_x07600_y00000.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0020_x08000_y00000.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0021_x08400_y00000.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0022_x08800_y00000.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0023_x09200_y00000.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0024_x09352_y00000.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0025_x00000_y00400.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0026_x00400_y00400.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0027_x00800_y00400.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0028_x01200_y00400.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0029_x01600_y00400.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0030_x02000_y00400.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0031_x02400_y00400.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0032_x02800_y00400.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0033_x03200_y00400.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0034_x03600_y00400.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0035_x04000_y00400.png [qwen] ---
+TEXT: ['CxeM']
+DIMS: []
+CODES: []
+GEO: []
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "CxeM"
+    ],
+    "DIMENSIONS": [],
+    "TABLES": [],
+    "CODES": [],
+    "GEOLOGY": []
+}
+```
+
+--- page01_tile0036_x04400_y00400.png [qwen] ---
+TEXT: ['хема располо', 'см. 440.02723.']
+DIMS: []
+CODES: []
+GEO: []
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "хема располо",
+        "см. 440.02723."
+    ],
+    "DIMENSIONS": [],
+    "TABLES": [],
+    "CODES": [],
+    "GEOLOGY": []
+}
+```
+
+--- page01_tile0037_x04800_y00400.png [qwen] ---
+TEXT: ['723.150200.1.6-KOK1', 'ложения свай']
+DIMS: []
+CODES: []
+GEO: []
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "723.150200.1.6-KOK1",
+        "ложения свай"
+    ],
+    "DIMENSIONS": [],
+    "TABLES": [],
+    "CODES": [],
+    "GEOLOGY": ""
+}
+```
+
+--- page01_tile0038_x05200_y00400.png [qwen] ---
+TEXT: ['вай', '1']
+DIMS: []
+CODES: []
+GEO: []
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "вай",
+        "1"
+    ],
+    "DIMENSIONS": [],
+    "TABLES": [],
+    "CODES": [],
+    "GEOLOGY": []
+}
+```
+
+--- page01_tile0039_x05600_y00400.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0040_x06000_y00400.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0041_x06400_y00400.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0042_x06800_y00400.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0043_x07200_y00400.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0044_x07600_y00400.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0045_x08000_y00400.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0046_x08400_y00400.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0047_x08800_y00400.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0048_x09200_y00400.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0049_x09352_y00400.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0050_x00000_y00800.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0051_x00400_y00800.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0052_x00800_y00800.png [qwen] ---
+TEXT: ['Анодно-монтажное', 'отделение (АМО)']
+DIMS: []
+CODES: []
+GEO: ['No text found']
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "Анодно-монтажное",
+        "отделение (АМО)"
+    ],
+    "DIMENSIONS": [],
+    "TABLES": [],
+    "CODES": [],
+    "GEOLOGY": "No text found"
+}
+```
+
+--- page01_tile0053_x01200_y00800.png [qwen] ---
+TEXT: ['КНОЕ', 'МО)']
+DIMS: []
+CODES: []
+GEO: []
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "КНОЕ",
+        "МО)"
+    ],
+    "DIMENSIONS": [],
+    "TABLES": [],
+    "CODES": [],
+    "GEOLOGY": []
+}
+```
+
+--- page01_tile0054_x01600_y00800.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0055_x02000_y00800.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0056_x02400_y00800.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0057_x02800_y00800.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0058_x03200_y00800.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0059_x03600_y00800.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0060_x04000_y00800.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0061_x04400_y00800.png [qwen] ---
+TEXT: ['CM.440.02723.']
+DIMS: []
+CODES: []
+GEO: []
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "CM.440.02723."
+    ],
+    "DIMENSIONS": [],
+    "TABLES": [],
+    "CODES": [],
+    "GEOLOGY": []
+}
+```
+
+--- page01_tile0062_x04800_y00800.png [qwen] ---
+TEXT: ['723.150200.1.6-KK1']
+DIMS: []
+CODES: []
+GEO: []
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "723.150200.1.6-KK1"
+    ],
+    "DIMENSIONS": [],
+    "TABLES": [],
+    "CODES": [],
+    "GEOLOGY": []
+}
+```
+
+--- page01_tile0063_x05200_y00800.png [qwen] ---
+TEXT: ['1']
+DIMS: []
+CODES: []
+GEO: []
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "1"
+    ],
+    "DIMENSIONS": [],
+    "TABLES": [],
+    "CODES": [],
+    "GEOLOGY": []
+}
+```
+
+--- page01_tile0064_x05600_y00800.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0065_x06000_y00800.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0066_x06400_y00800.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0067_x06800_y00800.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0068_x07200_y00800.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0069_x07600_y00800.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0070_x08000_y00800.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0071_x08400_y00800.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0072_x08800_y00800.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0073_x09200_y00800.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0074_x09352_y00800.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0075_x00000_y01200.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0076_x00400_y01200.png [qwen] ---
+TEXT: ['A', 'A', '0A']
+DIMS: []
+CODES: []
+GEO: ['No text found']
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "A",
+        "A",
+        "0A"
+    ],
+    "DIMENSIONS": [],
+    "TABLES": [],
+    "CODES": [],
+    "GEOLOGY": "No text found"
+}
+```
+
+--- page01_tile0077_x00800_y01200.png [qwen] ---
+TEXT: ['отделение (АМО)', '500', '700']
+DIMS: []
+CODES: []
+GEO: ['No text found']
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "отделение (АМО)",
+        "500",
+        "700"
+    ],
+    "DIMENSIONS": [],
+    "TABLES": [],
+    "CODES": [],
+    "GEOLOGY": "No text found"
+}
+```
+
+--- page01_tile0078_x01200_y01200.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0079_x01600_y01200.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0080_x02000_y01200.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0081_x02400_y01200.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0082_x02800_y01200.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0083_x03200_y01200.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0084_x03600_y01200.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0085_x04000_y01200.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0086_x04400_y01200.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0087_x04800_y01200.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0088_x05200_y01200.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0089_x05600_y01200.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0090_x06000_y01200.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0091_x06400_y01200.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0092_x06800_y01200.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0093_x07200_y01200.png [qwen] ---
+TEXT: ['325', '1450', '1075', '15', '1450', '1075']
+DIMS: ['1450', '325', '1075', '15']
+CODES: []
+GEO: ['No text found']
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "325",
+        "1450",
+        "1075",
+        "15",
+        "1450",
+        "1075"
+    ],
+    "DIMENSIONS": [
+        "1450",
+        "325",
+        "1075",
+    
+
+--- page01_tile0094_x07600_y01200.png [qwen] ---
+TEXT: ['15', '1075']
+DIMS: []
+CODES: []
+GEO: ['No text found']
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "15",
+        "1075"
+    ],
+    "DIMENSIONS": [],
+    "TABLES": [],
+    "CODES": [],
+    "GEOLOGY": "No text found"
+}
+```
+
+--- page01_tile0095_x08000_y01200.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0096_x08400_y01200.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0097_x08800_y01200.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0098_x09200_y01200.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0099_x09352_y01200.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0100_x00000_y01600.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0101_x00400_y01600.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0102_x00800_y01600.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: TEXT_LINES: 
+5700,438,215,71,90
+416,546,143,71,90
+
+--- page01_tile0103_x01200_y01600.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0104_x01600_y01600.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0105_x02000_y01600.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0106_x02400_y01600.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0107_x02800_y01600.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: TEXT_LINES: 
+    378,612,135,69,90
+
+--- page01_tile0108_x03200_y01600.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0109_x03600_y01600.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0110_x04000_y01600.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0111_x04400_y01600.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0112_x04800_y01600.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: 
+
+--- page01_tile0113_x05200_y01600.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0114_x05600_y01600.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0115_x06000_y01600.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0116_x06400_y01600.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0117_x06800_y01600.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0118_x07200_y01600.png [qwen] ---
+TEXT: ['6700', '6500', '145', '1075', '14']
+DIMS: []
+CODES: []
+GEO: ['No text found']
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "6700",
+        "6500",
+        "145",
+        "1075",
+        "14"
+    ],
+    "DIMENSIONS": [],
+    "TABLES": [],
+    "CODES": [],
+    "GEOLOGY": "No text found"
+
+--- page01_tile0119_x07600_y01600.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: TEXT_LINES: 
+128,56,159,65,90
+148,328,107,113,90
+
+--- page01_tile0120_x08000_y01600.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0121_x08400_y01600.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0122_x08800_y01600.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0123_x09200_y01600.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0124_x09352_y01600.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0125_x00000_y02000.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0126_x00400_y02000.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: TEXT_LINES: []
+DIMENSIONS: []
+TABLES: []
+CODES: []
+GEOLOGY: []
+
+--- page01_tile0127_x00800_y02000.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: TEXT_LINES: ['OB', '200']
+DIMENSIONS: []
+TABLES: []
+CODES: []
+GEOLOGY: []
+
+
+--- page01_tile0129_x01600_y02000.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: TEXT_LINES: 
+    772,414,95,71,90
+    340,800,71,103,90
+    144,980,41,135,90
+
+--- page01_tile0130_x02000_y02000.png [qwen] ---
+TEXT: ['3']
+DIMS: []
+CODES: []
+GEO: []
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "3"
+    ],
+    "DIMENSIONS": [],
+    "TABLES": [],
+    "CODES": [],
+    "GEOLOGY": []
+}
+```
+
+--- page01_tile0131_x02400_y02000.png [qwen] ---
+TEXT: ['3', 'OD']
+DIMS: []
+CODES: []
+GEO: []
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "3",
+        "OD"
+    ],
+    "DIMENSIONS": [],
+    "TABLES": [],
+    "CODES": [],
+    "GEOLOGY": []
+}
+```
+
+--- page01_tile0132_x02800_y02000.png [qwen] ---
+TEXT: ['1500', 'OD', '200', '4']
+DIMS: ['1500']
+CODES: []
+GEO: ['No text found']
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "1500",
+        "OD",
+        "200",
+        "4"
+    ],
+    "DIMENSIONS": [
+        "1500"
+    ],
+    "TABLES": [],
+    "CODES": [],
+    "GEOLOGY": "No text found
+
+--- page01_tile0133_x03200_y02000.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0134_x03600_y02000.png [qwen] ---
+TEXT: ['5']
+DIMS: []
+CODES: []
+GEO: []
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "5"
+    ],
+    "DIMENSIONS": [],
+    "TABLES": [],
+    "CODES": [],
+    "GEOLOGY": []
+}
+```
+
+--- page01_tile0135_x04000_y02000.png [qwen] ---
+TEXT: ['OB', '6']
+DIMS: []
+CODES: []
+GEO: []
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "OB",
+        "6"
+    ],
+    "DIMENSIONS": [],
+    "TABLES": [],
+    "CODES": [],
+    "GEOLOGY": []
+}
+```
+
+--- page01_tile0136_x04400_y02000.png [qwen] ---
+TEXT: ['6']
+DIMS: []
+CODES: []
+GEO: []
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "6"
+    ],
+    "DIMENSIONS": [],
+    "TABLES": [],
+    "CODES": [],
+    "GEOLOGY": []
+}
+```
+
+--- page01_tile0137_x04800_y02000.png [qwen] ---
+TEXT: ['200', '7']
+DIMS: []
+CODES: []
+GEO: ['No text found']
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "200",
+        "7"
+    ],
+    "DIMENSIONS": [],
+    "TABLES": [],
+    "CODES": [],
+    "GEOLOGY": "No text found"
+}
+```
+
+--- page01_tile0138_x05200_y02000.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0139_x05600_y02000.png [qwen] ---
+TEXT: ['8']
+DIMS: []
+CODES: []
+GEO: []
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "8"
+    ],
+    "DIMENSIONS": [],
+    "TABLES": [],
+    "CODES": [],
+    "GEOLOGY": []
+}
+```
+
+--- page01_tile0140_x06000_y02000.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0141_x06400_y02000.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: TEXT_LINES: 
+9
+
+--- page01_tile0142_x06800_y02000.png [qwen] ---
+TEXT: ['OC']
+DIMS: []
+CODES: []
+GEO: []
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "OC"
+    ],
+    "DIMENSIONS": [],
+    "TABLES": [],
+    "CODES": [],
+    "GEOLOGY": []
+}
+```
+
+--- page01_tile0143_x07200_y02000.png [qwen] ---
+TEXT: ['OC', '700', '200', '10']
+DIMS: ['700', '200']
+CODES: []
+GEO: ['No text found']
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "OC",
+        "700",
+        "200",
+        "10"
+    ],
+    "DIMENSIONS": [
+        "700",
+        "200"
+    ],
+    "TABLES": [],
+    "CODES": [],
+    "GEOLOGY": 
+
+--- page01_tile0144_x07600_y02000.png [qwen] ---
+TEXT: ['10', '2000', '11']
+DIMS: []
+CODES: []
+GEO: ['No text found']
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "10",
+        "2000",
+        "11"
+    ],
+    "DIMENSIONS": [],
+    "TABLES": [],
+    "CODES": [],
+    "GEOLOGY": "No text found"
+}
+```
+
+--- page01_tile0145_x08000_y02000.png [qwen] ---
+TEXT: ['12']
+DIMS: []
+CODES: []
+GEO: []
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "12"
+    ],
+    "DIMENSIONS": [],
+    "TABLES": [],
+    "CODES": [],
+    "GEOLOGY": []
+}
+```
+
+--- page01_tile0146_x08400_y02000.png [qwen] ---
+TEXT: ['2']
+DIMS: []
+CODES: []
+GEO: []
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "2"
+    ],
+    "DIMENSIONS": [],
+    "TABLES": [],
+    "CODES": [],
+    "GEOLOGY": []
+}
+```
+
+--- page01_tile0147_x08800_y02000.png [qwen] ---
+TEXT: ['13']
+DIMS: []
+CODES: []
+GEO: []
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "13"
+    ],
+    "DIMENSIONS": [],
+    "TABLES": [],
+    "CODES": [],
+    "GEOLOGY": []
+}
+```
+
+--- page01_tile0148_x09200_y02000.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0149_x09352_y02000.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0150_x00000_y02400.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0151_x00400_y02400.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0152_x00800_y02400.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0153_x01200_y02400.png [qwen] ---
+TEXT: ['4100', '1000', '250']
+DIMS: []
+CODES: []
+GEO: []
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "4100",
+        "1000",
+        "250"
+    ],
+    "DIMENSIONS": [],
+    "TABLES": [],
+    "CODES": [],
+    "GEOLOGY": []
+}
+```
+
+--- page01_tile0154_x01600_y02400.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: TEXT_LINES: ['4100', '2500']
+DIMENSIONS: []
+TABLES: []
+CODES: []
+GEOLOGY: []
+
+
+--- page01_tile0155_x02000_y02400.png [qwen] ---
+TEXT: ['5400', '6000']
+DIMS: []
+CODES: []
+GEO: []
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "5400",
+        "6000"
+    ],
+    "DIMENSIONS": [],
+    "TABLES": [],
+    "CODES": [],
+    "GEOLOGY": []
+}
+```
+
+--- page01_tile0156_x02400_y02400.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: TEXT_LINES: 
+- 932,880,83,135,90
+DIMENSIONS:
+
+--- page01_tile0157_x02800_y02400.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: TEXT_LINES: 
+200
+6000
+
+--- page01_tile0158_x03200_y02400.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: 
+
+--- page01_tile0159_x03600_y02400.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0160_x04000_y02400.png [qwen] ---
+TEXT: ['6000']
+DIMS: []
+CODES: []
+GEO: []
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "6000"
+    ],
+    "DIMENSIONS": [],
+    "TABLES": [],
+    "CODES": [],
+    "GEOLOGY": []
+}
+```
+
+--- page01_tile0161_x04400_y02400.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0163_x05200_y02400.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: 
+
+--- page01_tile0164_x05600_y02400.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: CODES
+
+--- page01_tile0166_x06400_y02400.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0167_x06800_y02400.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: TEXT_LINES: 
+24000
+
+--- page01_tile0168_x07200_y02400.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: TEXT_LINES: 
+4000
+6000
+2
+
+--- page01_tile0169_x07600_y02400.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: TEXT_LINES: 
+250,48,83,150,90
+248,708,83,150,90
+
+--- page01_tile0171_x08400_y02400.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: 
+
+--- page01_tile0173_x09200_y02400.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0174_x09352_y02400.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0175_x00000_y02800.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0176_x00400_y02800.png [qwen] ---
+TEXT: ['A', '0']
+DIMS: []
+CODES: []
+GEO: []
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "A",
+        "0"
+    ],
+    "DIMENSIONS": [],
+    "TABLES": [],
+    "CODES": [],
+    "GEOLOGY": []
+}
+```
+
+--- page01_tile0178_x01200_y02800.png [qwen] ---
+TEXT: ['1000', '250', '10e', 'O)', '01 39']
+DIMS: []
+CODES: []
+GEO: ['No text found']
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "1000",
+        "250",
+        "10e",
+        "O)",
+        "01 39"
+    ],
+    "DIMENSIONS": [],
+    "TABLES": [],
+    "CODES": [],
+    "GEOLOGY": "No text found"
+
+--- page01_tile0179_x01600_y02800.png [qwen] ---
+TEXT: ['2500', '1']
+DIMS: []
+CODES: []
+GEO: ['No text found']
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "2500",
+        "1"
+    ],
+    "DIMENSIONS": [],
+    "TABLES": [],
+    "CODES": [],
+    "GEOLOGY": "No text found"
+}
+```
+
+--- page01_tile0181_x02400_y02800.png [qwen] ---
+TEXT: ['6000', '2']
+DIMS: []
+CODES: []
+GEO: []
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "6000",
+        "2"
+    ],
+    "DIMENSIONS": [],
+    "TABLES": [],
+    "CODES": [],
+    "GEOLOGY": []
+}
+```
+
+--- page01_tile0182_x02800_y02800.png [qwen] ---
+TEXT: ['6000', '3']
+DIMS: []
+CODES: []
+GEO: []
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "6000",
+        "3"
+    ],
+    "DIMENSIONS": [],
+    "TABLES": [],
+    "CODES": [],
+    "GEOLOGY": []
+}
+```
+
+--- page01_tile0184_x03600_y02800.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: TEXT_LINES: ['4']
+
+--- page01_tile0187_x04800_y02800.png [qwen] ---
+TEXT: ['6000', '6']
+DIMS: []
+CODES: []
+GEO: ['No text found']
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "6000",
+        "6"
+    ],
+    "DIMENSIONS": [],
+    "TABLES": [],
+    "CODES": [],
+    "GEOLOGY": "No text found"
+}
+```
+
+--- page01_tile0189_x05600_y02800.png [qwen] ---
+TEXT: ['000', '7']
+DIMS: []
+CODES: []
+GEO: []
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "000",
+        "7"
+    ],
+    "DIMENSIONS": [],
+    "TABLES": [],
+    "CODES": [],
+    "GEOLOGY": []
+}
+```
+
+--- page01_tile0191_x06400_y02800.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: TEXT_LINES: 
+8
+
+--- page01_tile0192_x06800_y02800.png [qwen] ---
+TEXT: ['24000', '12']
+DIMS: []
+CODES: []
+GEO: ['No text found']
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "24000",
+        "12"
+    ],
+    "DIMENSIONS": [],
+    "TABLES": [],
+    "CODES": [],
+    "GEOLOGY": "No text found"
+}
+```
+
+--- page01_tile0193_x07200_y02800.png [qwen] ---
+TEXT: ['6000', '12/1']
+DIMS: []
+CODES: []
+GEO: []
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "6000",
+        "12/1"
+    ],
+    "DIMENSIONS": [],
+    "TABLES": [],
+    "CODES": [],
+    "GEOLOGY": []
+}
+```
+
+--- page01_tile0194_x07600_y02800.png [qwen] ---
+TEXT: ['2/1', '13']
+DIMS: []
+CODES: []
+GEO: []
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "2/1",
+        "13"
+    ],
+    "DIMENSIONS": [],
+    "TABLES": [],
+    "CODES": [],
+    "GEOLOGY": []
+}
+```
+
+--- page01_tile0196_x08400_y02800.png [qwen] ---
+TEXT: ['14', '600']
+DIMS: []
+CODES: []
+GEO: []
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "14",
+        "600"
+    ],
+    "DIMENSIONS": [],
+    "TABLES": [],
+    "CODES": [],
+    "GEOLOGY": []
+}
+```
+
+--- page01_tile0197_x08800_y02800.png [qwen] ---
+TEXT: ['6000', '15']
+DIMS: []
+CODES: []
+GEO: ['No text found']
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "6000",
+        "15"
+    ],
+    "DIMENSIONS": [],
+    "TABLES": [],
+    "CODES": [],
+    "GEOLOGY": "No text found"
+}
+```
+
+--- page01_tile0198_x09200_y02800.png [qwen] ---
+TEXT: ['15']
+DIMS: []
+CODES: []
+GEO: []
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "15"
+    ],
+    "DIMENSIONS": [],
+    "TABLES": [],
+    "CODES": [],
+    "GEOLOGY": []
+}
+```
+
+--- page01_tile0199_x09352_y02800.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0200_x00000_y03200.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0201_x00400_y03200.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0202_x00800_y03200.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0203_x01200_y03200.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0204_x01600_y03200.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0205_x02000_y03200.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0206_x02400_y03200.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0207_x02800_y03200.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0208_x03200_y03200.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0209_x03600_y03200.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0210_x04000_y03200.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0211_x04400_y03200.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0212_x04800_y03200.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0213_x05200_y03200.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0214_x05600_y03200.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0215_x06000_y03200.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0216_x06400_y03200.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0217_x06800_y03200.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0218_x07200_y03200.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0219_x07600_y03200.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0220_x08000_y03200.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0221_x08400_y03200.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0222_x08800_y03200.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0223_x09200_y03200.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0224_x09352_y03200.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0225_x00000_y03600.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0226_x00400_y03600.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0227_x00800_y03600.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0228_x01200_y03600.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0229_x01600_y03600.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0230_x02000_y03600.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0231_x02400_y03600.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0232_x02800_y03600.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0233_x03200_y03600.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0234_x03600_y03600.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0235_x04000_y03600.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0236_x04400_y03600.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0237_x04800_y03600.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0238_x05200_y03600.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0239_x05600_y03600.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0240_x06000_y03600.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0241_x06400_y03600.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0242_x06800_y03600.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0243_x07200_y03600.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0244_x07600_y03600.png [qwen] ---
+TEXT: ['1. Общие указания с']
+DIMS: []
+CODES: []
+GEO: []
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "1. Общие указания с"
+    ],
+    "DIMENSIONS": [],
+    "TABLES": [],
+    "CODES": [],
+    "GEOLOGY": []
+}
+```
+
+--- page01_tile0245_x08000_y03600.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0246_x08400_y03600.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0247_x08800_y03600.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0248_x09200_y03600.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0249_x09352_y03600.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0250_x00000_y04000.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0251_x00400_y04000.png [qwen] ---
+TEXT: ['Заде']
+DIMS: []
+CODES: []
+GEO: []
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "Заде"
+    ],
+    "DIMENSIONS": [],
+    "TABLES": [],
+    "CODES": [],
+    "GEOLOGY": []
+}
+```
+
+--- page01_tile0252_x00800_y04000.png [qwen] ---
+TEXT: ['аделка буронаби']
+DIMS: []
+CODES: []
+GEO: []
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "аделка буронаби"
+    ],
+    "DIMENSIONS": [],
+    "TABLES": [],
+    "CODES": [],
+    "GEOLOGY": []
+}
+```
+
+--- page01_tile0253_x01200_y04000.png [qwen] ---
+TEXT: ['Абивной свай в р', 'Верх арма', 'карка']
+DIMS: []
+CODES: []
+GEO: []
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "Абивной свай в р",
+        "Верх арма",
+        "карка"
+    ],
+    "DIMENSIONS": [],
+    "TABLES": [],
+    "CODES": [],
+    "GEOLOGY": []
+}
+```
+
+--- page01_tile0254_x01600_y04000.png [qwen] ---
+TEXT: ['в ростверк', 'х арматурного', 'каркаса']
+DIMS: []
+CODES: []
+GEO: []
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "в ростверк",
+        "х арматурного",
+        "каркаса"
+    ],
+    "DIMENSIONS": [],
+    "TABLES": [],
+    "CODES": [],
+    "GEOLOGY": []
+}
+```
+
+--- page01_tile0255_x02000_y04000.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0256_x02400_y04000.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0257_x02800_y04000.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: C
+
+--- page01_tile0258_x03200_y04000.png [qwen] ---
+TEXT: ['Спецификация']
+DIMS: []
+CODES: []
+GEO: ['No text found']
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "Спецификация"
+    ],
+    "DIMENSIONS": [],
+    "TABLES": [],
+    "CODES": [],
+    "GEOLOGY": "No text found"
+}
+```
+
+--- page01_tile0259_x03600_y04000.png [qwen] ---
+TEXT: ['ция свай']
+DIMS: []
+CODES: []
+GEO: []
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "ция свай"
+    ],
+    "DIMENSIONS": [],
+    "TABLES": [],
+    "CODES": [],
+    "GEOLOGY": []
+}
+```
+
+--- page01_tile0260_x04000_y04000.png [qwen] ---
+TEXT: ['Macca']
+DIMS: []
+CODES: []
+GEO: []
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "Macca"
+    ],
+    "DIMENSIONS": [],
+    "TABLES": [],
+    "CODES": [],
+    "GEOLOGY": []
+}
+```
+
+--- page01_tile0261_x04400_y04000.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0262_x04800_y04000.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0263_x05200_y04000.png [qwen] ---
+TEXT: ['Условное']
+DIMS: []
+CODES: []
+GEO: []
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "Условное"
+    ],
+    "DIMENSIONS": [],
+    "TABLES": [],
+    "CODES": [],
+    "GEOLOGY": []
+}
+```
+
+--- page01_tile0264_x05600_y04000.png [qwen] ---
+TEXT: ['Ведомость бу']
+DIMS: []
+CODES: []
+GEO: []
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "Ведомость бу"
+    ],
+    "DIMENSIONS": [],
+    "TABLES": [],
+    "CODES": [],
+    "GEOLOGY": []
+}
+```
+
+--- page01_tile0265_x06000_y04000.png [qwen] ---
+TEXT: ['ь буронабивных', 'Код. Отм. верха Отм. Н']
+DIMS: []
+CODES: []
+GEO: []
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "ь буронабивных",
+        "Код. Отм. верха Отм. Н"
+    ],
+    "DIMENSIONS": [],
+    "TABLES": [],
+    "CODES": [],
+    "GEOLOGY": []
+}
+```
+
+--- page01_tile0266_x06400_y04000.png [qwen] ---
+TEXT: ['ых свай', 'Отм. верха Проектная Mac']
+DIMS: []
+CODES: []
+GEO: []
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "ых свай",
+        "Отм. верха Проектная Mac"
+    ],
+    "DIMENSIONS": [],
+    "TABLES": [],
+    "CODES": [],
+    "GEOLOGY": []
+}
+```
+
+--- page01_tile0267_x06800_y04000.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0268_x07200_y04000.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0269_x07600_y04000.png [qwen] ---
+TEXT: ['1. Общие указания с', '2. Принят тип свай -', '3. Согласно техничес', 'свай, в виду неоднород', 'ИГЭ-4мп (Алевролит м', 'суглинистым твердым', 'Несущая способность']
+DIMS: []
+CODES: []
+GEO: []
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "1. Общие указания с",
+        "2. Принят тип свай -",
+        "3. Согласно техничес",
+        "свай, в виду неоднород",
+        "ИГЭ-4мп (Алевролит м",
+        "
+
+--- page01_tile0270_x08000_y04000.png [qwen] ---
+TEXT: ['НИЯ СМ. ЛИСТ 1.', 'зай - буровые, с погружени', 'нического отчета об инжене', 'днородности грунтовых усло', 'лит малопрочный средневь', 'рдым заполнителем до 20%', 'ность буронабивной сваи на']
+DIMS: []
+CODES: []
+GEO: []
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "НИЯ СМ. ЛИСТ 1.",
+        "зай - буровые, с погружени",
+        "нического отчета об инжене",
+        "днородности грунтовых усло",
+        "лит малопрочный сред
+
+--- page01_tile0271_x08400_y04000.png [qwen] ---
+TEXT: ['жением методом СГА.', 'женерно-геологических изы', 'условий, в зависимости от', 'дневыветрелый размягчае', '20%, объемки алевролита', 'на вдавливающую нагруз']
+DIMS: []
+CODES: []
+GEO: []
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "жением методом СГА.",
+        "женерно-геологических изы",
+        "условий, в зависимости от",
+        "дневыветрелый размягчае",
+        "20%, объемки алевроли
+
+--- page01_tile0272_x08800_y04000.png [qwen] ---
+TEXT: ['ИХ ИЗЫСКАНИЯХ НИЖНИЕ КОНЦ', 'сти от расположения в план', 'гаемый и ИГЭ-3 (Щебени', 'олита пониженной прочност', 'нагрузку по грунту принята']
+DIMS: []
+CODES: []
+GEO: []
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "ИХ ИЗЫСКАНИЯХ НИЖНИЕ КОНЦ",
+        "сти от расположения в план",
+        "гаемый и ИГЭ-3 (Щебени",
+        "олита пониженной прочност",
+        "нагрузку по гру
+
+--- page01_tile0273_x09200_y04000.png [qwen] ---
+TEXT: ['концы буронабивных', 'плане, опираются на', 'бениственный грунт с', 'чности.', 'инята по испытаниям и']
+DIMS: []
+CODES: []
+GEO: []
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "концы буронабивных",
+        "плане, опираются на",
+        "бениственный грунт с",
+        "чности.",
+        "инята по испытаниям и"
+    ],
+    "DIMENSIONS": [
+
+--- page01_tile0274_x09352_y04000.png [qwen] ---
+TEXT: ['уронабивных', 'опираются на', 'й грунт с', 'испытаниям и']
+DIMS: []
+CODES: []
+GEO: []
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "уронабивных",
+        "опираются на",
+        "й грунт с",
+        "испытаниям и"
+    ],
+    "DIMENSIONS": [],
+    "TABLES": [],
+    "CODES": [],
+    "GEOLOGY": 
+
+--- page01_tile0275_x00000_y04400.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0276_x00400_y04400.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0277_x00800_y04400.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0278_x01200_y04400.png [qwen] ---
+TEXT: ['верх арм', 'карка']
+DIMS: []
+CODES: []
+GEO: []
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "верх арм",
+        "карка"
+    ],
+    "DIMENSIONS": [],
+    "TABLES": [],
+    "CODES": [],
+    "GEOLOGY": []
+}
+```
+
+--- page01_tile0279_x01600_y04400.png [qwen] ---
+TEXT: ['каркаса', '-1,100', '386,250', '800']
+DIMS: ['']
+CODES: []
+GEO: ['No text found']
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "каркаса",
+        "-1,100",
+        "386,250",
+        "800"
+    ],
+    "DIMENSIONS": [
+        ""
+    ],
+    "TABLES": [],
+    "CODES": [],
+    "GEOLOGY": "No t
+
+--- page01_tile0280_x02000_y04400.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: TEXT_LINES: [], DIMENSIONS: [], TABLES: [], CODES: [], GEOLOGY: []
+
+--- page01_tile0281_x02400_y04400.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0282_x02800_y04400.png [qwen] ---
+TEXT: ['Обозначение', '23.150200.1.6-КЖ5, лист 6', '23.150200.1.6-КЖ5, лист 6']
+DIMS: []
+CODES: []
+GEO: ['No text found']
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "Обозначение",
+        "23.150200.1.6-КЖ5, лист 6",
+        "23.150200.1.6-КЖ5, лист 6"
+    ],
+    "DIMENSIONS": [],
+    "TABLES": [],
+    "CODES": [],
+    "GEOLO
+
+--- page01_tile0283_x03200_y04400.png [qwen] ---
+TEXT: ['Наиме', 'Свая буронабивная', 'Свая буронабивная']
+DIMS: []
+CODES: []
+GEO: []
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "Наиме",
+        "Свая буронабивная",
+        "Свая буронабивная"
+    ],
+    "DIMENSIONS": [],
+    "TABLES": [],
+    "CODES": [],
+    "GEOLOGY": []
+}
+```
+
+--- page01_tile0284_x03600_y04400.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: TEXT_LINES: ['Именование', 'ивная СБн 12-450', 'ивная СБн 16-450', '']
+
+--- page01_tile0285_x04000_y04400.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0286_x04400_y04400.png [qwen] ---
+TEXT: ['Примеч.']
+DIMS: []
+CODES: []
+GEO: []
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "Примеч."
+    ],
+    "DIMENSIONS": [],
+    "TABLES": [],
+    "CODES": [],
+    "GEOLOGY": []
+}
+```
+
+--- page01_tile0287_x04800_y04400.png [qwen] ---
+TEXT: ['Марка', 'свай', 'СБн 12-450', 'СБн 14-450']
+DIMS: []
+CODES: []
+GEO: ['No text found']
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "Марка",
+        "свай",
+        "СБн 12-450",
+        "СБн 14-450"
+    ],
+    "DIMENSIONS": [],
+    "TABLES": [],
+    "CODES": [],
+    "GEOLOGY": "No text found"
+
+--- page01_tile0288_x05200_y04400.png [qwen] ---
+TEXT: ['Условное', 'Обозначе', 'ние', '№ С', '12-450', '1-', '14-450', '6-']
+DIMS: []
+CODES: []
+GEO: ['No text found']
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "Условное",
+        "Обозначе",
+        "ние",
+        "№ С",
+        "12-450",
+        "1-",
+        "14-450",
+        "6-"
+    ],
+    "DIMENSIONS": [],
+    "TAB
+
+--- page01_tile0289_x05600_y04400.png [qwen] ---
+TEXT: ['№ Свай', 'Длина, м', '1-5', '12', '6-15', '14']
+DIMS: []
+CODES: []
+GEO: ['No text found']
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "№ Свай",
+        "Длина, м",
+        "1-5",
+        "12",
+        "6-15",
+        "14"
+    ],
+    "DIMENSIONS": [],
+    "TABLES": [],
+    "CODES": [],
+    "GEOLO
+
+--- page01_tile0290_x06000_y04400.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0291_x06400_y04400.png [qwen] ---
+TEXT: ['Отм. верха', 'бетонирова', 'ния', 'Проектная', 'отм. низа', 'свай', 'Mac', '385,450', '-1,900', '373,400', '-13,950', '385,450', '-1,900', '371,400', '-15,950']
+DIMS: []
+CODES: []
+GEO: []
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "Отм. верха",
+        "бетонирова",
+        "ния",
+        "Проектная",
+        "отм. низа",
+        "свай",
+        "Mac",
+        "385,450",
+        "-1,900",
+ 
+
+--- page01_tile0292_x06800_y04400.png [qwen] ---
+TEXT: ['Масса ед. кг.', 'Примеч.']
+DIMS: []
+CODES: []
+GEO: ['No text found']
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "Масса ед. кг.",
+        "Примеч."
+    ],
+    "DIMENSIONS": [],
+    "TABLES": [],
+    "CODES": [],
+    "GEOLOGY": "No text found"
+}
+```
+
+--- page01_tile0293_x07200_y04400.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0294_x07600_y04400.png [qwen] ---
+TEXT: ['Несущая способность', 'составляет Fd=1600 кг', 'вдавливающая нагруз', '4. Выпуски арматуры', 'ростверка. Арматурн', 'ржавчины и заделать', '5. После окончания р', 'поля с указанием след']
+DIMS: []
+CODES: []
+GEO: ['No text found']
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "Несущая способность",
+        "составляет Fd=1600 кг",
+        "вдавливающая нагруз",
+        "4. Выпуски арматуры",
+        "ростверка. Арматурн",
+        "ржав
+
+--- page01_tile0295_x08000_y04400.png [qwen] ---
+TEXT: ['ность буронабивной сваи на', '600 кН, несущая способност', 'грузка на сваю не превыша', 'атурных стержней свай заво', 'турные выпуски тщательно', 'лать в ростверк.', 'ния работ по выполнению с', 'спедующих параметров:']
+DIMS: []
+CODES: []
+GEO: []
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "ность буронабивной сваи на",
+        "600 кН, несущая способност",
+        "грузка на сваю не превыша",
+        "атурных стержней свай заво",
+        "турные вып
+
+--- page01_tile0296_x08400_y04400.png [qwen] ---
+TEXT: ['вай на вдавливающую нагруз', 'бность свай на выдергиван', 'евышает Frs=800 kH.', 'и заводятся в ростверк для х', 'льно очистить от пыли, гряз', 'нию свай, необходимо сост', 'ов:']
+DIMS: []
+CODES: []
+GEO: []
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "вай на вдавливающую нагруз",
+        "бность свай на выдергиван",
+        "евышает Frs=800 kH.",
+        "и заводятся в ростверк для х",
+        "льно очистить о
+
+--- page01_tile0297_x08800_y04400.png [qwen] ---
+TEXT: ['нагрузку по грунту принята', 'ивание - 413 к Н. Предель', 'для жесткого сопряжения а', 'и, грязи, остатков бетона, ок', 'составить исполнительную']
+DIMS: []
+CODES: []
+GEO: []
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "нагрузку по грунту принята",
+        "ивание - 413 к Н. Предель",
+        "для жесткого сопряжения а",
+        "и, грязи, остатков бетона, ок",
+        "составит
+
+--- page01_tile0298_x09200_y04400.png [qwen] ---
+TEXT: ['инята по испытаниям и', 'дельно допустимая', 'ения арматуры свай и', 'на, окалин, налета', 'льную схему свайного']
+DIMS: []
+CODES: []
+GEO: ['No text found']
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "инята по испытаниям и",
+        "дельно допустимая",
+        "ения арматуры свай и",
+        "на, окалин, налета",
+        "льную схему свайного"
+    ],
+    "DIM
+
+--- page01_tile0299_x09352_y04400.png [qwen] ---
+TEXT: ['испытаниям и', 'допустимая', 'атуры свай и', 'ин, налета', 'ему свайного']
+DIMS: []
+CODES: []
+GEO: ['No text found']
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "испытаниям и",
+        "допустимая",
+        "атуры свай и",
+        "ин, налета",
+        "ему свайного"
+    ],
+    "DIMENSIONS": [],
+    "TABLES": [],
+    "COD
+
+--- page01_tile0300_x00000_y04800.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0301_x00400_y04800.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0302_x00800_y04800.png [qwen] ---
+TEXT: ['Верх свай после']
+DIMS: []
+CODES: []
+GEO: []
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "Верх свай после"
+    ],
+    "DIMENSIONS": [],
+    "TABLES": [],
+    "CODES": [],
+    "GEOLOGY": []
+}
+```
+
+--- page01_tile0303_x01200_y04800.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0304_x01600_y04800.png [qwen] ---
+TEXT: ['800', '100', 'MY', '-1,900', '385,450', '-1,200', '385,350']
+DIMS: ['']
+CODES: []
+GEO: []
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "800",
+        "100",
+        "MY",
+        "-1,900",
+        "385,450",
+        "-1,200",
+        "385,350"
+    ],
+    "DIMENSIONS": [
+        ""
+    ],
+    "TAB
+
+--- page01_tile0305_x02000_y04800.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: TEXT_LINES:
+
+--- page01_tile0306_x02400_y04800.png [qwen] ---
+TEXT: ['6-15 440.02723.150']
+DIMS: []
+CODES: []
+GEO: ['No text found']
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "6-15 440.02723.150"
+    ],
+    "DIMENSIONS": [],
+    "TABLES": [],
+    "CODES": [],
+    "GEOLOGY": "No text found"
+}
+```
+
+--- page01_tile0307_x02800_y04800.png [qwen] ---
+TEXT: ['23.150200.1.6-ЮЖ5, лист 6']
+DIMS: []
+CODES: []
+GEO: []
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "23.150200.1.6-ЮЖ5, лист 6"
+    ],
+    "DIMENSIONS": [],
+    "TABLES": [],
+    "CODES": [],
+    "GEOLOGY": []
+}
+```
+
+--- page01_tile0308_x03200_y04800.png [qwen] ---
+TEXT: ['Свая буронабивная']
+DIMS: []
+CODES: []
+GEO: []
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "Свая буронабивная"
+    ],
+    "DIMENSIONS": [],
+    "TABLES": [],
+    "CODES": [],
+    "GEOLOGY": []
+}
+```
+
+--- page01_tile0309_x03600_y04800.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: TEXT_LINES: ['ивная СБн 16-450']
+
+--- page01_tile0310_x04000_y04800.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0311_x04400_y04800.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0312_x04800_y04800.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: TEXT_LINES: 
+    - 800,54,97,333,90
+CODES:
+
+--- page01_tile0313_x05200_y04800.png [qwen] ---
+TEXT: ['14-450', '6-', 'Общее', 'СВ']
+DIMS: []
+CODES: []
+GEO: []
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "14-450",
+        "6-",
+        "Общее",
+        "СВ"
+    ],
+    "DIMENSIONS": [],
+    "TABLES": [],
+    "CODES": [],
+    "GEOLOGY": []
+}
+```
+
+--- page01_tile0314_x05600_y04800.png [qwen] ---
+TEXT: ['6-15', '14', 'бщее кол-во', 'свай']
+DIMS: []
+CODES: []
+GEO: ['No text found']
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "6-15",
+        "14",
+        "бщее кол-во",
+        "свай"
+    ],
+    "DIMENSIONS": [],
+    "TABLES": [],
+    "CODES": [],
+    "GEOLOGY": "No text found"
+}
+```
+
+--- page01_tile0315_x06000_y04800.png [qwen] ---
+TEXT: ['10', '386.250', '-1,100', '385', '-1,9', '15']
+DIMS: []
+CODES: []
+GEO: []
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "10",
+        "386.250",
+        "-1,100",
+        "385",
+        "-1,9",
+        "15"
+    ],
+    "DIMENSIONS": [],
+    "TABLES": [],
+    "CODES": [],
+    "GEOLOG
+
+--- page01_tile0316_x06400_y04800.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0317_x06800_y04800.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0318_x07200_y04800.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0319_x07600_y04800.png [qwen] ---
+TEXT: ['поля с указанием след', 'отклонение свай от', 'отклонение свай от', 'отклонение свай от', 'абсолютная отметк', '6. Все работы произв', 'организацией и соглас', '7. После проведенияя']
+DIMS: []
+CODES: []
+GEO: ['No text found']
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "поля с указанием след",
+        "отклонение свай от",
+        "отклонение свай от",
+        "отклонение свай от",
+        "абсолютная отметк",
+        "6. Все ра
+
+--- page01_tile0320_x08000_y04800.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "следующих параметров:",
+        "ai от проектного положения",
+        "ai от проектного положения",
+        "ai от вертикали в %",
+        "тметка оголовка свай"
+
+--- page01_tile0321_x08400_y04800.png [qwen] ---
+TEXT: ['ов:', 'жения по Х', 'жения по Y', 'нии "Проекта производства', 'чиком.', 'статической вдавливающей']
+DIMS: []
+CODES: []
+GEO: ['No text found']
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "ов:",
+        "жения по Х",
+        "жения по Y",
+        "нии \"Проекта производства",
+        "чиком.",
+        "статической вдавливающей"
+    ],
+    "DIMENSIO
+
+--- page01_tile0322_x08800_y04800.png [qwen] ---
+TEXT: ['ства работ', 'выполненного', 'ющей нагрузкой свайное по']
+DIMS: []
+CODES: []
+GEO: []
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "ства работ", "выполненного",
+        "ющей нагрузкой свайное по"
+    ],
+    "DIMENSIONS": [],
+    "TABLES": [],
+    "CODES": [],
+    "GEOLOGY": []
+}
+```
+
+--- page01_tile0323_x09200_y04800.png [qwen] ---
+TEXT: ['нного подрядной', 'ое поле может быть']
+DIMS: []
+CODES: []
+GEO: []
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "нного подрядной",
+        "ое поле может быть"
+    ],
+    "DIMENSIONS": [],
+    "TABLES": [],
+    "CODES": [],
+    "GEOLOGY": []
+}
+```
+
+--- page01_tile0324_x09352_y04800.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0325_x00000_y05200.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0326_x00400_y05200.png [qwen] ---
+TEXT: ['Верх', 'бет']
+DIMS: []
+CODES: []
+GEO: []
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "Верх",
+        "бет"
+    ],
+    "DIMENSIONS": [],
+    "TABLES": [],
+    "CODES": [],
+    "GEOLOGY": []
+}
+```
+
+--- page01_tile0327_x00800_y05200.png [qwen] ---
+TEXT: ['Верх свай после', 'бетонирования']
+DIMS: []
+CODES: []
+GEO: []
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "Верх свай после",
+        "бетонирования"
+    ],
+    "DIMENSIONS": [],
+    "TABLES": [],
+    "CODES": [],
+    "GEOLOGY": []
+}
+```
+
+--- page01_tile0328_x01200_y05200.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0329_x01600_y05200.png [qwen] ---
+TEXT: ['СМ. СХЕМУ', '385,350']
+DIMS: []
+CODES: []
+GEO: []
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "СМ. СХЕМУ",
+        "385,350"
+    ],
+    "DIMENSIONS": [],
+    "TABLES": [],
+    "CODES": [],
+    "GEOLOGY": []
+}
+```
+
+--- page01_tile0330_x02000_y05200.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0331_x02400_y05200.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0332_x02800_y05200.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0333_x03200_y05200.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0334_x03600_y05200.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0335_x04000_y05200.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0336_x04400_y05200.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0337_x04800_y05200.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0338_x05200_y05200.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0339_x05600_y05200.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0340_x06000_y05200.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0341_x06400_y05200.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0342_x06800_y05200.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0343_x07200_y05200.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0344_x07600_y05200.png [qwen] ---
+TEXT: ['7. После проведения', 'откорректировано.']
+DIMS: []
+CODES: []
+GEO: []
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "7. После проведения",
+        "откорректировано."
+    ],
+    "DIMENSIONS": [],
+    "TABLES": [],
+    "CODES": [],
+    "GEOLOGY": []
+}
+```
+
+--- page01_tile0345_x08000_y05200.png [qwen] ---
+TEXT: ['дения испытаний свай стати', 'о.']
+DIMS: []
+CODES: []
+GEO: []
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "дения испытаний свай стати",
+        "о."
+    ],
+    "DIMENSIONS": [],
+    "TABLES": [],
+    "CODES": [],
+    "GEOLOGY": []
+}
+```
+
+--- page01_tile0346_x08400_y05200.png [qwen] ---
+TEXT: ['статической вдавливающей']
+DIMS: []
+CODES: []
+GEO: []
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "статической вдавливающей"
+    ],
+    "DIMENSIONS": [],
+    "TABLES": [],
+    "CODES": [],
+    "GEOLOGY": []
+}
+```
+
+--- page01_tile0347_x08800_y05200.png [qwen] ---
+TEXT: ['ЮЩЕЙ НАГРУЗКОЙ СВАЙНОЕ ПО']
+DIMS: []
+CODES: []
+GEO: []
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "ЮЩЕЙ НАГРУЗКОЙ СВАЙНОЕ ПО"
+    ],
+    "DIMENSIONS": [],
+    "TABLES": [],
+    "CODES": [],
+    "GEOLOGY": []
+}
+```
+
+--- page01_tile0348_x09200_y05200.png [qwen] ---
+TEXT: ['ое поле может быть']
+DIMS: []
+CODES: []
+GEO: []
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "ое поле может быть"
+    ],
+    "DIMENSIONS": [],
+    "TABLES": [],
+    "CODES": [],
+    "GEOLOGY": []
+}
+```
+
+--- page01_tile0349_x09352_y05200.png [qwen] ---
+TEXT: ['может быть']
+DIMS: []
+CODES: []
+GEO: []
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "может быть"
+    ],
+    "DIMENSIONS": [],
+    "TABLES": [],
+    "CODES": [],
+    "GEOLOGY": []
+}
+```
+
+--- page01_tile0350_x00000_y05600.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0351_x00400_y05600.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0352_x00800_y05600.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0353_x01200_y05600.png [qwen] ---
+TEXT: ['450']
+DIMS: []
+CODES: []
+GEO: ['No text found']
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "450"
+    ],
+    "DIMENSIONS": [],
+    "TABLES": [],
+    "CODES": [],
+    "GEOLOGY": "No text found"
+}
+```
+
+--- page01_tile0354_x01600_y05600.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0355_x02000_y05600.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0356_x02400_y05600.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0357_x02800_y05600.png [qwen] ---
+TEXT: ['Условнь']
+DIMS: []
+CODES: []
+GEO: []
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "Условнь"
+    ],
+    "DIMENSIONS": [],
+    "TABLES": [],
+    "CODES": [],
+    "GEOLOGY": []
+}
+```
+
+--- page01_tile0358_x03200_y05600.png [qwen] ---
+TEXT: ['зные обозначе']
+DIMS: []
+CODES: []
+GEO: []
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "зные обозначе"
+    ],
+    "DIMENSIONS": [],
+    "TABLES": [],
+    "CODES": [],
+    "GEOLOGY": []
+}
+```
+
+--- page01_tile0359_x03600_y05600.png [qwen] ---
+TEXT: ['ачения']
+DIMS: []
+CODES: []
+GEO: []
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "ачения"
+    ],
+    "DIMENSIONS": [],
+    "TABLES": [],
+    "CODES": [],
+    "GEOLOGY": []
+}
+```
+
+--- page01_tile0360_x04000_y05600.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0361_x04400_y05600.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0362_x04800_y05600.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0363_x05200_y05600.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0364_x05600_y05600.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0365_x06000_y05600.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0366_x06400_y05600.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0367_x06800_y05600.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0368_x07200_y05600.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0369_x07600_y05600.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0370_x08000_y05600.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0371_x08400_y05600.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0372_x08800_y05600.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0373_x09200_y05600.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0374_x09352_y05600.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0375_x00000_y06000.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: TEXT_LINES: 500,498,995,998,90
+DIMENSIONS: 564,500,995,1000,90
+TABLES: 500,498,995,998,90
+CODES: No text found
+
+--- page01_tile0376_x00400_y06000.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0377_x00800_y06000.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0378_x01200_y06000.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0379_x01600_y06000.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0380_x02000_y06000.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0381_x02400_y06000.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0382_x02800_y06000.png [qwen] ---
+TEXT: ['- Сваи бу', '- Сваи бу']
+DIMS: []
+CODES: []
+GEO: []
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "- Сваи бу",
+        "- Сваи бу"
+    ],
+    "DIMENSIONS": [],
+    "TABLES": [],
+    "CODES": [],
+    "GEOLOGY": []
+}
+```
+
+--- page01_tile0383_x03200_y06000.png [qwen] ---
+TEXT: ['ai буровинековые дли', 'ai буровинековые дли']
+DIMS: []
+CODES: []
+GEO: []
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "ai буровинековые дли",
+        "ai буровинековые дли"
+    ],
+    "DIMENSIONS": [],
+    "TABLES": [],
+    "CODES": [],
+    "GEOLOGY": []
+}
+```
+
+--- page01_tile0384_x03600_y06000.png [qwen] ---
+TEXT: ['длиной 12 м', 'длиной 14 м']
+DIMS: []
+CODES: []
+GEO: ['No text found']
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "длиной 12 м",
+        "длиной 14 м"
+    ],
+    "DIMENSIONS": [],
+    "TABLES": [],
+    "CODES": [],
+    "GEOLOGY": "No text found"
+}
+```
+
+--- page01_tile0385_x04000_y06000.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0386_x04400_y06000.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0387_x04800_y06000.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0388_x05200_y06000.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0389_x05600_y06000.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0390_x06000_y06000.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0391_x06400_y06000.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0392_x06800_y06000.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0393_x07200_y06000.png [qwen] ---
+TEXT: ['Изм.', 'Разраб', 'Прове', 'Н.КОНТ']
+DIMS: []
+CODES: []
+GEO: []
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "Изм.",
+        "Разраб",
+        "Прове",
+        "Н.КОНТ"
+    ],
+    "DIMENSIONS": [],
+    "TABLES": [],
+    "CODES": [],
+    "GEOLOGY": []
+}
+```
+
+--- page01_tile0394_x07600_y06000.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0395_x08000_y06000.png [qwen] ---
+TEXT: ['Подп. Дата', '11.24', '11.24', '11.24', 'Дан']
+DIMS: []
+CODES: []
+GEO: []
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "Подп. Дата",
+        "11.24",
+        "11.24",
+        "11.24",
+        "Дан"
+    ],
+    "DIMENSIONS": [],
+    "TABLES": [],
+    "CODES": [],
+    "GEOLOGY": []
+}
+
+--- page01_tile0396_x08400_y06000.png [qwen] ---
+TEXT: ['Данный чертеж не подлежит р', 'или частным лицам б', '440.02723.15', 'Публичное', 'РУСАЛ Братск', 'Экологическая реко']
+DIMS: []
+CODES: []
+GEO: []
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "Данный чертеж не подлежит р",
+        "или частным лицам б",
+        "440.02723.15",
+        "Публичное",
+        "РУСАЛ Братск",
+        "Экологическая реко"
+  
+
+--- page01_tile0397_x08800_y06000.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "ежит размножению и передаче др",
+        "цам без согласия АО "РУСАЛ ВА",
+        "3.150200.1.6-КЖ5",
+        "личное Акционерное Общество",
+        "атский Алюм
+
+--- page01_tile0398_x09200_y06000.png [qwen] ---
+TEXT: ['аче другим организациям', 'САЛ ВАМИ"', '5', 'тво', 'вый Завод"', 'роительства']
+DIMS: []
+CODES: []
+GEO: ['No text found']
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "аче другим организациям",
+        "САЛ ВАМИ\"",
+        "5",
+        "тво",
+        "вый Завод\"",
+        "роительства"
+    ],
+    "DIMENSIONS": [],
+    "TABLES
+
+--- page01_tile0399_x09352_y06000.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0400_x00000_y06400.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: TEXT_LINES: 
+    436,107,178,85,90,Подпис
+    436,564,333,85,90,Инв. № док.
+    578,564,85,571,0,2032876
+
+--- page01_tile0401_x00400_y06400.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0402_x00800_y06400.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0403_x01200_y06400.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0404_x01600_y06400.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0405_x02000_y06400.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0406_x02400_y06400.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0407_x02800_y06400.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0408_x03200_y06400.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0409_x03600_y06400.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0410_x04000_y06400.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0411_x04400_y06400.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0412_x04800_y06400.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0413_x05200_y06400.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0414_x05600_y06400.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0415_x06000_y06400.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0416_x06400_y06400.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0417_x06800_y06400.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0418_x07200_y06400.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0419_x07600_y06400.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0420_x08000_y06400.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: TEXT_LINES: 
+900,282,75,219,90
+900,368,75,191,90
+948,440,55,75,90
+976,522,75,43,90
+960,708,75,69,90
+498,968,75,995,90
+
+--- page01_tile0421_x08400_y06400.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "500,46,79,865,90",
+        "686,158,79,611,90,
+        "499,280,79,998,90,
+        "500,368,79,1000,90,
+        "550,440,79,900,90,
+        "550,528,79,875,90,
+ 
+
+--- page01_tile0422_x08800_y06400.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "атский Алюминиевый",
+        "я реконструкция. 1 этап строител",
+        "ки электролита",
+        "временного",
+        "ектролита",
+        "даменты",
+        
+
+--- page01_tile0423_x09200_y06400.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "вый Завод",
+        "роительства",
+        "дия Лист Листов",
+        "3",
+        "О "РУСАЛ ВАМИ\"",
+        "С.-ПЕТЕРБУРГ",
+        "Формат А1"
+    ],
+    "DIM
+
+--- page01_tile0424_x09352_y06400.png [qwen] ---
+TEXT: ['ВОД', 'ва', 'Ист', 'Листов', '3', 'САЛ ВАМИ"', 'ЕТЕРБУРГ', 'Формат А1']
+DIMS: []
+CODES: []
+GEO: ['No text found']
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "ВОД",
+        "ва",
+        "Ист",
+        "Листов",
+        "3",
+        "САЛ ВАМИ\"",
+        "ЕТЕРБУРГ",
+        "Формат А1"
+    ],
+    "DIMENSIONS": [],
+    
+
+--- page01_tile0425_x00000_y06494.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: TEXT_LINES: ['Инв. N док.', '203287']
+
+--- page01_tile0426_x00400_y06494.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0427_x00800_y06494.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0428_x01200_y06494.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0429_x01600_y06494.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0430_x02000_y06494.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0431_x02400_y06494.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0432_x02800_y06494.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0433_x03200_y06494.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0434_x03600_y06494.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0435_x04000_y06494.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0436_x04400_y06494.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0437_x04800_y06494.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0438_x05200_y06494.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0439_x05600_y06494.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0440_x06000_y06494.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0441_x06400_y06494.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0442_x06800_y06494.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0443_x07200_y06494.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: No text found
+
+--- page01_tile0444_x07600_y06494.png [qwen] ---
+TEXT: ['Имя файла 440_0']
+DIMS: []
+CODES: []
+GEO: []
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "Имя файла 440_0"
+    ],
+    "DIMENSIONS": [],
+    "TABLES": [],
+    "CODES": [],
+    "GEOLOGY": []
+}
+```
+
+--- page01_tile0445_x08000_y06494.png [qwen] ---
+TEXT: ['Отделе', 'Учас', 'СК', 'П', 'С', '440_02723_150200_1_6_KJ5']
+DIMS: []
+CODES: []
+GEO: ['No text found']
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "Отделе",
+        "Учас",
+        "СК",
+        "П",
+        "С",
+        "440_02723_150200_1_6_KJ5"
+    ],
+    "DIMENSIONS": [],
+    "TABLES": [],
+    "CODES": [
+
+--- page01_tile0446_x08400_y06494.png [qwen] ---
+TEXT: ['деление переработки эл', 'Участок дробления и врем', 'складирования электро', 'Пристройки. Фундамен', 'Схема расположения с', 'KJ5_03_00.xps']
+DIMS: []
+CODES: []
+GEO: []
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "деление переработки эл",
+        "Участок дробления и врем",
+        "складирования электро",
+        "Пристройки. Фундамен",
+        "Схема расположения с",
+   
+
+--- page01_tile0447_x08800_y06494.png [qwen] ---
+TEXT: ['и электролита', 'временного', 'электролита', 'даменты', 'Стадия', 'Р', 'НИЯ свай', 'АО "Р']
+DIMS: []
+CODES: []
+GEO: []
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "и электролита",
+        "временного",
+        "электролита",
+        "даменты",
+        "Стадия",
+        "Р",
+        "НИЯ свай",
+        "АО \"Р"
+    ],
+    "D
+
+--- page01_tile0448_x09200_y06494.png [qwen] ---
+TEXT: []
+DIMS: []
+CODES: []
+GEO: []
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "дия Лист Листов",
+        "3",
+        "О "РУСАЛ ВАМИ\"",
+        "С.-ПЕТЕРБУРГ",
+        "Формат А1"
+    ],
+    "DIMENSIONS": [],
+    "TABLES": [],
+    "CODES":
+
+--- page01_tile0449_x09352_y06494.png [qwen] ---
+TEXT: ['Ист Листов', '3', 'САЛ ВАМИ"', 'ЕТЕРБУРГ', 'Формат А1']
+DIMS: []
+CODES: []
+GEO: ['No text found']
+RAW: ```json
+{
+    "TEXT_LINES": [
+        "Ист Листов",
+        "3",
+        "САЛ ВАМИ\"",
+        "ЕТЕРБУРГ",
+        "Формат А1"
+    ],
+    "DIMENSIONS": [],
+    "TABLES": [],
+    "CODES": [],
+    "GEOL
+

@@ -1,0 +1,2408 @@
+[
+  {
+    "_raw_text": "```json\n{\n    \"TEXT_LINES\": [\n        \"A\",\n        \"700\",\n        \"300\",\n        \"1\",\n        \"1\"\n    ],\n    \"DIMENSIONS\": [],\n    \"TABLES\": [],\n    \"CODES\": [],\n    \"GEOLOGY\": \"No text found\"\n}\n```",
+    "text_lines": [
+      "A",
+      "700",
+      "300",
+      "1",
+      "1"
+    ],
+    "dimensions": [],
+    "tables": [],
+    "codes": [],
+    "geology": [
+      "No text found"
+    ],
+    "_tokens": 1173,
+    "_prompt_tokens": 1105,
+    "_completion_tokens": 68,
+    "_provider": "qwen",
+    "_model": "qwen-vl-ocr",
+    "_tile": "page01_tile0000_x00000_y00000.png",
+    "_x": 0,
+    "_y": 0
+  },
+  {
+    "_raw_text": "```json\n{\n    \"TEXT_LINES\": [\n        \"БФМ13\",\n        \"1030\",\n        \"3500\"\n    ],\n    \"DIMENSIONS\": [],\n    \"TABLES\": [],\n    \"CODES\": [],\n    \"GEOLOGY\": \"No text found\"\n}\n```",
+    "text_lines": [
+      "БФМ13",
+      "1030",
+      "3500"
+    ],
+    "dimensions": [],
+    "tables": [],
+    "codes": [],
+    "geology": [
+      "No text found"
+    ],
+    "_tokens": 1171,
+    "_prompt_tokens": 1105,
+    "_completion_tokens": 66,
+    "_provider": "qwen",
+    "_model": "qwen-vl-ocr",
+    "_tile": "page01_tile0001_x00900_y00000.png",
+    "_x": 900,
+    "_y": 0
+  },
+  {
+    "_raw_text": "```json\n{\n    \"TEXT_LINES\": [\n        \"1030\",\n        \"1\",\n        \"3\"\n    ],\n    \"DIMENSIONS\": [],\n    \"TABLES\": [],\n    \"CODES\": [],\n    \"GEOLOGY\": \"No text found\"\n}\n```",
+    "text_lines": [
+      "1030",
+      "1",
+      "3"
+    ],
+    "dimensions": [],
+    "tables": [],
+    "codes": [],
+    "geology": [
+      "No text found"
+    ],
+    "_tokens": 1164,
+    "_prompt_tokens": 1105,
+    "_completion_tokens": 59,
+    "_provider": "qwen",
+    "_model": "qwen-vl-ocr",
+    "_tile": "page01_tile0002_x01800_y00000.png",
+    "_x": 1800,
+    "_y": 0
+  },
+  {
+    "_raw_text": "```json\n{\n    \"TEXT_LINES\": [\n        \"150\",\n        \"15 14 13\"\n    ],\n    \"DIMENSIONS\": [],\n    \"TABLES\": [],\n    \"CODES\": [],\n    \"GEOLOGY\": []\n}\n```",
+    "text_lines": [
+      "150",
+      "15 14 13"
+    ],
+    "dimensions": [],
+    "tables": [],
+    "codes": [],
+    "geology": [],
+    "_tokens": 1162,
+    "_prompt_tokens": 1105,
+    "_completion_tokens": 57,
+    "_provider": "qwen",
+    "_model": "qwen-vl-ocr",
+    "_tile": "page01_tile0003_x02700_y00000.png",
+    "_x": 2700,
+    "_y": 0
+  },
+  {
+    "_raw_text": "```json\n{\n    \"TEXT_LINES\": [\n        \"БФm14\"\n    ],\n    \"DIMENSIONS\": [],\n    \"TABLES\": [],\n    \"CODES\": [],\n    \"GEOLOGY\": []\n}\n```",
+    "text_lines": [
+      "БФm14"
+    ],
+    "dimensions": [],
+    "tables": [],
+    "codes": [],
+    "geology": [],
+    "_tokens": 1153,
+    "_prompt_tokens": 1105,
+    "_completion_tokens": 48,
+    "_provider": "qwen",
+    "_model": "qwen-vl-ocr",
+    "_tile": "page01_tile0004_x03600_y00000.png",
+    "_x": 3600,
+    "_y": 0
+  },
+  {
+    "_raw_text": "```json\n{\n    \"TEXT_LINES\": [\n        \"300\",\n        \"3\",\n        \"5\",\n        \"14\"\n    ],\n    \"DIMENSIONS\": [],\n    \"TABLES\": [],\n    \"CODES\": [],\n    \"GEOLOGY\": \"No text found\"\n}\n```",
+    "text_lines": [
+      "300",
+      "3",
+      "5",
+      "14"
+    ],
+    "dimensions": [],
+    "tables": [],
+    "codes": [],
+    "geology": [
+      "No text found"
+    ],
+    "_tokens": 1168,
+    "_prompt_tokens": 1105,
+    "_completion_tokens": 63,
+    "_provider": "qwen",
+    "_model": "qwen-vl-ocr",
+    "_tile": "page01_tile0005_x04500_y00000.png",
+    "_x": 4500,
+    "_y": 0
+  },
+  {
+    "_raw_text": "```json\n{\n    \"TEXT_LINES\": [\n        \"БФМ\",\n        \"4850\",\n        \"300\",\n        \"14\"\n    ],\n    \"DIMENSIONS\": [\n        \"\"\n    ],\n    \"TABLES\": [],\n    \"CODES\": [],\n    \"GEOLOGY\": []\n}\n```",
+    "text_lines": [
+      "БФМ",
+      "4850",
+      "300",
+      "14"
+    ],
+    "dimensions": [
+      ""
+    ],
+    "tables": [],
+    "codes": [],
+    "geology": [],
+    "_tokens": 1173,
+    "_prompt_tokens": 1105,
+    "_completion_tokens": 68,
+    "_provider": "qwen",
+    "_model": "qwen-vl-ocr",
+    "_tile": "page01_tile0006_x05400_y00000.png",
+    "_x": 5400,
+    "_y": 0
+  },
+  {
+    "_raw_text": "```json\n{\n    \"TEXT_LINES\": [\n        \"Pm15\",\n        \"850\",\n        \"550\",\n        \"5\"\n    ],\n    \"DIMENSIONS\": [],\n    \"TABLES\": [],\n    \"CODES\": [],\n    \"GEOLOGY\": \"No text found\"\n}\n```",
+    "text_lines": [
+      "Pm15",
+      "850",
+      "550",
+      "5"
+    ],
+    "dimensions": [],
+    "tables": [],
+    "codes": [],
+    "geology": [
+      "No text found"
+    ],
+    "_tokens": 1172,
+    "_prompt_tokens": 1105,
+    "_completion_tokens": 67,
+    "_provider": "qwen",
+    "_model": "qwen-vl-ocr",
+    "_tile": "page01_tile0007_x06300_y00000.png",
+    "_x": 6300,
+    "_y": 0
+  },
+  {
+    "_raw_text": "```json\n{\n    \"TEXT_LINES\": [\n        \"5\",\n        \"Спецификация фу\",\n        \"Поз.\",\n        \"Обозначение\"\n    ],\n    \"DIMENSIONS\": [],\n    \"TABLES\": [\n        [\n            \"\",\n            \"1* ГОСТ 34028-2016\",\n            \"2 ГОСТ 34028-2016\"\n        ]\n    ],\n    \"CODES\": [],\n    \"GEOLOGY\": \"No text found\"\n}\n```",
+    "text_lines": [
+      "5",
+      "Спецификация фу",
+      "Поз.",
+      "Обозначение"
+    ],
+    "dimensions": [],
+    "tables": [
+      [
+        "",
+        "1* ГОСТ 34028-2016",
+        "2 ГОСТ 34028-2016"
+      ]
+    ],
+    "codes": [],
+    "geology": [
+      "No text found"
+    ],
+    "_tokens": 1221,
+    "_prompt_tokens": 1105,
+    "_completion_tokens": 116,
+    "_provider": "qwen",
+    "_model": "qwen-vl-ocr",
+    "_tile": "page01_tile0008_x07200_y00000.png",
+    "_x": 7200,
+    "_y": 0
+  },
+  {
+    "_raw_text": "```json\n{\n    \"TEXT_LINES\": [\n        \"фундаментных балок БФМ13\",\n        \"Наименование\",\n        \"БФМ13\",\n        \"Детали\",\n        \"20 - A500C L= 4700\",\n        \"12 - A500C L= 3860\"\n    ],\n    \"DIMENSIONS\": [],\n    \"TABLES\": [],\n    \"CODES\": [],\n    \"GEOLOGY\": \"No text found\"\n}\n```",
+    "text_lines": [
+      "фундаментных балок БФМ13",
+      "Наименование",
+      "БФМ13",
+      "Детали",
+      "20 - A500C L= 4700",
+      "12 - A500C L= 3860"
+    ],
+    "dimensions": [],
+    "tables": [],
+    "codes": [],
+    "geology": [
+      "No text found"
+    ],
+    "_tokens": 1223,
+    "_prompt_tokens": 1105,
+    "_completion_tokens": 118,
+    "_provider": "qwen",
+    "_model": "qwen-vl-ocr",
+    "_tile": "page01_tile0009_x08100_y00000.png",
+    "_x": 8100,
+    "_y": 0
+  },
+  {
+    "_raw_text": "```json\n{\n    \"TEXT_LINES\": [\n        \"БФМ13, БФМ14, БФМ15\",\n        \"Кол\",\n        \"Масса\",\n        \"Примеч.\",\n        \"ед.\",\n        \"ед., кг\"\n    ],\n    \"DIMENSIONS\": [\n        \"4700\",\n        \"3860\"\n    ],\n    \"TABLES\": [\n        [\n            \"\",\n            \"\",\n            \"4\",\n            \"11,59\"\n        ],\n        [\n            \"\",\n            \"\",\n            \"4\",\n            \"3,43\"\n        ]\n    ],\n    \"CODES\": [],\n    \"GEOLOGY\": \"No text found\"\n}\n```",
+    "text_lines": [
+      "БФМ13, БФМ14, БФМ15",
+      "Кол",
+      "Масса",
+      "Примеч.",
+      "ед.",
+      "ед., кг"
+    ],
+    "dimensions": [
+      "4700",
+      "3860"
+    ],
+    "tables": [
+      [
+        "",
+        "",
+        "4",
+        "11,59"
+      ],
+      [
+        "",
+        "",
+        "4",
+        "3,43"
+      ]
+    ],
+    "codes": [],
+    "geology": [
+      "No text found"
+    ],
+    "_tokens": 1254,
+    "_prompt_tokens": 1105,
+    "_completion_tokens": 149,
+    "_provider": "qwen",
+    "_model": "qwen-vl-ocr",
+    "_tile": "page01_tile0010_x08894_y00000.png",
+    "_x": 8894,
+    "_y": 0
+  },
+  {
+    "_raw_text": "```json\n{\n    \"TEXT_LINES\": [\n        \"300\",\n        \"220\",\n        \"13\",\n        \"14\"\n    ],\n    \"DIMENSIONS\": [],\n    \"TABLES\": [],\n    \"CODES\": [],\n    \"GEOLOGY\": \"No text found\"\n}\n```",
+    "text_lines": [
+      "300",
+      "220",
+      "13",
+      "14"
+    ],
+    "dimensions": [],
+    "tables": [],
+    "codes": [],
+    "geology": [
+      "No text found"
+    ],
+    "_tokens": 1171,
+    "_prompt_tokens": 1105,
+    "_completion_tokens": 66,
+    "_provider": "qwen",
+    "_model": "qwen-vl-ocr",
+    "_tile": "page01_tile0011_x00000_y00900.png",
+    "_x": 0,
+    "_y": 900
+  },
+  {
+    "_raw_text": "```json\n{\n    \"TEXT_LINES\": [\n        \"5560\",\n        \"6000\",\n        \"Разр\",\n        \"100\",\n        \"100\"\n    ],\n    \"DIMENSIONS\": [],\n    \"TABLES\": [],\n    \"CODES\": [],\n    \"GEOLOGY\": \"No text found\"\n}\n```",
+    "text_lines": [
+      "5560",
+      "6000",
+      "Разр",
+      "100",
+      "100"
+    ],
+    "dimensions": [],
+    "tables": [],
+    "codes": [],
+    "geology": [
+      "No text found"
+    ],
+    "_tokens": 1181,
+    "_prompt_tokens": 1105,
+    "_completion_tokens": 76,
+    "_provider": "qwen",
+    "_model": "qwen-vl-ocr",
+    "_tile": "page01_tile0012_x00900_y00900.png",
+    "_x": 900,
+    "_y": 900
+  },
+  {
+    "_raw_text": "```json\n{\n    \"TEXT_LINES\": [\n        \"1\",\n        \"3\",\n        \"220\",\n        \"14\",\n        \"15\",\n        \"рез 1-1\",\n        \"5560\",\n        \"2\",\n        \"100\",\n        \"100\"\n    ],\n    \"DIMENSIONS\": [],\n    \"TABLES\": [],\n    \"CODES\": [],\n    \"GEOLOGY\": \"No text found\"\n}\n```",
+    "text_lines": [
+      "1",
+      "3",
+      "220",
+      "14",
+      "15",
+      "рез 1-1",
+      "5560",
+      "2",
+      "100",
+      "100"
+    ],
+    "dimensions": [],
+    "tables": [],
+    "codes": [],
+    "geology": [
+      "No text found"
+    ],
+    "_tokens": 1204,
+    "_prompt_tokens": 1105,
+    "_completion_tokens": 99,
+    "_provider": "qwen",
+    "_model": "qwen-vl-ocr",
+    "_tile": "page01_tile0013_x01800_y00900.png",
+    "_x": 1800,
+    "_y": 900
+  },
+  {
+    "_raw_text": "```json\n{\n    \"TEXT_LINES\": [\n        \"150\",\n        \"100\",\n        \"Pa\"\n    ],\n    \"DIMENSIONS\": [],\n    \"TABLES\": [],\n    \"CODES\": [],\n    \"GEOLOGY\": []\n}\n```",
+    "text_lines": [
+      "150",
+      "100",
+      "Pa"
+    ],
+    "dimensions": [],
+    "tables": [],
+    "codes": [],
+    "geology": [],
+    "_tokens": 1161,
+    "_prompt_tokens": 1105,
+    "_completion_tokens": 56,
+    "_provider": "qwen",
+    "_model": "qwen-vl-ocr",
+    "_tile": "page01_tile0014_x02700_y00900.png",
+    "_x": 2700,
+    "_y": 900
+  },
+  {
+    "_raw_text": "```json\n{\n    \"TEXT_LINES\": [\n        \"4450\",\n        \"Разрез 2-2\"\n    ],\n    \"DIMENSIONS\": [],\n    \"TABLES\": [],\n    \"CODES\": [],\n    \"GEOLOGY\": []\n}\n```",
+    "text_lines": [
+      "4450",
+      "Разрез 2-2"
+    ],
+    "dimensions": [],
+    "tables": [],
+    "codes": [],
+    "geology": [],
+    "_tokens": 1162,
+    "_prompt_tokens": 1105,
+    "_completion_tokens": 57,
+    "_provider": "qwen",
+    "_model": "qwen-vl-ocr",
+    "_tile": "page01_tile0015_x03600_y00900.png",
+    "_x": 3600,
+    "_y": 900
+  },
+  {
+    "_raw_text": "```json\n{\n    \"TEXT_LINES\": [\n        \"300\",\n        \"1550\",\n        \"3\",\n        \"A\",\n        \"5\",\n        \"14\",\n        \"15\",\n        \"100\"\n    ],\n    \"DIMENSIONS\": [\n        \"300\",\n        \"1550\"\n    ],\n    \"TABLES\": [],\n    \"CODES\": [],\n    \"GEOLOGY\": \"No text found\"\n}\n```",
+    "text_lines": [
+      "300",
+      "1550",
+      "3",
+      "A",
+      "5",
+      "14",
+      "15",
+      "100"
+    ],
+    "dimensions": [
+      "300",
+      "1550"
+    ],
+    "tables": [],
+    "codes": [],
+    "geology": [
+      "No text found"
+    ],
+    "_tokens": 1205,
+    "_prompt_tokens": 1105,
+    "_completion_tokens": 100,
+    "_provider": "qwen",
+    "_model": "qwen-vl-ocr",
+    "_tile": "page01_tile0016_x04500_y00900.png",
+    "_x": 4500,
+    "_y": 900
+  },
+  {
+    "_raw_text": "```json\n{\n    \"TEXT_LINES\": [\n        \"Разрез 5-5\",\n        \"5400\",\n        \"540\",\n        \"15\",\n        \"1400\"\n    ],\n    \"DIMENSIONS\": [],\n    \"TABLES\": [],\n    \"CODES\": [],\n    \"GEOLOGY\": \"No text found\"\n}\n```",
+    "text_lines": [
+      "Разрез 5-5",
+      "5400",
+      "540",
+      "15",
+      "1400"
+    ],
+    "dimensions": [],
+    "tables": [],
+    "codes": [],
+    "geology": [
+      "No text found"
+    ],
+    "_tokens": 1184,
+    "_prompt_tokens": 1105,
+    "_completion_tokens": 79,
+    "_provider": "qwen",
+    "_model": "qwen-vl-ocr",
+    "_tile": "page01_tile0017_x05400_y00900.png",
+    "_x": 5400,
+    "_y": 900
+  },
+  {
+    "_raw_text": "```json\n{\n    \"TEXT_LINES\": [\n        \"5400\",\n        \"1000\",\n        \"5\",\n        \"A\",\n        \"5-5\",\n        \"6\",\n        \"100\",\n        \"100\",\n        \"120\",\n        \"11\"\n    ],\n    \"DIMENSIONS\": [\n        \"\"\n    ],\n    \"TABLES\": [],\n    \"CODES\": [],\n    \"GEOLOGY\": []\n}\n```",
+    "text_lines": [
+      "5400",
+      "1000",
+      "5",
+      "A",
+      "5-5",
+      "6",
+      "100",
+      "100",
+      "120",
+      "11"
+    ],
+    "dimensions": [
+      ""
+    ],
+    "tables": [],
+    "codes": [],
+    "geology": [],
+    "_tokens": 1204,
+    "_prompt_tokens": 1105,
+    "_completion_tokens": 99,
+    "_provider": "qwen",
+    "_model": "qwen-vl-ocr",
+    "_tile": "page01_tile0018_x06300_y00900.png",
+    "_x": 6300,
+    "_y": 900
+  },
+  {
+    "_raw_text": "```json\n{\n    \"TEXT_LINES\": [\n        \"5\",\n        \"A\",\n        \"110\",\n        \"2 ГОСТ 34028-2016\",\n        \"3* ГОСТ 5781-82\",\n        \"4* ГОСТ 5781-82\",\n        \"5* ГОСТ 34028-2016\",\n        \"6 ГОСТ 34028-2016\",\n        \"7 ГОСТ 34028-2016\",\n        \"8 ГОСТ 34028-2016\",\n        \"17* ГОСТ 34028-2016\",\n        \"ГОСТ 26633-2015\"\n    ],\n    \"DIMENSIONS\": [],\n    \"TABLES\": [],\n    \"CODES\": [],\n    \"GEOLOGY\": \"No text found\"\n}\n```",
+    "text_lines": [
+      "5",
+      "A",
+      "110",
+      "2 ГОСТ 34028-2016",
+      "3* ГОСТ 5781-82",
+      "4* ГОСТ 5781-82",
+      "5* ГОСТ 34028-2016",
+      "6 ГОСТ 34028-2016",
+      "7 ГОСТ 34028-2016",
+      "8 ГОСТ 34028-2016",
+      "17* ГОСТ 34028-2016",
+      "ГОСТ 26633-2015"
+    ],
+    "dimensions": [],
+    "tables": [],
+    "codes": [],
+    "geology": [
+      "No text found"
+    ],
+    "_tokens": 1323,
+    "_prompt_tokens": 1105,
+    "_completion_tokens": 218,
+    "_provider": "qwen",
+    "_model": "qwen-vl-ocr",
+    "_tile": "page01_tile0019_x07200_y00900.png",
+    "_x": 7200,
+    "_y": 900
+  },
+  {
+    "_raw_text": "```json\n{\n    \"TEXT_LINES\": [\n        \"12 - A500C L= 3860\",\n        \"8 - A240 L= 1580\",\n        \"8 - A240 L= 370\",\n        \"12 - A500C L= 1220\",\n        \"12 - A500C L= 1750\",\n        \"12 - A500C L= 1150\",\n        \"12 - A500C L= 5500\",\n        \"12 - A500C L= 1190\",\n        \"Материалы\",\n        \"Бетон В25, W6, F150\",\n        \"М³\"\n    ],\n    \"DIMENSIONS\": [],\n    \"TABLES\": [],\n    \"CODES\": [],\n    \"GEOLOGY\": []\n}\n```",
+    "text_lines": [
+      "12 - A500C L= 3860",
+      "8 - A240 L= 1580",
+      "8 - A240 L= 370",
+      "12 - A500C L= 1220",
+      "12 - A500C L= 1750",
+      "12 - A500C L= 1150",
+      "12 - A500C L= 5500",
+      "12 - A500C L= 1190",
+      "Материалы",
+      "Бетон В25, W6, F150",
+      "М³"
+    ],
+    "dimensions": [],
+    "tables": [],
+    "codes": [],
+    "geology": [],
+    "_tokens": 1313,
+    "_prompt_tokens": 1105,
+    "_completion_tokens": 208,
+    "_provider": "qwen",
+    "_model": "qwen-vl-ocr",
+    "_tile": "page01_tile0020_x08100_y00900.png",
+    "_x": 8100,
+    "_y": 900
+  },
+  {
+    "_raw_text": "```json\n{\n    \"TEXT_LINES\": [\n        \"L= 3860 4 3,43\",\n        \"L= 1580 27 0,62\",\n        \"L= 370 40 0,15\",\n        \"L= 1220 32 1,08\",\n        \"L= 1750 40 1,55\",\n        \"L= 1150 24 1,02\",\n        \"L= 5500 10 4,88\",\n        \"L= 1190 10 1,06\",\n        \"M³ 2,63\",\n        \"M³ 0,18\"\n    ],\n    \"DIMENSIONS\": [\n        \"3860\",\n        \"1580\",\n        \"370\",\n        \"1220\",\n        \"1750\",\n        \"1150\",\n        \"5500\",\n        \"1190\"\n    ],\n    \"TABLES\": [],\n    \"CODES\": [],\n    \"GEOLOGY\": []\n}\n```",
+    "text_lines": [
+      "L= 3860 4 3,43",
+      "L= 1580 27 0,62",
+      "L= 370 40 0,15",
+      "L= 1220 32 1,08",
+      "L= 1750 40 1,55",
+      "L= 1150 24 1,02",
+      "L= 5500 10 4,88",
+      "L= 1190 10 1,06",
+      "M³ 2,63",
+      "M³ 0,18"
+    ],
+    "dimensions": [
+      "3860",
+      "1580",
+      "370",
+      "1220",
+      "1750",
+      "1150",
+      "5500",
+      "1190"
+    ],
+    "tables": [],
+    "codes": [],
+    "geology": [],
+    "_tokens": 1364,
+    "_prompt_tokens": 1105,
+    "_completion_tokens": 259,
+    "_provider": "qwen",
+    "_model": "qwen-vl-ocr",
+    "_tile": "page01_tile0021_x08894_y00900.png",
+    "_x": 8894,
+    "_y": 900
+  },
+  {
+    "_raw_text": "```json\n{\n    \"TEXT_LINES\": [\n        \"0,000\",\n        \"50\",\n        \"4\",\n        \"1200\",\n        \"280\",\n        \"280\",\n        \"250\",\n        \"1030\",\n        \"600\",\n        \"50\",\n        \"1800\",\n        \"-1,200\"\n    ],\n    \"DIMENSIONS\": [\n        \"50\",\n        \"4\"\n    ],\n    \"TABLES\": [],\n    \"CODES\": [],\n    \"GEOLOGY\": []\n}\n```",
+    "text_lines": [
+      "0,000",
+      "50",
+      "4",
+      "1200",
+      "280",
+      "280",
+      "250",
+      "1030",
+      "600",
+      "50",
+      "1800",
+      "-1,200"
+    ],
+    "dimensions": [
+      "50",
+      "4"
+    ],
+    "tables": [],
+    "codes": [],
+    "geology": [],
+    "_tokens": 1231,
+    "_prompt_tokens": 1105,
+    "_completion_tokens": 126,
+    "_provider": "qwen",
+    "_model": "qwen-vl-ocr",
+    "_tile": "page01_tile0022_x00000_y01800.png",
+    "_x": 0,
+    "_y": 1800
+  },
+  {
+    "_raw_text": "```json\n{\n    \"TEXT_LINES\": [\n        \"4x200=800\",\n        \"100\",\n        \"100\",\n        \"130\",\n        \"100\",\n        \"8\",\n        \"10 шт.\",\n        \"15\",\n        \"40\",\n        \"300\"\n    ],\n    \"DIMENSIONS\": [\n        \"\"\n    ],\n    \"TABLES\": [],\n    \"CODES\": [],\n    \"GEOLOGY\": []\n}\n```",
+    "text_lines": [
+      "4x200=800",
+      "100",
+      "100",
+      "130",
+      "100",
+      "8",
+      "10 шт.",
+      "15",
+      "40",
+      "300"
+    ],
+    "dimensions": [
+      ""
+    ],
+    "tables": [],
+    "codes": [],
+    "geology": [],
+    "_tokens": 1212,
+    "_prompt_tokens": 1105,
+    "_completion_tokens": 107,
+    "_provider": "qwen",
+    "_model": "qwen-vl-ocr",
+    "_tile": "page01_tile0023_x00900_y01800.png",
+    "_x": 900,
+    "_y": 1800
+  },
+  {
+    "_raw_text": "```json\n{\n    \"TEXT_LINES\": [\n        \"15x200=3000\",\n        \"5560\",\n        \"UT.\",\n        \"100\",\n        \"100\",\n        \"130\",\n        \"4)\"\n    ],\n    \"DIMENSIONS\": [],\n    \"TABLES\": [],\n    \"CODES\": [],\n    \"GEOLOGY\": []\n}\n```",
+    "text_lines": [
+      "15x200=3000",
+      "5560",
+      "UT.",
+      "100",
+      "100",
+      "130",
+      "4)"
+    ],
+    "dimensions": [],
+    "tables": [],
+    "codes": [],
+    "geology": [],
+    "_tokens": 1192,
+    "_prompt_tokens": 1105,
+    "_completion_tokens": 87,
+    "_provider": "qwen",
+    "_model": "qwen-vl-ocr",
+    "_tile": "page01_tile0024_x01800_y01800.png",
+    "_x": 1800,
+    "_y": 1800
+  },
+  {
+    "_raw_text": "```json\n{\n    \"TEXT_LINES\": [\n        \"100\",\n        \"130\",\n        \"4x200=800\",\n        \"50\",\n        \"17\",\n        \"10 шт.\",\n        \"7\",\n        \"6\",\n        \"шаг 200\",\n        \"1030\",\n        \"8\",\n        \"10 шт.\",\n        \"3,4\",\n        \"40\",\n        \"40\"\n    ],\n    \"DIMENSIONS\": [\n        \"40\"\n    ],\n    \"TABLES\": [],\n    \"CODES\": [],\n    \"GEOLOGY\": [\n        \"No text found\"\n    ]\n}\n```",
+    "text_lines": [
+      "100",
+      "130",
+      "4x200=800",
+      "50",
+      "17",
+      "10 шт.",
+      "7",
+      "6",
+      "шаг 200",
+      "1030",
+      "8",
+      "10 шт.",
+      "3,4",
+      "40",
+      "40"
+    ],
+    "dimensions": [
+      "40"
+    ],
+    "tables": [],
+    "codes": [],
+    "geology": [
+      "No text found"
+    ],
+    "_tokens": 1252,
+    "_prompt_tokens": 1105,
+    "_completion_tokens": 147,
+    "_provider": "qwen",
+    "_model": "qwen-vl-ocr",
+    "_tile": "page01_tile0025_x02700_y01800.png",
+    "_x": 2700,
+    "_y": 1800
+  },
+  {
+    "_raw_text": "```json\n{\n    \"TEXT_LINES\": [\n        \"5\",\n        \"шаг 200\",\n        \"40\",\n        \"0,000\",\n        \"4\",\n        \"шаг 400\",\n        \"в шахм.\",\n        \"порядке\",\n        \"6\",\n        \"шаг 200\",\n        \"50\",\n        \"250\",\n        \"1200\",\n        \"1800\",\n        \"-1,200\"\n    ],\n    \"DIMENSIONS\": [\n        \"280\",\n        \"280\",\n        \"280\",\n        \"250\"\n    ],\n    \"TABLES\": [],\n    \"CODES\": [],\n    \"GEOLOGY\": [\n        \"No text found\"\n    ]\n}\n```",
+    "text_lines": [
+      "5",
+      "шаг 200",
+      "40",
+      "0,000",
+      "4",
+      "шаг 400",
+      "в шахм.",
+      "порядке",
+      "6",
+      "шаг 200",
+      "50",
+      "250",
+      "1200",
+      "1800",
+      "-1,200"
+    ],
+    "dimensions": [
+      "280",
+      "280",
+      "280",
+      "250"
+    ],
+    "tables": [],
+    "codes": [],
+    "geology": [
+      "No text found"
+    ],
+    "_tokens": 1277,
+    "_prompt_tokens": 1105,
+    "_completion_tokens": 172,
+    "_provider": "qwen",
+    "_model": "qwen-vl-ocr",
+    "_tile": "page01_tile0026_x03600_y01800.png",
+    "_x": 3600,
+    "_y": 1800
+  },
+  {
+    "_raw_text": "```json\n{\n    \"TEXT_LINES\": [\n        \"0,000\",\n        \"0\",\n        \"-1,200\",\n        \"1700\",\n        \"500\",\n        \"280\",\n        \"250\",\n        \"280\",\n        \"240\",\n        \"50\",\n        \"7\",\n        \"50\",\n        \"270\",\n        \"100\",\n        \"100\",\n        \"175\",\n        \"7\"\n    ],\n    \"DIMENSIONS\": [\n        \"1200\"\n    ],\n    \"TABLES\": [],\n    \"CODES\": [],\n    \"GEOLOGY\": [\n        \"00\"\n    ]\n}\n```",
+    "text_lines": [
+      "0,000",
+      "0",
+      "-1,200",
+      "1700",
+      "500",
+      "280",
+      "250",
+      "280",
+      "240",
+      "50",
+      "7",
+      "50",
+      "270",
+      "100",
+      "100",
+      "175",
+      "7"
+    ],
+    "dimensions": [
+      "1200"
+    ],
+    "tables": [],
+    "codes": [],
+    "geology": [
+      "00"
+    ],
+    "_tokens": 1260,
+    "_prompt_tokens": 1105,
+    "_completion_tokens": 155,
+    "_provider": "qwen",
+    "_model": "qwen-vl-ocr",
+    "_tile": "page01_tile0027_x04500_y01800.png",
+    "_x": 4500,
+    "_y": 1800
+  },
+  {
+    "_raw_text": "```json\n{\n    \"TEXT_LINES\": [\n        \"5400\",\n        \"20x200=4000\",\n        \"7\",\n        \"16\",\n        \"10 шт.\"\n    ],\n    \"DIMENSIONS\": [],\n    \"TABLES\": [],\n    \"CODES\": [],\n    \"GEOLOGY\": \"No text found\"\n}\n```",
+    "text_lines": [
+      "5400",
+      "20x200=4000",
+      "7",
+      "16",
+      "10 шт."
+    ],
+    "dimensions": [],
+    "tables": [],
+    "codes": [],
+    "geology": [
+      "No text found"
+    ],
+    "_tokens": 1186,
+    "_prompt_tokens": 1105,
+    "_completion_tokens": 81,
+    "_provider": "qwen",
+    "_model": "qwen-vl-ocr",
+    "_tile": "page01_tile0028_x05400_y01800.png",
+    "_x": 5400,
+    "_y": 1800
+  },
+  {
+    "_raw_text": "```json\n{\n    \"TEXT_LINES\": [\n        \"100\",\n        \"100\",\n        \"175\",\n        \"100\",\n        \"120\",\n        \"110\",\n        \"11\",\n        \"5\"\n    ],\n    \"DIMENSIONS\": [],\n    \"TABLES\": [],\n    \"CODES\": [],\n    \"GEOLOGY\": []\n}\n```",
+    "text_lines": [
+      "100",
+      "100",
+      "175",
+      "100",
+      "120",
+      "110",
+      "11",
+      "5"
+    ],
+    "dimensions": [],
+    "tables": [],
+    "codes": [],
+    "geology": [],
+    "_tokens": 1190,
+    "_prompt_tokens": 1105,
+    "_completion_tokens": 85,
+    "_provider": "qwen",
+    "_model": "qwen-vl-ocr",
+    "_tile": "page01_tile0029_x06300_y01800.png",
+    "_x": 6300,
+    "_y": 1800
+  },
+  {
+    "_raw_text": "```json\n{\n    \"TEXT_LINES\": [\n        \"110\",\n        \"110\",\n        \"50\",\n        \"17\",\n        \"10 шт.\",\n        \"7\",\n        \"15\",\n        \"550\",\n        \"14,4\",\n        \"ГОСТ 26633-2015\",\n        \"ГОСТ 26633-2015\",\n        \"9* ГОСТ 34028-2016\",\n        \"10 ГОСТ 34028-2016\",\n        \"11* ГОСТ 5781-82\",\n        \"4* ГОСТ 5781-82\",\n        \"ГОСТ 26633-2015\"\n    ],\n    \"DIMENSIONS\": [],\n    \"TABLES\": [],\n    \"CODES\": [],\n    \"GEOLOGY\": \"No text found\"\n}\n```",
+    "text_lines": [
+      "110",
+      "110",
+      "50",
+      "17",
+      "10 шт.",
+      "7",
+      "15",
+      "550",
+      "14,4",
+      "ГОСТ 26633-2015",
+      "ГОСТ 26633-2015",
+      "9* ГОСТ 34028-2016",
+      "10 ГОСТ 34028-2016",
+      "11* ГОСТ 5781-82",
+      "4* ГОСТ 5781-82",
+      "ГОСТ 26633-2015"
+    ],
+    "dimensions": [],
+    "tables": [],
+    "codes": [],
+    "geology": [
+      "No text found"
+    ],
+    "_tokens": 1322,
+    "_prompt_tokens": 1105,
+    "_completion_tokens": 217,
+    "_provider": "qwen",
+    "_model": "qwen-vl-ocr",
+    "_tile": "page01_tile0030_x07200_y01800.png",
+    "_x": 7200,
+    "_y": 1800
+  },
+  {
+    "_raw_text": "```json\n{\n    \"TEXT_LINES\": [\n        \"Бетон В25, W6, F150\",\n        \"Бетон В7,5\",\n        \"БФМ14\",\n        \"Детали\",\n        \"16 - A500C L= 5410\",\n        \"12 - A500C L= 4810\",\n        \"8 - A240 L= 1430\",\n        \"8 - A240 L= 370\",\n        \"Материалы\",\n        \"Бетон В25, W6, F150\",\n        \"М³\"\n    ],\n    \"DIMENSIONS\": [],\n    \"TABLES\": [],\n    \"CODES\": [],\n    \"GEOLOGY\": \"No text found\"\n}\n```",
+    "text_lines": [
+      "Бетон В25, W6, F150",
+      "Бетон В7,5",
+      "БФМ14",
+      "Детали",
+      "16 - A500C L= 5410",
+      "12 - A500C L= 4810",
+      "8 - A240 L= 1430",
+      "8 - A240 L= 370",
+      "Материалы",
+      "Бетон В25, W6, F150",
+      "М³"
+    ],
+    "dimensions": [],
+    "tables": [],
+    "codes": [],
+    "geology": [
+      "No text found"
+    ],
+    "_tokens": 1286,
+    "_prompt_tokens": 1105,
+    "_completion_tokens": 181,
+    "_provider": "qwen",
+    "_model": "qwen-vl-ocr",
+    "_tile": "page01_tile0031_x08100_y01800.png",
+    "_x": 8100,
+    "_y": 1800
+  },
+  {
+    "_raw_text": "```json\n{\n    \"TEXT_LINES\": [\n        \"M 2,63\",\n        \"M³ 0,18 подготовка\",\n        \"L= 5410 4 8,54\",\n        \"L= 4810 4 4,27\",\n        \"L= 1430 30 0,56\",\n        \"L= 370 22 0,15\",\n        \"M³ 0,67\"\n    ],\n    \"DIMENSIONS\": [],\n    \"TABLES\": [],\n    \"CODES\": [],\n    \"GEOLOGY\": \"No text found\"\n}\n```",
+    "text_lines": [
+      "M 2,63",
+      "M³ 0,18 подготовка",
+      "L= 5410 4 8,54",
+      "L= 4810 4 4,27",
+      "L= 1430 30 0,56",
+      "L= 370 22 0,15",
+      "M³ 0,67"
+    ],
+    "dimensions": [],
+    "tables": [],
+    "codes": [],
+    "geology": [
+      "No text found"
+    ],
+    "_tokens": 1250,
+    "_prompt_tokens": 1105,
+    "_completion_tokens": 145,
+    "_provider": "qwen",
+    "_model": "qwen-vl-ocr",
+    "_tile": "page01_tile0032_x08894_y01800.png",
+    "_x": 8894,
+    "_y": 1800
+  },
+  {
+    "_raw_text": "```json\n{\n    \"TEXT_LINES\": [\n        \"600\",\n        \"50\",\n        \"-1,800\",\n        \"13\",\n        \"14\"\n    ],\n    \"DIMENSIONS\": [],\n    \"TABLES\": [],\n    \"CODES\": [],\n    \"GEOLOGY\": \"No text found\"\n}\n```",
+    "text_lines": [
+      "600",
+      "50",
+      "-1,800",
+      "13",
+      "14"
+    ],
+    "dimensions": [],
+    "tables": [],
+    "codes": [],
+    "geology": [
+      "No text found"
+    ],
+    "_tokens": 1178,
+    "_prompt_tokens": 1105,
+    "_completion_tokens": 73,
+    "_provider": "qwen",
+    "_model": "qwen-vl-ocr",
+    "_tile": "page01_tile0033_x00000_y02700.png",
+    "_x": 0,
+    "_y": 2700
+  },
+  {
+    "_raw_text": "```json\n{\n    \"TEXT_LINES\": [\n        \"1250\",\n        \"180\",\n        \"300\",\n        \"40\",\n        \"9x100=900\",\n        \"2\",\n        \"4 шт.\",\n        \"8x\"\n    ],\n    \"DIMENSIONS\": [\n        \"\"\n    ],\n    \"TABLES\": [],\n    \"CODES\": [],\n    \"GEOLOGY\": \"No text found\"\n}\n```",
+    "text_lines": [
+      "1250",
+      "180",
+      "300",
+      "40",
+      "9x100=900",
+      "2",
+      "4 шт.",
+      "8x"
+    ],
+    "dimensions": [
+      ""
+    ],
+    "tables": [],
+    "codes": [],
+    "geology": [
+      "No text found"
+    ],
+    "_tokens": 1204,
+    "_prompt_tokens": 1105,
+    "_completion_tokens": 99,
+    "_provider": "qwen",
+    "_model": "qwen-vl-ocr",
+    "_tile": "page01_tile0034_x00900_y02700.png",
+    "_x": 900,
+    "_y": 2700
+  },
+  {
+    "_raw_text": "```json\n{\n    \"TEXT_LINES\": [\n        \"2\",\n        \"UT.\",\n        \"1\",\n        \"2 шт.\",\n        \"1\",\n        \"2 шт.\",\n        \"180\",\n        \"300\",\n        \"8x200=1600\",\n        \"9x100=900\",\n        \"3500\",\n        \"2\"\n    ],\n    \"DIMENSIONS\": [\n        \"\"\n    ],\n    \"TABLES\": [],\n    \"CODES\": [],\n    \"GEOLOGY\": [\n        \"\"\n    ]\n}\n```",
+    "text_lines": [
+      "2",
+      "UT.",
+      "1",
+      "2 шт.",
+      "1",
+      "2 шт.",
+      "180",
+      "300",
+      "8x200=1600",
+      "9x100=900",
+      "3500",
+      "2"
+    ],
+    "dimensions": [
+      ""
+    ],
+    "tables": [],
+    "codes": [],
+    "geology": [
+      ""
+    ],
+    "_tokens": 1229,
+    "_prompt_tokens": 1105,
+    "_completion_tokens": 124,
+    "_provider": "qwen",
+    "_model": "qwen-vl-ocr",
+    "_tile": "page01_tile0035_x01800_y02700.png",
+    "_x": 1800,
+    "_y": 2700
+  },
+  {
+    "_raw_text": "```json\n{\n    \"TEXT_LINES\": [\n        \"3, 4\",\n        \"1250\",\n        \"300\",\n        \"00\",\n        \"1\",\n        \"2 шт.\",\n        \"2\",\n        \"4 шт.\",\n        \"1\",\n        \"2 шт.\",\n        \"4\",\n        \"war 200\"\n    ],\n    \"DIMENSIONS\": [\n        \"40\"\n    ],\n    \"TABLES\": [],\n    \"CODES\": [],\n    \"GEOLOGY\": \"No text found\"\n}\n```",
+    "text_lines": [
+      "3, 4",
+      "1250",
+      "300",
+      "00",
+      "1",
+      "2 шт.",
+      "2",
+      "4 шт.",
+      "1",
+      "2 шт.",
+      "4",
+      "war 200"
+    ],
+    "dimensions": [
+      "40"
+    ],
+    "tables": [],
+    "codes": [],
+    "geology": [
+      "No text found"
+    ],
+    "_tokens": 1223,
+    "_prompt_tokens": 1105,
+    "_completion_tokens": 118,
+    "_provider": "qwen",
+    "_model": "qwen-vl-ocr",
+    "_tile": "page01_tile0036_x02700_y02700.png",
+    "_x": 2700,
+    "_y": 2700
+  },
+  {
+    "_raw_text": "```json\n{\n    \"TEXT_LINES\": [\n        \"6\",\n        \"шаг 200 50 250\",\n        \"18\",\n        \"-1,200\",\n        \"150\",\n        \"600\",\n        \"-1,800\",\n        \"100\",\n        \"4\",\n        \"200\",\n        \"3\",\n        \"шаг 200\",\n        \"Подготовка\",\n        \"Бетон В7,5\",\n        \"300\",\n        \"700\"\n    ],\n    \"DIMENSIONS\": [\n        \"150\",\n        \"600\",\n        \"100\"\n    ],\n    \"TABLES\": [],\n    \"CODES\": [],\n    \"GEOLOGY\": []\n}\n```",
+    "text_lines": [
+      "6",
+      "шаг 200 50 250",
+      "18",
+      "-1,200",
+      "150",
+      "600",
+      "-1,800",
+      "100",
+      "4",
+      "200",
+      "3",
+      "шаг 200",
+      "Подготовка",
+      "Бетон В7,5",
+      "300",
+      "700"
+    ],
+    "dimensions": [
+      "150",
+      "600",
+      "100"
+    ],
+    "tables": [],
+    "codes": [],
+    "geology": [],
+    "_tokens": 1275,
+    "_prompt_tokens": 1105,
+    "_completion_tokens": 170,
+    "_provider": "qwen",
+    "_model": "qwen-vl-ocr",
+    "_tile": "page01_tile0037_x03600_y02700.png",
+    "_x": 3600,
+    "_y": 2700
+  },
+  {
+    "_raw_text": "```json\n{\n    \"TEXT_LINES\": [\n        \"-1,700\",\n        \"500\",\n        \"40\",\n        \"24\",\n        \"180\",\n        \"240\",\n        \"8x100=800\"\n    ],\n    \"DIMENSIONS\": [],\n    \"TABLES\": [],\n    \"CODES\": [],\n    \"GEOLOGY\": \"No text found\"\n}\n```",
+    "text_lines": [
+      "-1,700",
+      "500",
+      "40",
+      "24",
+      "180",
+      "240",
+      "8x100=800"
+    ],
+    "dimensions": [],
+    "tables": [],
+    "codes": [],
+    "geology": [
+      "No text found"
+    ],
+    "_tokens": 1197,
+    "_prompt_tokens": 1105,
+    "_completion_tokens": 92,
+    "_provider": "qwen",
+    "_model": "qwen-vl-ocr",
+    "_tile": "page01_tile0038_x04500_y02700.png",
+    "_x": 4500,
+    "_y": 2700
+  },
+  {
+    "_raw_text": "```json\n{\n    \"TEXT_LINES\": [\n        \"13\",\n        \"4 шт.\",\n        \"12\",\n        \"3 шт.\",\n        \"12\",\n        \"2 шт.\",\n        \"00 175\",\n        \"14x200=2800\",\n        \"4850\"\n    ],\n    \"DIMENSIONS\": [],\n    \"TABLES\": [],\n    \"CODES\": [],\n    \"GEOLOGY\": \"No text found\"\n}\n```",
+    "text_lines": [
+      "13",
+      "4 шт.",
+      "12",
+      "3 шт.",
+      "12",
+      "2 шт.",
+      "00 175",
+      "14x200=2800",
+      "4850"
+    ],
+    "dimensions": [],
+    "tables": [],
+    "codes": [],
+    "geology": [
+      "No text found"
+    ],
+    "_tokens": 1212,
+    "_prompt_tokens": 1105,
+    "_completion_tokens": 107,
+    "_provider": "qwen",
+    "_model": "qwen-vl-ocr",
+    "_tile": "page01_tile0039_x05400_y02700.png",
+    "_x": 5400,
+    "_y": 2700
+  },
+  {
+    "_raw_text": "```json\n{\n    \"TEXT_LINES\": [\n        \"12\",\n        \"2 шт.\",\n        \"175\",\n        \"8x100=800\",\n        \"240\",\n        \"180\",\n        \"240\",\n        \"1550\",\n        \"6\",\n        \"Ведомость деталей\"\n    ],\n    \"DIMENSIONS\": [\n        \"12\",\n        \"2 шт.\",\n        \"175\",\n        \"8x100=800\",\n        \"240\",\n        \"180\",\n        \"240\",\n        \"1550\"\n    ],\n    \"TABLES\": [],\n    \"CODES\": [],\n    \"GEOLOGY\": [\n        \"240\"\n    ]\n}\n```",
+    "text_lines": [
+      "12",
+      "2 шт.",
+      "175",
+      "8x100=800",
+      "240",
+      "180",
+      "240",
+      "1550",
+      "6",
+      "Ведомость деталей"
+    ],
+    "dimensions": [
+      "12",
+      "2 шт.",
+      "175",
+      "8x100=800",
+      "240",
+      "180",
+      "240",
+      "1550"
+    ],
+    "tables": [],
+    "codes": [],
+    "geology": [
+      "240"
+    ],
+    "_tokens": 1277,
+    "_prompt_tokens": 1105,
+    "_completion_tokens": 172,
+    "_provider": "qwen",
+    "_model": "qwen-vl-ocr",
+    "_tile": "page01_tile0040_x06300_y02700.png",
+    "_x": 6300,
+    "_y": 2700
+  },
+  {
+    "_raw_text": "```json\n{\n    \"TEXT_LINES\": [\n        \"14,4\",\n        \"240\",\n        \"80\",\n        \"50\",\n        \"A\",\n        \"ей\",\n        \"ГОСТ 26633-2015\",\n        \"ГОСТ 26633-2015\",\n        \"12* ГОСТ 34028-2016\",\n        \"13 ГОСТ 34028-2016\",\n        \"14* ГОСТ 5781-82\",\n        \"4* ГОСТ 5781-82\",\n        \"5* ГОСТ 34028-2016\",\n        \"7 ГОСТ 34028-2016\",\n        \"15 ГОСТ 34028-2016\"\n    ],\n    \"DIMENSIONS\": [],\n    \"TABLES\": [],\n    \"CODES\": [],\n    \"GEOLOGY\": \"No text found\"\n}\n```",
+    "text_lines": [
+      "14,4",
+      "240",
+      "80",
+      "50",
+      "A",
+      "ей",
+      "ГОСТ 26633-2015",
+      "ГОСТ 26633-2015",
+      "12* ГОСТ 34028-2016",
+      "13 ГОСТ 34028-2016",
+      "14* ГОСТ 5781-82",
+      "4* ГОСТ 5781-82",
+      "5* ГОСТ 34028-2016",
+      "7 ГОСТ 34028-2016",
+      "15 ГОСТ 34028-2016"
+    ],
+    "dimensions": [],
+    "tables": [],
+    "codes": [],
+    "geology": [
+      "No text found"
+    ],
+    "_tokens": 1342,
+    "_prompt_tokens": 1105,
+    "_completion_tokens": 237,
+    "_provider": "qwen",
+    "_model": "qwen-vl-ocr",
+    "_tile": "page01_tile0041_x07200_y02700.png",
+    "_x": 7200,
+    "_y": 2700
+  },
+  {
+    "_raw_text": "```json\n{\n    \"TEXT_LINES\": [\n        \"Бетон В25, W6, F150\",\n        \"Бетон В7,5\",\n        \"БФМ15\",\n        \"Детали\",\n        \"16 - A500C L= 5810\",\n        \"12 - A500C L= 5210\",\n        \"8 - A240 L= 1380\",\n        \"8 - A240 L= 370\",\n        \"12 - A500C L= 1220\",\n        \"12 - A500C L= 1150\",\n        \"12 - A500C L= 1650\"\n    ],\n    \"DIMENSIONS\": [],\n    \"TABLES\": [],\n    \"CODES\": [],\n    \"GEOLOGY\": \"No text found\"\n}\n```",
+    "text_lines": [
+      "Бетон В25, W6, F150",
+      "Бетон В7,5",
+      "БФМ15",
+      "Детали",
+      "16 - A500C L= 5810",
+      "12 - A500C L= 5210",
+      "8 - A240 L= 1380",
+      "8 - A240 L= 370",
+      "12 - A500C L= 1220",
+      "12 - A500C L= 1150",
+      "12 - A500C L= 1650"
+    ],
+    "dimensions": [],
+    "tables": [],
+    "codes": [],
+    "geology": [
+      "No text found"
+    ],
+    "_tokens": 1311,
+    "_prompt_tokens": 1105,
+    "_completion_tokens": 206,
+    "_provider": "qwen",
+    "_model": "qwen-vl-ocr",
+    "_tile": "page01_tile0042_x08100_y02700.png",
+    "_x": 8100,
+    "_y": 2700
+  },
+  {
+    "_raw_text": "```json\n{\n    \"TEXT_LINES\": [\n        \"M³ 0,67\",\n        \"M³ 0,22 подготовка\",\n        \"L= 5810 5 9,17\",\n        \"L= 5210 4 4,63\",\n        \"L= 1380 33 0,54\",\n        \"L= 370 46 0,15\",\n        \"L= 1220 32 1,08\",\n        \"L= 1150 10 1,02\",\n        \"L= 1650 54 1,47\"\n    ],\n    \"DIMENSIONS\": [],\n    \"TABLES\": [],\n    \"CODES\": [],\n    \"GEOLOGY\": \"No text found\"\n}\n```",
+    "text_lines": [
+      "M³ 0,67",
+      "M³ 0,22 подготовка",
+      "L= 5810 5 9,17",
+      "L= 5210 4 4,63",
+      "L= 1380 33 0,54",
+      "L= 370 46 0,15",
+      "L= 1220 32 1,08",
+      "L= 1150 10 1,02",
+      "L= 1650 54 1,47"
+    ],
+    "dimensions": [],
+    "tables": [],
+    "codes": [],
+    "geology": [
+      "No text found"
+    ],
+    "_tokens": 1295,
+    "_prompt_tokens": 1105,
+    "_completion_tokens": 190,
+    "_provider": "qwen",
+    "_model": "qwen-vl-ocr",
+    "_tile": "page01_tile0043_x08894_y02700.png",
+    "_x": 8894,
+    "_y": 2700
+  },
+  {
+    "_raw_text": "```json\n{\n    \"TEXT_LINES\": [\n        \"40\",\n        \"-1,200\"\n    ],\n    \"DIMENSIONS\": [],\n    \"TABLES\": [],\n    \"CODES\": [],\n    \"GEOLOGY\": []\n}\n```",
+    "text_lines": [
+      "40",
+      "-1,200"
+    ],
+    "dimensions": [],
+    "tables": [],
+    "codes": [],
+    "geology": [],
+    "_tokens": 1158,
+    "_prompt_tokens": 1105,
+    "_completion_tokens": 53,
+    "_provider": "qwen",
+    "_model": "qwen-vl-ocr",
+    "_tile": "page01_tile0044_x00000_y03600.png",
+    "_x": 0,
+    "_y": 3600
+  },
+  {
+    "_raw_text": "```json\n{\n    \"TEXT_LINES\": [\n        \"\"\n    ],\n    \"DIMENSIONS\": [\n        \"\"\n    ],\n    \"TABLES\": [],\n    \"CODES\": [],\n    \"GEOLOGY\": []\n}\n```",
+    "text_lines": [
+      ""
+    ],
+    "dimensions": [
+      ""
+    ],
+    "tables": [],
+    "codes": [],
+    "geology": [],
+    "_tokens": 1151,
+    "_prompt_tokens": 1105,
+    "_completion_tokens": 46,
+    "_provider": "qwen",
+    "_model": "qwen-vl-ocr",
+    "_tile": "page01_tile0045_x00900_y03600.png",
+    "_x": 900,
+    "_y": 3600
+  },
+  {
+    "_raw_text": "```json\n{\n    \"TEXT_LINES\": [\n        \"Разрез 3-3\",\n        \"4\"\n    ],\n    \"DIMENSIONS\": [],\n    \"TABLES\": [],\n    \"CODES\": [],\n    \"GEOLOGY\": []\n}\n```",
+    "text_lines": [
+      "Разрез 3-3",
+      "4"
+    ],
+    "dimensions": [],
+    "tables": [],
+    "codes": [],
+    "geology": [],
+    "_tokens": 1159,
+    "_prompt_tokens": 1105,
+    "_completion_tokens": 54,
+    "_provider": "qwen",
+    "_model": "qwen-vl-ocr",
+    "_tile": "page01_tile0046_x01800_y03600.png",
+    "_x": 1800,
+    "_y": 3600
+  },
+  {
+    "_raw_text": "```json\n{\n    \"TEXT_LINES\": [\n        \"40\"\n    ],\n    \"DIMENSIONS\": [],\n    \"TABLES\": [],\n    \"CODES\": [],\n    \"GEOLOGY\": []\n}\n```",
+    "text_lines": [
+      "40"
+    ],
+    "dimensions": [],
+    "tables": [],
+    "codes": [],
+    "geology": [],
+    "_tokens": 1150,
+    "_prompt_tokens": 1105,
+    "_completion_tokens": 45,
+    "_provider": "qwen",
+    "_model": "qwen-vl-ocr",
+    "_tile": "page01_tile0047_x02700_y03600.png",
+    "_x": 2700,
+    "_y": 3600
+  },
+  {
+    "_raw_text": "```json\n{\n    \"TEXT_LINES\": [\n        \"Разрез 4-4\",\n        \"40\",\n        \"40\"\n    ],\n    \"DIMENSIONS\": [],\n    \"TABLES\": [],\n    \"CODES\": [],\n    \"GEOLOGY\": []\n}\n```",
+    "text_lines": [
+      "Разрез 4-4",
+      "40",
+      "40"
+    ],
+    "dimensions": [],
+    "tables": [],
+    "codes": [],
+    "geology": [],
+    "_tokens": 1165,
+    "_prompt_tokens": 1105,
+    "_completion_tokens": 60,
+    "_provider": "qwen",
+    "_model": "qwen-vl-ocr",
+    "_tile": "page01_tile0048_x03600_y03600.png",
+    "_x": 3600,
+    "_y": 3600
+  },
+  {
+    "_raw_text": "```json\n{\n    \"TEXT_LINES\": [\n        \"Разр\",\n        \"40\",\n        \"-1,200\"\n    ],\n    \"DIMENSIONS\": [],\n    \"TABLES\": [],\n    \"CODES\": [],\n    \"GEOLOGY\": []\n}\n```",
+    "text_lines": [
+      "Разр",
+      "40",
+      "-1,200"
+    ],
+    "dimensions": [],
+    "tables": [],
+    "codes": [],
+    "geology": [],
+    "_tokens": 1164,
+    "_prompt_tokens": 1105,
+    "_completion_tokens": 59,
+    "_provider": "qwen",
+    "_model": "qwen-vl-ocr",
+    "_tile": "page01_tile0049_x04500_y03600.png",
+    "_x": 4500,
+    "_y": 3600
+  },
+  {
+    "_raw_text": "```json\n{\n    \"TEXT_LINES\": [\n        \"рез 6-6\",\n        \"5\",\n        \"war 200\",\n        \"40\",\n        \"0,000\"\n    ],\n    \"DIMENSIONS\": [\n        \"\"\n    ],\n    \"TABLES\": [],\n    \"CODES\": [],\n    \"GEOLOGY\": \"No text found\"\n}\n```",
+    "text_lines": [
+      "рез 6-6",
+      "5",
+      "war 200",
+      "40",
+      "0,000"
+    ],
+    "dimensions": [
+      ""
+    ],
+    "tables": [],
+    "codes": [],
+    "geology": [
+      "No text found"
+    ],
+    "_tokens": 1186,
+    "_prompt_tokens": 1105,
+    "_completion_tokens": 81,
+    "_provider": "qwen",
+    "_model": "qwen-vl-ocr",
+    "_tile": "page01_tile0050_x05400_y03600.png",
+    "_x": 5400,
+    "_y": 3600
+  },
+  {
+    "_raw_text": "```json\n{\n    \"TEXT_LINES\": [\n        \"Ведомость деталей\",\n        \"Поз.\",\n        \"Эскиз\",\n        \"1\",\n        \"4100\",\n        \"300\",\n        \"300\",\n        \"3\",\n        \"520\",\n        \"270\",\n        \"595\",\n        \"195\"\n    ],\n    \"DIMENSIONS\": [],\n    \"TABLES\": [],\n    \"CODES\": [],\n    \"GEOLOGY\": \"No text found\"\n}\n```",
+    "text_lines": [
+      "Ведомость деталей",
+      "Поз.",
+      "Эскиз",
+      "1",
+      "4100",
+      "300",
+      "300",
+      "3",
+      "520",
+      "270",
+      "595",
+      "195"
+    ],
+    "dimensions": [],
+    "tables": [],
+    "codes": [],
+    "geology": [
+      "No text found"
+    ],
+    "_tokens": 1221,
+    "_prompt_tokens": 1105,
+    "_completion_tokens": 116,
+    "_provider": "qwen",
+    "_model": "qwen-vl-ocr",
+    "_tile": "page01_tile0051_x06300_y03600.png",
+    "_x": 6300,
+    "_y": 3600
+  },
+  {
+    "_raw_text": "```json\n{\n    \"TEXT_LINES\": [\n        \"15 ГОСТ 34028-2016\",\n        \"16 ГОСТ 34028-2016\",\n        \"17* ГОСТ 34028-2016\",\n        \"ГОСТ 26633-2015\",\n        \"ГОСТ 26633-2015\",\n        \"Поз. с знаком \"*\" смотри вед\"\n    ],\n    \"DIMENSIONS\": [],\n    \"TABLES\": [],\n    \"CODES\": [],\n    \"GEOLOGY\": []\n}\n```",
+    "text_lines": [],
+    "dimensions": [],
+    "tables": [],
+    "codes": [],
+    "geology": [],
+    "_tokens": 1252,
+    "_prompt_tokens": 1105,
+    "_completion_tokens": 147,
+    "_provider": "qwen",
+    "_model": "qwen-vl-ocr",
+    "_tile": "page01_tile0052_x07200_y03600.png",
+    "_x": 7200,
+    "_y": 3600
+  },
+  {
+    "_raw_text": "```json\n{\n    \"TEXT_LINES\": [\n        \"12 - A500C L= 1650\",\n        \"12 - A500C L= 5620\",\n        \"12 - A500C L= 1190\",\n        \"Материалы\",\n        \"Бетон В25, W6, F150\",\n        \"Бетон В7,5\",\n        \"1 ведомость деталей\"\n    ],\n    \"DIMENSIONS\": [],\n    \"TABLES\": [],\n    \"CODES\": [],\n    \"GEOLOGY\": \"No text found\"\n}\n```",
+    "text_lines": [
+      "12 - A500C L= 1650",
+      "12 - A500C L= 5620",
+      "12 - A500C L= 1190",
+      "Материалы",
+      "Бетон В25, W6, F150",
+      "Бетон В7,5",
+      "1 ведомость деталей"
+    ],
+    "dimensions": [],
+    "tables": [],
+    "codes": [],
+    "geology": [
+      "No text found"
+    ],
+    "_tokens": 1248,
+    "_prompt_tokens": 1105,
+    "_completion_tokens": 143,
+    "_provider": "qwen",
+    "_model": "qwen-vl-ocr",
+    "_tile": "page01_tile0053_x08100_y03600.png",
+    "_x": 8100,
+    "_y": 3600
+  },
+  {
+    "_raw_text": "```json\n{\n    \"TEXT_LINES\": [\n        \"L= 1650 54 1,47\",\n        \"L= 5620 10 4,99\",\n        \"L= 1190 10 1,06\",\n        \"M³ 2,67\",\n        \"M³ 0,24 подготовка\"\n    ],\n    \"DIMENSIONS\": [\n        \"1650\",\n        \"5620\",\n        \"1190\"\n    ],\n    \"TABLES\": [],\n    \"CODES\": [],\n    \"GEOLOGY\": []\n}\n```",
+    "text_lines": [
+      "L= 1650 54 1,47",
+      "L= 5620 10 4,99",
+      "L= 1190 10 1,06",
+      "M³ 2,67",
+      "M³ 0,24 подготовка"
+    ],
+    "dimensions": [
+      "1650",
+      "5620",
+      "1190"
+    ],
+    "tables": [],
+    "codes": [],
+    "geology": [],
+    "_tokens": 1245,
+    "_prompt_tokens": 1105,
+    "_completion_tokens": 140,
+    "_provider": "qwen",
+    "_model": "qwen-vl-ocr",
+    "_tile": "page01_tile0054_x08894_y03600.png",
+    "_x": 8894,
+    "_y": 3600
+  },
+  {
+    "_raw_text": "```json\n{\n    \"TEXT_LINES\": [\n        \"40\",\n        \"240\",\n        \"40\",\n        \"-1,200\",\n        \"-1,700\",\n        \"500\"\n    ],\n    \"DIMENSIONS\": [\n        \"-1,200\",\n        \"-1,700\",\n        \"500\"\n    ],\n    \"TABLES\": [],\n    \"CODES\": [],\n    \"GEOLOGY\": []\n}\n```",
+    "text_lines": [
+      "40",
+      "240",
+      "40",
+      "-1,200",
+      "-1,700",
+      "500"
+    ],
+    "dimensions": [
+      "-1,200",
+      "-1,700",
+      "500"
+    ],
+    "tables": [],
+    "codes": [],
+    "geology": [],
+    "_tokens": 1207,
+    "_prompt_tokens": 1105,
+    "_completion_tokens": 102,
+    "_provider": "qwen",
+    "_model": "qwen-vl-ocr",
+    "_tile": "page01_tile0055_x00000_y04500.png",
+    "_x": 0,
+    "_y": 4500
+  },
+  {
+    "_raw_text": "```json\n{\n    \"TEXT_LINES\": [\n        \"50\",\n        \"40\",\n        \"240\",\n        \"40\",\n        \"180\",\n        \"240\",\n        \"50\",\n        \"7x100=700\",\n        \"10\",\n        \"4 шт.\",\n        \"175\"\n    ],\n    \"DIMENSIONS\": [\n        \"700\"\n    ],\n    \"TABLES\": [],\n    \"CODES\": [],\n    \"GEOLOGY\": \"No text found\"\n}\n```",
+    "text_lines": [
+      "50",
+      "40",
+      "240",
+      "40",
+      "180",
+      "240",
+      "50",
+      "7x100=700",
+      "10",
+      "4 шт.",
+      "175"
+    ],
+    "dimensions": [
+      "700"
+    ],
+    "tables": [],
+    "codes": [],
+    "geology": [
+      "No text found"
+    ],
+    "_tokens": 1224,
+    "_prompt_tokens": 1105,
+    "_completion_tokens": 119,
+    "_provider": "qwen",
+    "_model": "qwen-vl-ocr",
+    "_tile": "page01_tile0056_x00900_y04500.png",
+    "_x": 900,
+    "_y": 4500
+  },
+  {
+    "_raw_text": "```json\n{\n    \"TEXT_LINES\": [\n        \"9\",\n        \"2 шт.\",\n        \"9\",\n        \"2 шт.\",\n        \"13x200=2600\",\n        \"4450\",\n        \"175\",\n        \"7x100\",\n        \"4\"\n    ],\n    \"DIMENSIONS\": [],\n    \"TABLES\": [],\n    \"CODES\": [],\n    \"GEOLOGY\": \"No text found\"\n}\n```",
+    "text_lines": [
+      "9",
+      "2 шт.",
+      "9",
+      "2 шт.",
+      "13x200=2600",
+      "4450",
+      "175",
+      "7x100",
+      "4"
+    ],
+    "dimensions": [],
+    "tables": [],
+    "codes": [],
+    "geology": [
+      "No text found"
+    ],
+    "_tokens": 1208,
+    "_prompt_tokens": 1105,
+    "_completion_tokens": 103,
+    "_provider": "qwen",
+    "_model": "qwen-vl-ocr",
+    "_tile": "page01_tile0057_x01800_y04500.png",
+    "_x": 1800,
+    "_y": 4500
+  },
+  {
+    "_raw_text": "```json\n{\n    \"TEXT_LINES\": [\n        \"11,4\",\n        \"240\",\n        \"180\",\n        \"240\",\n        \"50\",\n        \"7x100=700\",\n        \"1550\",\n        \"A\"\n    ],\n    \"DIMENSIONS\": [\n        \"40\",\n        \"2L\",\n        \"1\",\n        \"4L\",\n        \"9\",\n        \"2U\"\n    ],\n    \"TABLES\": [],\n    \"CODES\": [],\n    \"GEOLOGY\": \"No text found\"\n}\n```",
+    "text_lines": [
+      "11,4",
+      "240",
+      "180",
+      "240",
+      "50",
+      "7x100=700",
+      "1550",
+      "A"
+    ],
+    "dimensions": [
+      "40",
+      "2L",
+      "1",
+      "4L",
+      "9",
+      "2U"
+    ],
+    "tables": [],
+    "codes": [],
+    "geology": [
+      "No text found"
+    ],
+    "_tokens": 1232,
+    "_prompt_tokens": 1105,
+    "_completion_tokens": 127,
+    "_provider": "qwen",
+    "_model": "qwen-vl-ocr",
+    "_tile": "page01_tile0058_x02700_y04500.png",
+    "_x": 2700,
+    "_y": 4500
+  },
+  {
+    "_raw_text": "```json\n{\n    \"TEXT_LINES\": [\n        \"9\",\n        \"2 шт.\",\n        \"10\",\n        \"4 шт.\",\n        \"9\",\n        \"2 шт.\",\n        \"4\",\n        \"шаг 200\",\n        \"11\",\n        \"шаг 200\",\n        \"Подготовка\",\n        \"Бетон В7,5\",\n        \"150\",\n        \"300\",\n        \"150\",\n        \"13\"\n    ],\n    \"DIMENSIONS\": [\n        \"130\",\n        \"130\",\n        \"500\",\n        \"100\"\n    ],\n    \"TABLES\": [],\n    \"CODES\": [],\n    \"GEOLOGY\": []\n}\n```",
+    "text_lines": [
+      "9",
+      "2 шт.",
+      "10",
+      "4 шт.",
+      "9",
+      "2 шт.",
+      "4",
+      "шаг 200",
+      "11",
+      "шаг 200",
+      "Подготовка",
+      "Бетон В7,5",
+      "150",
+      "300",
+      "150",
+      "13"
+    ],
+    "dimensions": [
+      "130",
+      "130",
+      "500",
+      "100"
+    ],
+    "tables": [],
+    "codes": [],
+    "geology": [],
+    "_tokens": 1268,
+    "_prompt_tokens": 1105,
+    "_completion_tokens": 163,
+    "_provider": "qwen",
+    "_model": "qwen-vl-ocr",
+    "_tile": "page01_tile0059_x03600_y04500.png",
+    "_x": 3600,
+    "_y": 4500
+  },
+  {
+    "_raw_text": "```json\n{\n    \"TEXT_LINES\": [\n        \"-1,200\",\n        \"-1,700\",\n        \"ТОВКА\",\n        \"B7,5\",\n        \"40\",\n        \"16\",\n        \"10 шт.\",\n        \"40\",\n        \"12\",\n        \"2 шт.\",\n        \"13\"\n    ],\n    \"DIMENSIONS\": [\n        \"40\",\n        \"16\",\n        \"10 шт.\",\n        \"40\",\n        \"12\",\n        \"2 шт.\",\n        \"13\"\n    ],\n    \"TABLES\": [],\n    \"CODES\": [],\n    \"GEOLOGY\": []\n}\n```",
+    "text_lines": [
+      "-1,200",
+      "-1,700",
+      "ТОВКА",
+      "B7,5",
+      "40",
+      "16",
+      "10 шт.",
+      "40",
+      "12",
+      "2 шт.",
+      "13"
+    ],
+    "dimensions": [
+      "40",
+      "16",
+      "10 шт.",
+      "40",
+      "12",
+      "2 шт.",
+      "13"
+    ],
+    "tables": [],
+    "codes": [],
+    "geology": [],
+    "_tokens": 1252,
+    "_prompt_tokens": 1105,
+    "_completion_tokens": 147,
+    "_provider": "qwen",
+    "_model": "qwen-vl-ocr",
+    "_tile": "page01_tile0060_x04500_y04500.png",
+    "_x": 4500,
+    "_y": 4500
+  },
+  {
+    "_raw_text": "```json\n{\n    \"TEXT_LINES\": [\n        \"шаг 400\",\n        \"в шахм.\",\n        \"порядке\",\n        \"4\",\n        \"280\",\n        \"280\",\n        \"1200\",\n        \"1700\",\n        \"-1,200\",\n        \"-1,700\",\n        \"15\",\n        \"50\",\n        \"250\",\n        \"500\",\n        \"130\",\n        \"30\"\n    ],\n    \"DIMENSIONS\": [\n        \"1200\",\n        \"1700\",\n        \"-1,200\",\n        \"-1,700\"\n    ],\n    \"TABLES\": [],\n    \"CODES\": [],\n    \"GEOLOGY\": \"No text found\"\n}\n```",
+    "text_lines": [
+      "шаг 400",
+      "в шахм.",
+      "порядке",
+      "4",
+      "280",
+      "280",
+      "1200",
+      "1700",
+      "-1,200",
+      "-1,700",
+      "15",
+      "50",
+      "250",
+      "500",
+      "130",
+      "30"
+    ],
+    "dimensions": [
+      "1200",
+      "1700",
+      "-1,200",
+      "-1,700"
+    ],
+    "tables": [],
+    "codes": [],
+    "geology": [
+      "No text found"
+    ],
+    "_tokens": 1282,
+    "_prompt_tokens": 1105,
+    "_completion_tokens": 177,
+    "_provider": "qwen",
+    "_model": "qwen-vl-ocr",
+    "_tile": "page01_tile0061_x05400_y04500.png",
+    "_x": 5400,
+    "_y": 4500
+  },
+  {
+    "_raw_text": "```json\n{\n    \"TEXT_LINES\": [\n        \"195\",\n        \"4\",\n        \"75\",\n        \"75\",\n        \"220\",\n        \"5\",\n        \"220\",\n        \"500\",\n        \"500\",\n        \"9\",\n        \"4930\",\n        \"240\",\n        \"240\"\n    ],\n    \"DIMENSIONS\": [],\n    \"TABLES\": [],\n    \"CODES\": [],\n    \"GEOLOGY\": \"No text found\"\n}\n```",
+    "text_lines": [
+      "195",
+      "4",
+      "75",
+      "75",
+      "220",
+      "5",
+      "220",
+      "500",
+      "500",
+      "9",
+      "4930",
+      "240",
+      "240"
+    ],
+    "dimensions": [],
+    "tables": [],
+    "codes": [],
+    "geology": [
+      "No text found"
+    ],
+    "_tokens": 1220,
+    "_prompt_tokens": 1105,
+    "_completion_tokens": 115,
+    "_provider": "qwen",
+    "_model": "qwen-vl-ocr",
+    "_tile": "page01_tile0062_x06300_y04500.png",
+    "_x": 6300,
+    "_y": 4500
+  },
+  {
+    "_raw_text": "```json\n{\n    \"TEXT_LINES\": [\n        \"500,648,55,600,90,1. Общие указания даны н\",\n        \"696,726,55,599,90,2. Схема расположения ф\",\n        \"696,804,55,600,90,3. Защитный слой армату\",\n        \"696,876,55,600,90,4. Под фундаментными ба\",\n        \"720,932,47,541,90,выполнить шире подош\"\n    ],\n    \"DIMENSIONS\": [],\n    \"TABLES\": [],\n    \"CODES\": [],\n    \"GEOLOGY\": []\n}\n```",
+    "text_lines": [
+      "500,648,55,600,90,1. Общие указания даны н",
+      "696,726,55,599,90,2. Схема расположения ф",
+      "696,804,55,600,90,3. Защитный слой армату",
+      "696,876,55,600,90,4. Под фундаментными ба",
+      "720,932,47,541,90,выполнить шире подош"
+    ],
+    "dimensions": [],
+    "tables": [],
+    "codes": [],
+    "geology": [],
+    "_tokens": 1297,
+    "_prompt_tokens": 1105,
+    "_completion_tokens": 192,
+    "_provider": "qwen",
+    "_model": "qwen-vl-ocr",
+    "_tile": "page01_tile0063_x07200_y04500.png",
+    "_x": 7200,
+    "_y": 4500
+  },
+  {
+    "_raw_text": "```json\n{\n    \"TEXT_LINES\": [\n        \"ны на листе 1.\",\n        \"я фундаментных балок см. лист 5.\",\n        \"атуры 40 мм.\",\n        \"и балками выполнить бетонную подготовку\",\n        \"дошвы на 100 мм с каждой стороны.\"\n    ],\n    \"DIMENSIONS\": [],\n    \"TABLES\": [],\n    \"CODES\": [],\n    \"GEOLOGY\": \"No text found\"\n}\n```",
+    "text_lines": [
+      "ны на листе 1.",
+      "я фундаментных балок см. лист 5.",
+      "атуры 40 мм.",
+      "и балками выполнить бетонную подготовку",
+      "дошвы на 100 мм с каждой стороны."
+    ],
+    "dimensions": [],
+    "tables": [],
+    "codes": [],
+    "geology": [
+      "No text found"
+    ],
+    "_tokens": 1218,
+    "_prompt_tokens": 1105,
+    "_completion_tokens": 113,
+    "_provider": "qwen",
+    "_model": "qwen-vl-ocr",
+    "_tile": "page01_tile0064_x08100_y04500.png",
+    "_x": 8100,
+    "_y": 4500
+  },
+  {
+    "_raw_text": "```json\n{\n    \"TEXT_LINES\": [\n        \"дготовку В7,5 - 100 мм. Подготовку\",\n        \"l.\"\n    ],\n    \"DIMENSIONS\": [],\n    \"TABLES\": [],\n    \"CODES\": [],\n    \"GEOLOGY\": \"No text found\"\n}\n```",
+    "text_lines": [
+      "дготовку В7,5 - 100 мм. Подготовку",
+      "l."
+    ],
+    "dimensions": [],
+    "tables": [],
+    "codes": [],
+    "geology": [
+      "No text found"
+    ],
+    "_tokens": 1173,
+    "_prompt_tokens": 1105,
+    "_completion_tokens": 68,
+    "_provider": "qwen",
+    "_model": "qwen-vl-ocr",
+    "_tile": "page01_tile0065_x08894_y04500.png",
+    "_x": 8894,
+    "_y": 4500
+  },
+  {
+    "_raw_text": "No text found",
+    "text_lines": [],
+    "dimensions": [],
+    "tables": [],
+    "codes": [],
+    "geology": [],
+    "_tokens": 1109,
+    "_prompt_tokens": 1105,
+    "_completion_tokens": 4,
+    "_provider": "qwen",
+    "_model": "qwen-vl-ocr",
+    "_tile": "page01_tile0066_x00000_y05400.png",
+    "_x": 0,
+    "_y": 5400
+  },
+  {
+    "_raw_text": "```json\n{\n    \"TEXT_LINES\": [\n        \"Ведомость рас\",\n        \"Из\",\n        \"Арма\",\n        \"арка элемента\",\n        \"A240\",\n        \"ГОСТ 5781-82\"\n    ],\n    \"DIMENSIONS\": [],\n    \"TABLES\": [],\n    \"CODES\": [],\n    \"GEOLOGY\": []\n}\n```",
+    "text_lines": [
+      "Ведомость рас",
+      "Из",
+      "Арма",
+      "арка элемента",
+      "A240",
+      "ГОСТ 5781-82"
+    ],
+    "dimensions": [],
+    "tables": [],
+    "codes": [],
+    "geology": [],
+    "_tokens": 1191,
+    "_prompt_tokens": 1105,
+    "_completion_tokens": 86,
+    "_provider": "qwen",
+    "_model": "qwen-vl-ocr",
+    "_tile": "page01_tile0067_x00900_y05400.png",
+    "_x": 900,
+    "_y": 5400
+  },
+  {
+    "_raw_text": "```json\n{\n    \"TEXT_LINES\": [\n        \"4\",\n        \"асхода стали, кг\",\n        \"Изделия арматурные\",\n        \"Арматура класса\",\n        \"A500C\",\n        \"Все\",\n        \"ГОСТ 34028-2016\"\n    ],\n    \"DIMENSIONS\": [],\n    \"TABLES\": [],\n    \"CODES\": [],\n    \"GEOLOGY\": \"No text found\"\n}\n```",
+    "text_lines": [
+      "4",
+      "асхода стали, кг",
+      "Изделия арматурные",
+      "Арматура класса",
+      "A500C",
+      "Все",
+      "ГОСТ 34028-2016"
+    ],
+    "dimensions": [],
+    "tables": [],
+    "codes": [],
+    "geology": [
+      "No text found"
+    ],
+    "_tokens": 1215,
+    "_prompt_tokens": 1105,
+    "_completion_tokens": 110,
+    "_provider": "qwen",
+    "_model": "qwen-vl-ocr",
+    "_tile": "page01_tile0068_x01800_y05400.png",
+    "_x": 1800,
+    "_y": 5400
+  },
+  {
+    "_raw_text": "```json\n{\n    \"TEXT_LINES\": [\n        \"Всего\"\n    ],\n    \"DIMENSIONS\": [],\n    \"TABLES\": [],\n    \"CODES\": [],\n    \"GEOLOGY\": []\n}\n```",
+    "text_lines": [
+      "Всего"
+    ],
+    "dimensions": [],
+    "tables": [],
+    "codes": [],
+    "geology": [],
+    "_tokens": 1151,
+    "_prompt_tokens": 1105,
+    "_completion_tokens": 46,
+    "_provider": "qwen",
+    "_model": "qwen-vl-ocr",
+    "_tile": "page01_tile0069_x02700_y05400.png",
+    "_x": 2700,
+    "_y": 5400
+  },
+  {
+    "_raw_text": "```json\n{\n    \"TEXT_LINES\": [\n        \"13\",\n        \"14\",\n        \"15\",\n        \"Разрез 7-7\",\n        \"17\",\n        \"10 шт.\",\n        \"270\",\n        \"15\",\n        \"шаг 20\"\n    ],\n    \"DIMENSIONS\": [\n        \"\"\n    ],\n    \"TABLES\": [],\n    \"CODES\": [],\n    \"GEOLOGY\": \"No text found\"\n}\n```",
+    "text_lines": [
+      "13",
+      "14",
+      "15",
+      "Разрез 7-7",
+      "17",
+      "10 шт.",
+      "270",
+      "15",
+      "шаг 20"
+    ],
+    "dimensions": [
+      ""
+    ],
+    "tables": [],
+    "codes": [],
+    "geology": [
+      "No text found"
+    ],
+    "_tokens": 1209,
+    "_prompt_tokens": 1105,
+    "_completion_tokens": 104,
+    "_provider": "qwen",
+    "_model": "qwen-vl-ocr",
+    "_tile": "page01_tile0070_x03600_y05400.png",
+    "_x": 3600,
+    "_y": 5400
+  },
+  {
+    "_raw_text": "```json\n{\n    \"TEXT_LINES\": [\n        \"13\",\n        \"4 шт.\",\n        \"40\",\n        \"12\",\n        \"3 шт.\",\n        \"4\",\n        \"шаг 200\",\n        \"100\",\n        \"1400\",\n        \"3\",\n        \"15\",\n        \"шаг 200\",\n        \"5\",\n        \"15\",\n        \"14\"\n    ],\n    \"DIMENSIONS\": [\n        \"13\",\n        \"4\",\n        \"4\",\n        \"12\",\n        \"3\"\n    ],\n    \"TABLES\": [],\n    \"CODES\": [],\n    \"GEOLOGY\": \"No text found\"\n}\n```",
+    "text_lines": [
+      "13",
+      "4 шт.",
+      "40",
+      "12",
+      "3 шт.",
+      "4",
+      "шаг 200",
+      "100",
+      "1400",
+      "3",
+      "15",
+      "шаг 200",
+      "5",
+      "15",
+      "14"
+    ],
+    "dimensions": [
+      "13",
+      "4",
+      "4",
+      "12",
+      "3"
+    ],
+    "tables": [],
+    "codes": [],
+    "geology": [
+      "No text found"
+    ],
+    "_tokens": 1258,
+    "_prompt_tokens": 1105,
+    "_completion_tokens": 153,
+    "_provider": "qwen",
+    "_model": "qwen-vl-ocr",
+    "_tile": "page01_tile0071_x04500_y05400.png",
+    "_x": 4500,
+    "_y": 5400
+  },
+  {
+    "_raw_text": "```json\n{\n    \"TEXT_LINES\": [\n        \"Подготовка\",\n        \"Бетон В7,5\",\n        \"14\",\n        \"шаг 200\",\n        \"100\",\n        \"300\",\n        \"500\",\n        \"-1,700\",\n        \"100\",\n        \"130\"\n    ],\n    \"DIMENSIONS\": [\n        \"14\"\n    ],\n    \"TABLES\": [],\n    \"CODES\": [],\n    \"GEOLOGY\": []\n}\n```",
+    "text_lines": [
+      "Подготовка",
+      "Бетон В7,5",
+      "14",
+      "шаг 200",
+      "100",
+      "300",
+      "500",
+      "-1,700",
+      "100",
+      "130"
+    ],
+    "dimensions": [
+      "14"
+    ],
+    "tables": [],
+    "codes": [],
+    "geology": [],
+    "_tokens": 1220,
+    "_prompt_tokens": 1105,
+    "_completion_tokens": 115,
+    "_provider": "qwen",
+    "_model": "qwen-vl-ocr",
+    "_tile": "page01_tile0072_x05400_y05400.png",
+    "_x": 5400,
+    "_y": 5400
+  },
+  {
+    "_raw_text": "```json\n{\n    \"TEXT_LINES\": [\n        \"9\",\n        \"11\",\n        \"12\",\n        \"14\",\n        \"240\",\n        \"295\",\n        \"420\",\n        \"220\",\n        \"5330\",\n        \"240\",\n        \"270\",\n        \"420\",\n        \"240\",\n        \"495\",\n        \"240\",\n        \"495\",\n        \"95\"\n    ],\n    \"DIMENSIONS\": [],\n    \"TABLES\": [],\n    \"CODES\": [],\n    \"GEOLOGY\": []\n}\n```",
+    "text_lines": [
+      "9",
+      "11",
+      "12",
+      "14",
+      "240",
+      "295",
+      "420",
+      "220",
+      "5330",
+      "240",
+      "270",
+      "420",
+      "240",
+      "495",
+      "240",
+      "495",
+      "95"
+    ],
+    "dimensions": [],
+    "tables": [],
+    "codes": [],
+    "geology": [],
+    "_tokens": 1242,
+    "_prompt_tokens": 1105,
+    "_completion_tokens": 137,
+    "_provider": "qwen",
+    "_model": "qwen-vl-ocr",
+    "_tile": "page01_tile0073_x06300_y05400.png",
+    "_x": 6300,
+    "_y": 5400
+  },
+  {
+    "_raw_text": "```json\n{\n    \"TEXT_LINES\": [\n        \"выполнить шире подош\",\n        \"5. Размеры хомутов в \\\"Вед\",\n        \"стержней по внешним гр\",\n        \"6. Фундаментные балки от\",\n        \"конструкцией ростверко\",\n        \"Изм. Кол.уч. Лист № док. Подп.\",\n        \"Разработал Пономарева\",\n        \"Проверил Макаренко\",\n        \"Н.контр. Сотников\"\n    ],\n    \"DIMENSIONS\": [],\n    \"TABLES\": [\n        {\n            \"rows\": [\n                {\n                    \"content\": \"Изм.\"\n                },\n                {\n                    \"content\": \"Кол.уч.\"\n                },\n                {\n                    \"content\": \"Лист\"\n                },\n                {\n                    \"content\": \"№ док.\"\n                },\n                {\n                    \"content\": \"Подп.\"\n                }\n            ]\n        }\n    ],\n    \"CODES\": [],\n    \"GEOLOGY\": []\n}\n```",
+    "text_lines": [
+      "выполнить шире подош",
+      "5. Размеры хомутов в \"Вед",
+      "стержней по внешним гр",
+      "6. Фундаментные балки от",
+      "конструкцией ростверко",
+      "Изм. Кол.уч. Лист № док. Подп.",
+      "Разработал Пономарева",
+      "Проверил Макаренко",
+      "Н.контр. Сотников"
+    ],
+    "dimensions": [],
+    "tables": [
+      {
+        "rows": [
+          {
+            "content": "Изм."
+          },
+          {
+            "content": "Кол.уч."
+          },
+          {
+            "content": "Лист"
+          },
+          {
+            "content": "№ док."
+          },
+          {
+            "content": "Подп."
+          }
+        ]
+      }
+    ],
+    "codes": [],
+    "geology": [],
+    "_tokens": 1335,
+    "_prompt_tokens": 1105,
+    "_completion_tokens": 230,
+    "_provider": "qwen",
+    "_model": "qwen-vl-ocr",
+    "_tile": "page01_tile0074_x07200_y05400.png",
+    "_x": 7200,
+    "_y": 5400
+  },
+  {
+    "_raw_text": "```json\n{\n    \"TEXT_LINES\": [\n        \"дошвы на 100 мм с каждой стороны.\",\n        \"Ведомости деталей\" даны по внутренним\",\n        \"им граням.\",\n        \"ки от отм. -1,700 до отм. -1,200 бетонироват\",\n        \"ерков в одной опалубке.\",\n        \"Подп. Дата\",\n        \"Данный чертеж не подлежит размножению\",\n        \"или частным лицам без согласия\",\n        \"440.02723.150200.1.\",\n        \"Публичное Акционерное\"\n    ],\n    \"DIMENSIONS\": [],\n    \"TABLES\": [\n        [\n            \"\",\n            \"\",\n            \"11.24\",\n            \"11.24\",\n            \"11.24\"\n        ],\n        [\n            \"\",\n            \"\",\n            \"11.24\",\n            \"11.24\",\n            \"11.24\"\n        ]\n    ],\n    \"CODES\": [],\n    \"GEOLOGY\": []\n}\n```",
+    "text_lines": [],
+    "dimensions": [],
+    "tables": [],
+    "codes": [],
+    "geology": [],
+    "_tokens": 1359,
+    "_prompt_tokens": 1105,
+    "_completion_tokens": 254,
+    "_provider": "qwen",
+    "_model": "qwen-vl-ocr",
+    "_tile": "page01_tile0075_x08100_y05400.png",
+    "_x": 8100,
+    "_y": 5400
+  },
+  {
+    "_raw_text": "```json\n{\n    \"TEXT_LINES\": [\n        \"ренним граням стержней, гнутых\",\n        \"онировать одновременно с\",\n        \"размножению и передаче другим организациям\",\n        \"без согласия АО \"РУСАЛ ВАМИ\\\"\",\n        \"50200.1.6-КЖ5\",\n        \"е Акционерное Общество\"\n    ],\n    \"DIMENSIONS\": [],\n    \"TABLES\": [],\n    \"CODES\": [],\n    \"GEOLOGY\": \"No text found\"\n}\n```",
+    "text_lines": [],
+    "dimensions": [],
+    "tables": [],
+    "codes": [],
+    "geology": [],
+    "_tokens": 1235,
+    "_prompt_tokens": 1105,
+    "_completion_tokens": 130,
+    "_provider": "qwen",
+    "_model": "qwen-vl-ocr",
+    "_tile": "page01_tile0076_x08894_y05400.png",
+    "_x": 8894,
+    "_y": 5400
+  },
+  {
+    "_raw_text": "```json\n{\n    \"TEXT_LINES\": [\n        \"Инв. № док.\",\n        \"Подпись и дата\",\n        \"Взам.\",\n        \"2032876\",\n        \"27 НОЯ 2024\",\n        \"Марка\",\n        \"Б\",\n        \"Б\",\n        \"Б\"\n    ],\n    \"DIMENSIONS\": [],\n    \"TABLES\": [],\n    \"CODES\": [],\n    \"GEOLOGY\": []\n}\n```",
+    "text_lines": [
+      "Инв. № док.",
+      "Подпись и дата",
+      "Взам.",
+      "2032876",
+      "27 НОЯ 2024",
+      "Марка",
+      "Б",
+      "Б",
+      "Б"
+    ],
+    "dimensions": [],
+    "tables": [],
+    "codes": [],
+    "geology": [],
+    "_tokens": 1209,
+    "_prompt_tokens": 1105,
+    "_completion_tokens": 104,
+    "_provider": "qwen",
+    "_model": "qwen-vl-ocr",
+    "_tile": "page01_tile0077_x00000_y06025.png",
+    "_x": 0,
+    "_y": 6025
+  },
+  {
+    "_raw_text": "```json\n{\n    \"TEXT_LINES\": [\n        \"арка элемента\",\n        \"А240\",\n        \"ГОСТ 5781-82\",\n        \"Ø8\",\n        \"Итого\",\n        \"Ø12\",\n        \"БФм13\",\n        \"22,71\",\n        \"22,71\",\n        \"194,4\",\n        \"БФм14\",\n        \"20,18\",\n        \"20,18\",\n        \"17,08\",\n        \"БФм15\",\n        \"24,74\",\n        \"24,74\",\n        \"202,9\"\n    ],\n    \"DIMENSIONS\": [],\n    \"TABLES\": [],\n    \"CODES\": [],\n    \"GEOLOGY\": \"No text found\"\n}\n```",
+    "text_lines": [
+      "арка элемента",
+      "А240",
+      "ГОСТ 5781-82",
+      "Ø8",
+      "Итого",
+      "Ø12",
+      "БФм13",
+      "22,71",
+      "22,71",
+      "194,4",
+      "БФм14",
+      "20,18",
+      "20,18",
+      "17,08",
+      "БФм15",
+      "24,74",
+      "24,74",
+      "202,9"
+    ],
+    "dimensions": [],
+    "tables": [],
+    "codes": [],
+    "geology": [
+      "No text found"
+    ],
+    "_tokens": 1290,
+    "_prompt_tokens": 1105,
+    "_completion_tokens": 185,
+    "_provider": "qwen",
+    "_model": "qwen-vl-ocr",
+    "_tile": "page01_tile0078_x00900_y06025.png",
+    "_x": 900,
+    "_y": 6025
+  },
+  {
+    "_raw_text": "```json\n{\n    \"TEXT_LINES\": [\n        \"Изделия арматурные\",\n        \"Арматура класса\",\n        \"A500C\",\n        \"ГОСТ 34028-2016\",\n        \"Все\",\n        \"Ø12\",\n        \"Ø16\",\n        \"Ø20\",\n        \"Итого\",\n        \"94,43\",\n        \"46,37\",\n        \"240,80\",\n        \"263,\",\n        \"17,08\",\n        \"34,16\",\n        \"51,24\",\n        \"71,4\",\n        \"02,96\",\n        \"45,86\",\n        \"248,81\",\n        \"273,5\"\n    ],\n    \"DIMENSIONS\": [],\n    \"TABLES\": [],\n    \"CODES\": [],\n    \"GEOLOGY\": \"No text found\"\n}\n```",
+    "text_lines": [
+      "Изделия арматурные",
+      "Арматура класса",
+      "A500C",
+      "ГОСТ 34028-2016",
+      "Все",
+      "Ø12",
+      "Ø16",
+      "Ø20",
+      "Итого",
+      "94,43",
+      "46,37",
+      "240,80",
+      "263,",
+      "17,08",
+      "34,16",
+      "51,24",
+      "71,4",
+      "02,96",
+      "45,86",
+      "248,81",
+      "273,5"
+    ],
+    "dimensions": [],
+    "tables": [],
+    "codes": [],
+    "geology": [
+      "No text found"
+    ],
+    "_tokens": 1321,
+    "_prompt_tokens": 1105,
+    "_completion_tokens": 216,
+    "_provider": "qwen",
+    "_model": "qwen-vl-ocr",
+    "_tile": "page01_tile0079_x01800_y06025.png",
+    "_x": 1800,
+    "_y": 6025
+  },
+  {
+    "_raw_text": "```json\n{\n    \"TEXT_LINES\": [\n        \"Всего\",\n        \"263,51\",\n        \"71,42\",\n        \"273,55\",\n        \"Арматура балки\",\n        \"условно не показа\"\n    ],\n    \"DIMENSIONS\": [],\n    \"TABLES\": [],\n    \"CODES\": [],\n    \"GEOLOGY\": \"No text found\"\n}\n```",
+    "text_lines": [
+      "Всего",
+      "263,51",
+      "71,42",
+      "273,55",
+      "Арматура балки",
+      "условно не показа"
+    ],
+    "dimensions": [],
+    "tables": [],
+    "codes": [],
+    "geology": [
+      "No text found"
+    ],
+    "_tokens": 1201,
+    "_prompt_tokens": 1105,
+    "_completion_tokens": 96,
+    "_provider": "qwen",
+    "_model": "qwen-vl-ocr",
+    "_tile": "page01_tile0080_x02700_y06025.png",
+    "_x": 2700,
+    "_y": 6025
+  },
+  {
+    "_raw_text": "```json\n{\n    \"TEXT_LINES\": [\n        \"17\",\n        \"10 шт.\",\n        \"балки\",\n        \"оказана\",\n        \"270\",\n        \"15\",\n        \"шаг 20\"\n    ],\n    \"DIMENSIONS\": [\n        \"270\"\n    ],\n    \"TABLES\": [],\n    \"CODES\": [],\n    \"GEOLOGY\": \"No text found\"\n}\n```",
+    "text_lines": [
+      "17",
+      "10 шт.",
+      "балки",
+      "оказана",
+      "270",
+      "15",
+      "шаг 20"
+    ],
+    "dimensions": [
+      "270"
+    ],
+    "tables": [],
+    "codes": [],
+    "geology": [
+      "No text found"
+    ],
+    "_tokens": 1198,
+    "_prompt_tokens": 1105,
+    "_completion_tokens": 93,
+    "_provider": "qwen",
+    "_model": "qwen-vl-ocr",
+    "_tile": "page01_tile0081_x03600_y06025.png",
+    "_x": 3600,
+    "_y": 6025
+  },
+  {
+    "_raw_text": "```json\n{\n    \"TEXT_LINES\": [\n        \"15\",\n        \"шаг 200\",\n        \"5\",\n        \"шаг 200\",\n        \"15\",\n        \"14\"\n    ],\n    \"DIMENSIONS\": [],\n    \"TABLES\": [],\n    \"CODES\": [],\n    \"GEOLOGY\": \"No text found\"\n}\n```",
+    "text_lines": [
+      "15",
+      "шаг 200",
+      "5",
+      "шаг 200",
+      "15",
+      "14"
+    ],
+    "dimensions": [],
+    "tables": [],
+    "codes": [],
+    "geology": [
+      "No text found"
+    ],
+    "_tokens": 1186,
+    "_prompt_tokens": 1105,
+    "_completion_tokens": 81,
+    "_provider": "qwen",
+    "_model": "qwen-vl-ocr",
+    "_tile": "page01_tile0082_x04500_y06025.png",
+    "_x": 4500,
+    "_y": 6025
+  },
+  {
+    "_raw_text": "```json\n{\n    \"TEXT_LINES\": [\n        \"14\"\n    ],\n    \"DIMENSIONS\": [],\n    \"TABLES\": [],\n    \"CODES\": [],\n    \"GEOLOGY\": []\n}\n```",
+    "text_lines": [
+      "14"
+    ],
+    "dimensions": [],
+    "tables": [],
+    "codes": [],
+    "geology": [],
+    "_tokens": 1150,
+    "_prompt_tokens": 1105,
+    "_completion_tokens": 45,
+    "_provider": "qwen",
+    "_model": "qwen-vl-ocr",
+    "_tile": "page01_tile0083_x05400_y06025.png",
+    "_x": 5400,
+    "_y": 6025
+  },
+  {
+    "_raw_text": "```json\n{\n    \"TEXT_LINES\": [\n        \"12\",\n        \"240\",\n        \"240\",\n        \"14\",\n        \"420\",\n        \"270\",\n        \"495\",\n        \"195\",\n        \"17\",\n        \"190\",\n        \"500\",\n        \"500\"\n    ],\n    \"DIMENSIONS\": [],\n    \"TABLES\": [],\n    \"CODES\": [],\n    \"GEOLOGY\": \"No text found\"\n}\n```",
+    "text_lines": [
+      "12",
+      "240",
+      "240",
+      "14",
+      "420",
+      "270",
+      "495",
+      "195",
+      "17",
+      "190",
+      "500",
+      "500"
+    ],
+    "dimensions": [],
+    "tables": [],
+    "codes": [],
+    "geology": [
+      "No text found"
+    ],
+    "_tokens": 1218,
+    "_prompt_tokens": 1105,
+    "_completion_tokens": 113,
+    "_provider": "qwen",
+    "_model": "qwen-vl-ocr",
+    "_tile": "page01_tile0084_x06300_y06025.png",
+    "_x": 6300,
+    "_y": 6025
+  },
+  {
+    "_raw_text": "```json\n{\n    \"TEXT_LINES\": [\n        \"Изм. Кол.уч. Лист № док. Подп.\",\n        \"Разработал Пономарева\",\n        \"Проверил Макаренко\",\n        \"Н.контр. Сотников\",\n        \"Имя файла 440_02723\"\n    ],\n    \"DIMENSIONS\": [],\n    \"TABLES\": [],\n    \"CODES\": [],\n    \"GEOLOGY\": []\n}\n```",
+    "text_lines": [
+      "Изм. Кол.уч. Лист № док. Подп.",
+      "Разработал Пономарева",
+      "Проверил Макаренко",
+      "Н.контр. Сотников",
+      "Имя файла 440_02723"
+    ],
+    "dimensions": [],
+    "tables": [],
+    "codes": [],
+    "geology": [],
+    "_tokens": 1213,
+    "_prompt_tokens": 1105,
+    "_completion_tokens": 108,
+    "_provider": "qwen",
+    "_model": "qwen-vl-ocr",
+    "_tile": "page01_tile0085_x07200_y06025.png",
+    "_x": 7200,
+    "_y": 6025
+  },
+  {
+    "_raw_text": "```json\n{\n    \"TEXT_LINES\": [\n        \"Данный чертеж не подлежит размножению\",\n        \"или частным лицам без согласия\",\n        \"440.02723.150200.1.\",\n        \"Публичное Акционерное\",\n        \"РУСАЛ Братский Алюм\",\n        \"Экологическая реконструкция. 1\",\n        \"Отделение переработки электролита\",\n        \"Участок дробления и временного\",\n        \"складирования электролита\",\n        \"Пристройки. Фундаменты\",\n        \"Балки БФМ13, БФМ14, БФМ15\",\n        \"02723_150200_1_6_KJ5_15_00.xps\"\n    ],\n    \"DIMENSIONS\": [],\n    \"TABLES\": [],\n    \"CODES\": [],\n    \"GEOLOGY\": []\n}\n```",
+    "text_lines": [
+      "Данный чертеж не подлежит размножению",
+      "или частным лицам без согласия",
+      "440.02723.150200.1.",
+      "Публичное Акционерное",
+      "РУСАЛ Братский Алюм",
+      "Экологическая реконструкция. 1",
+      "Отделение переработки электролита",
+      "Участок дробления и временного",
+      "складирования электролита",
+      "Пристройки. Фундаменты",
+      "Балки БФМ13, БФМ14, БФМ15",
+      "02723_150200_1_6_KJ5_15_00.xps"
+    ],
+    "dimensions": [],
+    "tables": [],
+    "codes": [],
+    "geology": [],
+    "_tokens": 1338,
+    "_prompt_tokens": 1105,
+    "_completion_tokens": 233,
+    "_provider": "qwen",
+    "_model": "qwen-vl-ocr",
+    "_tile": "page01_tile0086_x08100_y06025.png",
+    "_x": 8100,
+    "_y": 6025
+  },
+  {
+    "_raw_text": "```json\n{\n    \"TEXT_LINES\": [\n        \"размножению и передаче другим организациям\",\n        \"без согласия АО \"РУСАЛ ВАМИ\\\"\",\n        \"50200.1.6-КЖ5\",\n        \"е Акционерное Общество\",\n        \"кий Алюминиевый Завод\\\"\",\n        \"онструкция. 1 этап строительства\",\n        \"ектролита\",\n        \"менного\",\n        \"олита\",\n        \"енты\",\n        \"5Фм15\",\n        \"Стадия\",\n        \"Пист\",\n        \"Листов\",\n        \"Р\",\n        \"15\",\n        \"АО \"РУСАЛ ВАМИ\\\"\",\n        \"С.-ПЕТЕРБУРГ\",\n        \"Формат А1\"\n    ],\n    \"DIMENSIONS\": [],\n    \"TABLES\": [],\n    \"CODES\": [],\n    \"GEOLOGY\": []\n}\n```",
+    "text_lines": [],
+    "dimensions": [],
+    "tables": [],
+    "codes": [],
+    "geology": [],
+    "_tokens": 1323,
+    "_prompt_tokens": 1105,
+    "_completion_tokens": 218,
+    "_provider": "qwen",
+    "_model": "qwen-vl-ocr",
+    "_tile": "page01_tile0087_x08894_y06025.png",
+    "_x": 8894,
+    "_y": 6025
+  }
+]

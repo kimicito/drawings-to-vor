@@ -31,62 +31,100 @@ def load_ocr_data(json_path: Path) -> list:
 
 
 def extract_pile_specifications(data: list) -> list:
-    """Extract pile specifications from OCR data."""
+    """Extract pile specifications from OCR data with flexible parsing."""
     specs = []
-    
-    # Pattern: СБн{length}-{diameter} followed by quantity
-    pile_pattern = re.compile(
-        r'(?:сваи\s+)?буронабивные\s+([СC][БB][нn]\d{1,2}-\d{3,4})\s+(\d+)',
-        re.IGNORECASE
-    )
     
     all_text = ' '.join(
         ' '.join(r.get('text_lines', []))
         for r in data
     )
     
-    matches = pile_pattern.findall(all_text)
+    # Try multiple patterns for pile marks and quantities
+    # Pattern 1: Mark followed by quantity (flexible spacing)
+    pile_patterns = [
+        # СБн12-450 100
+        re.compile(r'([СC][БB][нnN]\d{1,2}-\d{3,4})\s+(\d+)', re.IGNORECASE),
+        # Сваи буронабивные СБн12-450 (100 шт)
+        re.compile(r'буронабивные\s+([СC][БB][нnN]\d{1,2}-\d{3,4})\s*.*?\((\d+)\s*шт', re.IGNORECASE),
+        # Ведомость свай: СБн12-450 - 100 шт
+        re.compile(r'([СC][БB][нnN]\d{1,2}-\d{3,4})\s*[-–—]\s*(\d+)\s*шт', re.IGNORECASE),
+        # Flexible: СБн12-450 followed by number within 50 chars (for tables)
+        re.compile(r'([СC][БB][нnN]\d{1,2}-\d{3,4})\s*[^0-9]{0,50}(\d+)', re.IGNORECASE),
+    ]
     
     seen = set()
-    for mark, count_str in matches:
-        mark = mark.upper().replace('N', 'Н').replace('B', 'Б')
-        count = int(count_str)
-        
-        if mark in seen:
-            continue
-        seen.add(mark)
-        
-        # Parse dimensions: СБН12-450 → length=12m, diameter=450mm
-        dim_match = re.match(r'СБН(\d+)-(\d+)', mark)
-        if dim_match:
-            length_m = int(dim_match.group(1))
-            diameter_mm = int(dim_match.group(2))
-        else:
-            length_m = 12
-            diameter_mm = 450
-        
-        # Calculate volumes
-        radius_m = (diameter_mm / 1000) / 2
-        volume_per_pile = math.pi * (radius_m ** 2) * length_m
-        total_concrete = volume_per_pile * count
-        total_soil = total_concrete * 1.15  # 15% loosening
-        
-        # Estimate rebar (approximate: 120 kg/m³ for piles)
-        rebar_kg_per_m3 = 120
-        total_rebar_kg = total_concrete * rebar_kg_per_m3
-        
-        specs.append({
-            'mark': mark,
-            'diameter_mm': diameter_mm,
-            'length_m': length_m,
-            'count': count,
-            'volume_per_pile_m3': round(volume_per_pile, 3),
-            'total_concrete_m3': round(total_concrete, 2),
-            'total_burrowing_m3': round(total_concrete, 2),
-            'total_soil_extraction_m3': round(total_soil, 2),
-            'total_rebar_kg': round(total_rebar_kg, 1),
-            'total_rebar_t': round(total_rebar_kg / 1000, 3),
-        })
+    for pattern in pile_patterns:
+        matches = pattern.findall(all_text)
+        for mark, count_str in matches:
+            mark = mark.upper().replace('N', 'Н').replace('B', 'Б').replace('C', 'С')
+            count = int(count_str)
+            
+            if mark in seen:
+                continue
+            seen.add(mark)
+            
+            # Parse dimensions
+            dim_match = re.match(r'СБН(\d+)-(\d+)', mark)
+            if dim_match:
+                length_m = int(dim_match.group(1))
+                diameter_mm = int(dim_match.group(2))
+            else:
+                length_m = 12
+                diameter_mm = 450
+            
+            # Calculate volumes
+            radius_m = (diameter_mm / 1000) / 2
+            volume_per_pile = math.pi * (radius_m ** 2) * length_m
+            total_concrete = volume_per_pile * count
+            total_soil = total_concrete * 1.15
+            total_rebar_kg = total_concrete * 120  # 120 kg/m³
+            
+            specs.append({
+                'mark': mark,
+                'diameter_mm': diameter_mm,
+                'length_m': length_m,
+                'count': count,
+                'volume_per_pile_m3': round(volume_per_pile, 3),
+                'total_concrete_m3': round(total_concrete, 2),
+                'total_burrowing_m3': round(total_concrete, 2),
+                'total_soil_extraction_m3': round(total_soil, 2),
+                'total_rebar_kg': round(total_rebar_kg, 1),
+                'total_rebar_t': round(total_rebar_kg / 1000, 3),
+            })
+    
+    # If no quantities found, just extract marks with default count=1
+    if not specs:
+        mark_pattern = re.compile(r'[СC][БB][нnN]\d{1,2}-\d{3,4}', re.IGNORECASE)
+        marks = mark_pattern.findall(all_text)
+        for mark in marks:
+            mark = mark.upper().replace('N', 'Н').replace('B', 'Б').replace('C', 'С')
+            if mark in seen:
+                continue
+            seen.add(mark)
+            
+            dim_match = re.match(r'СБН(\d+)-(\d+)', mark)
+            if dim_match:
+                length_m = int(dim_match.group(1))
+                diameter_mm = int(dim_match.group(2))
+            else:
+                length_m = 12
+                diameter_mm = 450
+            
+            radius_m = (diameter_mm / 1000) / 2
+            volume_per_pile = math.pi * (radius_m ** 2) * length_m
+            
+            specs.append({
+                'mark': mark,
+                'diameter_mm': diameter_mm,
+                'length_m': length_m,
+                'count': 1,  # Unknown quantity
+                'volume_per_pile_m3': round(volume_per_pile, 3),
+                'total_concrete_m3': round(volume_per_pile, 2),
+                'total_burrowing_m3': round(volume_per_pile, 2),
+                'total_soil_extraction_m3': round(volume_per_pile * 1.15, 2),
+                'total_rebar_kg': round(volume_per_pile * 120, 1),
+                'total_rebar_t': round(volume_per_pile * 120 / 1000, 3),
+            })
     
     return specs
 
