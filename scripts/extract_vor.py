@@ -1,18 +1,18 @@
 #!/usr/bin/env python3
 """
-extract_vor.py — Извлечение Ведомости объёмов работ (ВОР) из OCR-результатов.
+extextract_vor.py — Извлечение Ведомости объёмов работ (ВОР) из OCR-результатов.
 
 Поддерживает:
 - Буронабивные сваи (объём бетона, бурения, выбурки грунта, арматура)
+- Фундаменты (ленточные, столбчатые, монолитные)
+- Плиты (перекрытия, полы)
+- Арматура (класс, диаметр)
+- Закладные детали
 - Автоматический расчёт по формулам
 - Выход: CSV, TXT, Excel (.xlsx)
 
 Использование:
-    # Для свай
-    python extract_vor.py --ocr-json ./output/piles_qwen.json --type piles --output ./output/vor_piles.xlsx
-    
-    # Для геологии  
-    python extract_vor.py --ocr-json ./output/kj7_02_qwen.json --type geology --output ./output/vor_geo.csv
+    python extract_vor.py --ocr-json ./output/ocr.json --type all --output ./output/vor
 """
 
 import argparse
@@ -30,25 +30,20 @@ def load_ocr_data(json_path: Path) -> list:
         return json.load(f)
 
 
+def get_all_text(data: list) -> str:
+    """Extract all text from OCR data."""
+    return ' '.join(' '.join(r.get('text_lines', [])) for r in data)
+
+
 def extract_pile_specifications(data: list) -> list:
     """Extract pile specifications from OCR data with flexible parsing."""
     specs = []
+    all_text = get_all_text(data)
     
-    all_text = ' '.join(
-        ' '.join(r.get('text_lines', []))
-        for r in data
-    )
-    
-    # Try multiple patterns for pile marks and quantities
-    # Pattern 1: Mark followed by quantity (flexible spacing)
     pile_patterns = [
-        # СБн12-450 100
         re.compile(r'([СC][БB][нnN]\d{1,2}-\d{3,4})\s+(\d+)', re.IGNORECASE),
-        # Сваи буронабивные СБн12-450 (100 шт)
         re.compile(r'буронабивные\s+([СC][БB][нnN]\d{1,2}-\d{3,4})\s*.*?\((\d+)\s*шт', re.IGNORECASE),
-        # Ведомость свай: СБн12-450 - 100 шт
         re.compile(r'([СC][БB][нnN]\d{1,2}-\d{3,4})\s*[-–—]\s*(\d+)\s*шт', re.IGNORECASE),
-        # Flexible: СБн12-450 followed by number within 50 chars (for tables)
         re.compile(r'([СC][БB][нnN]\d{1,2}-\d{3,4})\s*[^0-9]{0,50}(\d+)', re.IGNORECASE),
     ]
     
@@ -58,12 +53,10 @@ def extract_pile_specifications(data: list) -> list:
         for mark, count_str in matches:
             mark = mark.upper().replace('N', 'Н').replace('B', 'Б').replace('C', 'С')
             count = int(count_str)
-            
             if mark in seen:
                 continue
             seen.add(mark)
             
-            # Parse dimensions
             dim_match = re.match(r'СБН(\d+)-(\d+)', mark)
             if dim_match:
                 length_m = int(dim_match.group(1))
@@ -72,12 +65,8 @@ def extract_pile_specifications(data: list) -> list:
                 length_m = 12
                 diameter_mm = 450
             
-            # Calculate volumes
             radius_m = (diameter_mm / 1000) / 2
             volume_per_pile = math.pi * (radius_m ** 2) * length_m
-            total_concrete = volume_per_pile * count
-            total_soil = total_concrete * 1.15
-            total_rebar_kg = total_concrete * 120  # 120 kg/m³
             
             specs.append({
                 'mark': mark,
@@ -85,14 +74,14 @@ def extract_pile_specifications(data: list) -> list:
                 'length_m': length_m,
                 'count': count,
                 'volume_per_pile_m3': round(volume_per_pile, 3),
-                'total_concrete_m3': round(total_concrete, 2),
-                'total_burrowing_m3': round(total_concrete, 2),
-                'total_soil_extraction_m3': round(total_soil, 2),
-                'total_rebar_kg': round(total_rebar_kg, 1),
-                'total_rebar_t': round(total_rebar_kg / 1000, 3),
+                'total_concrete_m3': round(volume_per_pile * count, 2),
+                'total_burrowing_m3': round(volume_per_pile * count, 2),
+                'total_soil_extraction_m3': round(volume_per_pile * count * 1.15, 2),
+                'total_rebar_kg': round(volume_per_pile * count * 120, 1),
+                'total_rebar_t': round(volume_per_pile * count * 120 / 1000, 3),
             })
     
-    # If no quantities found, just extract marks with default count=1
+    # If no quantities found, extract marks with count=1
     if not specs:
         mark_pattern = re.compile(r'[СC][БB][нnN]\d{1,2}-\d{3,4}', re.IGNORECASE)
         marks = mark_pattern.findall(all_text)
@@ -101,7 +90,6 @@ def extract_pile_specifications(data: list) -> list:
             if mark in seen:
                 continue
             seen.add(mark)
-            
             dim_match = re.match(r'СБН(\d+)-(\d+)', mark)
             if dim_match:
                 length_m = int(dim_match.group(1))
@@ -109,16 +97,11 @@ def extract_pile_specifications(data: list) -> list:
             else:
                 length_m = 12
                 diameter_mm = 450
-            
             radius_m = (diameter_mm / 1000) / 2
             volume_per_pile = math.pi * (radius_m ** 2) * length_m
-            
             specs.append({
-                'mark': mark,
-                'diameter_mm': diameter_mm,
-                'length_m': length_m,
-                'count': 1,  # Unknown quantity
-                'volume_per_pile_m3': round(volume_per_pile, 3),
+                'mark': mark, 'diameter_mm': diameter_mm, 'length_m': length_m,
+                'count': 1, 'volume_per_pile_m3': round(volume_per_pile, 3),
                 'total_concrete_m3': round(volume_per_pile, 2),
                 'total_burrowing_m3': round(volume_per_pile, 2),
                 'total_soil_extraction_m3': round(volume_per_pile * 1.15, 2),
@@ -129,11 +112,117 @@ def extract_pile_specifications(data: list) -> list:
     return specs
 
 
-def generate_pile_vor(specs: list) -> list:
-    """Generate ВОР (Ведомость объёмов работ) for piles."""
-    rows = []
+def extract_foundation_specifications(data: list) -> list:
+    """Extract foundation specifications from OCR data."""
+    specs = []
+    all_text = get_all_text(data)
     
-    # Title
+    foundation_patterns = [
+        re.compile(r'([ПФ][Ф]?[мmM]\d+[а-я]?)', re.IGNORECASE),
+        re.compile(r'([ФF]\d+[а-я]?)', re.IGNORECASE),
+        re.compile(r'([Лл]\d+[а-я]?)', re.IGNORECASE),
+    ]
+    
+    seen = set()
+    for pattern in foundation_patterns:
+        matches = pattern.findall(all_text)
+        for mark in matches:
+            mark = mark.upper()
+            if mark in seen:
+                continue
+            seen.add(mark)
+            specs.append({'mark': mark, 'type': 'foundation', 'dimensions': {}})
+    
+    # Try to find dimensions for each foundation
+    for spec in specs:
+        mark_escaped = re.escape(spec['mark'])
+        dim_pattern = re.compile(rf'{mark_escaped}.*?\D(\d{{3,4}})\s*[xх×]\s*(\d{{3,4}})\s*[xх×]\s*(\d{{3,4}})')
+        dim_match = dim_pattern.search(all_text)
+        if dim_match:
+            spec['dimensions'] = {
+                'length': int(dim_match.group(1)),
+                'width': int(dim_match.group(2)),
+                'height': int(dim_match.group(3))
+            }
+    
+    return specs
+
+
+def extract_slab_specifications(data: list) -> list:
+    """Extract slab specifications from OCR data."""
+    specs = []
+    all_text = get_all_text(data)
+    
+    slab_patterns = [
+        re.compile(r'([Пп][\s.]?(\d+[а-я]?))', re.IGNORECASE),
+        re.compile(r'([Пп][мm]\d+[а-я]?)', re.IGNORECASE),
+    ]
+    
+    seen = set()
+    for pattern in slab_patterns:
+        matches = pattern.findall(all_text)
+        for match in matches:
+            mark = match[0] if isinstance(match, tuple) else match
+            mark = mark.upper().replace(' ', '')
+            if mark in seen:
+                continue
+            seen.add(mark)
+            specs.append({'mark': mark, 'type': 'slab'})
+    
+    return specs
+
+
+def extract_rebar_specifications(data: list) -> list:
+    """Extract rebar specifications from OCR data."""
+    specs = []
+    all_text = get_all_text(data)
+    
+    rebar_patterns = [
+        re.compile(r'([АA]\d{3}[СC]?)\s*[,.]?\s*.*?[⌀ØDd](\d{1,2})', re.IGNORECASE),
+        re.compile(r'арматур[аы].*?([АA]\d{3}[СC]?).*?[⌀ØDd](\d{1,2})', re.IGNORECASE),
+    ]
+    
+    seen = set()
+    for pattern in rebar_patterns:
+        matches = pattern.findall(all_text)
+        for steel_class, diameter in matches:
+            steel_class = steel_class.upper().replace('A', 'А').replace('C', 'С')
+            key = f"{steel_class}-{diameter}"
+            if key in seen:
+                continue
+            seen.add(key)
+            specs.append({'steel_class': steel_class, 'diameter': int(diameter), 'type': 'rebar'})
+    
+    return specs
+
+
+def extract_embedded_parts(data: list) -> list:
+    """Extract embedded part specifications from OCR data."""
+    specs = []
+    all_text = get_all_text(data)
+    
+    embedded_patterns = [
+        re.compile(r'([МM][НH]\d+[а-я]?)', re.IGNORECASE),
+        re.compile(r'([АA][БB]\d+[а-я]?)', re.IGNORECASE),
+        re.compile(r'([Зз]акладн[аыо].*?[МM][НH]\d+)', re.IGNORECASE),
+    ]
+    
+    seen = set()
+    for pattern in embedded_patterns:
+        matches = pattern.findall(all_text)
+        for mark in matches:
+            mark = mark.upper().replace('M', 'М').replace('H', 'Н').replace('A', 'А').replace('B', 'Б')
+            if mark in seen:
+                continue
+            seen.add(mark)
+            specs.append({'mark': mark, 'type': 'embedded'})
+    
+    return specs
+
+
+def generate_pile_vor(specs: list) -> tuple:
+    """Generate ВОР for piles."""
+    rows = []
     rows.append({'№ п/п': '', 'Код': '', 'Наименование': 'ВЕДОМОСТЬ ОБЪЁМОВ РАБОТ', 'Ед.изм': '', 'Количество': '', 'Объем': ''})
     rows.append({'№ п/п': '', 'Код': '', 'Наименование': 'Буронабивные сваи', 'Ед.изм': '', 'Количество': '', 'Объем': ''})
     
@@ -141,191 +230,76 @@ def generate_pile_vor(specs: list) -> list:
     totals = {'concrete': 0, 'burrowing': 0, 'soil': 0, 'rebar': 0, 'count': 0}
     
     for spec in specs:
-        # Drilling
-        rows.append({
-            '№ п/п': row_num,
-            'Код': 'Е2-196',
-            'Наименование': f"Бурение скважин D={spec['diameter_mm']}мм, L={spec['length_m']}м ({spec['mark']})",
-            'Ед.изм': 'м³',
-            'Количество': spec['count'],
-            'Объем': spec['total_burrowing_m3'],
-        })
+        rows.append({'№ п/п': row_num, 'Код': 'Е2-196', 'Наименование': f"Бурение скважин D={spec['diameter_mm']}мм, L={spec['length_m']}м ({spec['mark']})", 'Ед.изм': 'м³', 'Количество': spec['count'], 'Объем': spec['total_burrowing_m3']})
         totals['burrowing'] += spec['total_burrowing_m3']
         row_num += 1
         
-        # Rebar cage
-        rows.append({
-            '№ п/п': row_num,
-            'Код': 'Е4-48',
-            'Наименование': f"Установка арматурных каркасов свай {spec['mark']}",
-            'Ед.изм': 'шт',
-            'Количество': spec['count'],
-            'Объем': f"~{spec['total_rebar_t']} т",
-        })
+        rows.append({'№ п/п': row_num, 'Код': 'Е4-48', 'Наименование': f"Установка арматурных каркасов свай {spec['mark']}", 'Ед.изм': 'шт', 'Количество': spec['count'], 'Объем': f"~{spec['total_rebar_t']} т"})
         totals['rebar'] += spec['total_rebar_t']
         row_num += 1
         
-        # Concrete
-        rows.append({
-            '№ п/п': row_num,
-            'Код': 'Е4-1',
-            'Наименование': f"Бетонирование свай {spec['mark']}",
-            'Ед.изм': 'м³',
-            'Количество': spec['count'],
-            'Объем': spec['total_concrete_m3'],
-        })
+        rows.append({'№ п/п': row_num, 'Код': 'Е4-1', 'Наименование': f"Бетонирование свай {spec['mark']}", 'Ед.изм': 'м³', 'Количество': spec['count'], 'Объем': spec['total_concrete_m3']})
         totals['concrete'] += spec['total_concrete_m3']
         row_num += 1
         
-        # Soil extraction
-        rows.append({
-            '№ п/п': row_num,
-            'Код': 'Е2-120',
-            'Наименование': f"Выбурка грунта ({spec['mark']})",
-            'Ед.изм': 'м³',
-            'Количество': spec['count'],
-            'Объем': spec['total_soil_extraction_m3'],
-        })
+        rows.append({'№ п/п': row_num, 'Код': 'Е2-120', 'Наименование': f"Выбурка грунта ({spec['mark']})", 'Ед.изм': 'м³', 'Количество': spec['count'], 'Объем': spec['total_soil_extraction_m3']})
         totals['soil'] += spec['total_soil_extraction_m3']
         row_num += 1
         
         totals['count'] += spec['count']
     
-    # Total
-    rows.append({
-        '№ п/п': '',
-        'Код': '',
-        'Наименование': 'ИТОГО:',
-        'Ед.изм': '',
-        'Количество': totals['count'],
-        'Объем': f"Бетон: {round(totals['concrete'], 2)} м³ | Арм.: {round(totals['rebar'], 3)} т | Выбурка: {round(totals['soil'], 2)} м³",
-    })
+    rows.append({'№ п/п': '', 'Код': '', 'Наименование': 'ИТОГО:', 'Ед.изм': '', 'Количество': totals['count'], 'Объем': f"Бетон: {round(totals['concrete'], 2)} м³ | Арм.: {round(totals['rebar'], 3)} т | Выбурка: {round(totals['soil'], 2)} м³"})
     
     return rows, totals
+
+
+def generate_summary_report(data: list) -> dict:
+    """Generate comprehensive summary of all found elements."""
+    report = {
+        'piles': extract_pile_specifications(data),
+        'foundations': extract_foundation_specifications(data),
+        'slabs': extract_slab_specifications(data),
+        'rebar': extract_rebar_specifications(data),
+        'embedded': extract_embedded_parts(data),
+    }
+    return report
 
 
 def save_vor_csv(rows: list, output_path: Path):
     """Save ВОР to CSV."""
     output_path.parent.mkdir(parents=True, exist_ok=True)
     fieldnames = ['№ п/п', 'Код', 'Наименование', 'Ед.изм', 'Количество', 'Объем']
-    
     with open(output_path, 'w', newline='', encoding='utf-8-sig') as f:
         writer = csv.DictWriter(f, fieldnames=fieldnames, delimiter=';')
         writer.writeheader()
         writer.writerows(rows)
-    
     print(f"Saved CSV: {output_path}")
-
-
-def save_vor_excel(rows: list, totals: dict, output_path: Path):
-    """Save ВОР to Excel with formatting."""
-    try:
-        from openpyxl import Workbook
-        from openpyxl.styles import Font, Alignment, PatternFill, Border, Side
-    except ImportError:
-        print("WARNING: openpyxl not installed, skipping Excel output", file=sys.stderr)
-        return
-    
-    output_path.parent.mkdir(parents=True, exist_ok=True)
-    wb = Workbook()
-    ws = wb.active
-    ws.title = "ВОР"
-    
-    # Styles
-    header_font = Font(bold=True, size=12)
-    title_font = Font(bold=True, size=14)
-    thin_border = Border(
-        left=Side(style='thin'), right=Side(style='thin'),
-        top=Side(style='thin'), bottom=Side(style='thin')
-    )
-    
-    # Title
-    ws.merge_cells('A1:F1')
-    ws['A1'] = 'ВЕДОМОСТЬ ОБЪЁМОВ РАБОТ'
-    ws['A1'].font = title_font
-    ws['A1'].alignment = Alignment(horizontal='center')
-    
-    ws.merge_cells('A2:F2')
-    ws['A2'] = 'Буронабивные сваи'
-    ws['A2'].font = Font(bold=True, size=11, italic=True)
-    ws['A2'].alignment = Alignment(horizontal='center')
-    
-    # Headers
-    headers = ['№ п/п', 'Код ресурса', 'Наименование работ и затрат', 'Ед.изм', 'Количество', 'Объем']
-    for col, header in enumerate(headers, 1):
-        cell = ws.cell(row=4, column=col, value=header)
-        cell.font = header_font
-        cell.fill = PatternFill(start_color='DDDDDD', end_color='DDDDDD', fill_type='solid')
-        cell.border = thin_border
-    
-    # Data
-    row_idx = 5
-    for row in rows[2:]:  # Skip title rows
-        if not row['№ п/п'] and row['Наименование'] == 'ИТОГО:':
-            # Total row
-            for col in range(1, 7):
-                cell = ws.cell(row=row_idx, column=col)
-                cell.border = thin_border
-                if col == 1:
-                    cell.value = 'ИТОГО:'
-                    cell.font = Font(bold=True)
-                elif col == 5:
-                    cell.value = row['Количество']
-                    cell.font = Font(bold=True)
-                elif col == 6:
-                    cell.value = row['Объем']
-                    cell.font = Font(bold=True)
-            row_idx += 1
-        elif row['№ п/п']:
-            for col, key in enumerate(['№ п/п', 'Код', 'Наименование', 'Ед.изм', 'Количество', 'Объем'], 1):
-                cell = ws.cell(row=row_idx, column=col, value=row[key])
-                cell.border = thin_border
-                if col == 3:
-                    cell.alignment = Alignment(wrap_text=True)
-            row_idx += 1
-    
-    # Adjust column widths
-    ws.column_dimensions['A'].width = 8
-    ws.column_dimensions['B'].width = 12
-    ws.column_dimensions['C'].width = 60
-    ws.column_dimensions['D'].width = 10
-    ws.column_dimensions['E'].width = 12
-    ws.column_dimensions['F'].width = 25
-    
-    wb.save(output_path)
-    print(f"Saved Excel: {output_path}")
 
 
 def save_vor_txt(rows: list, output_path: Path):
     """Save ВОР to human-readable TXT."""
     output_path.parent.mkdir(parents=True, exist_ok=True)
-    
     with open(output_path, 'w', encoding='utf-8') as f:
         f.write("=" * 80 + "\n")
         f.write("ВЕДОМОСТЬ ОБЪЁМОВ РАБОТ\n")
-        f.write("Буронабивные сваи\n")
         f.write("=" * 80 + "\n\n")
-        
         for row in rows:
             if row['№ п/п'] == '':
                 if row['Наименование'] == 'ИТОГО:':
-                    f.write(f"\n{'='*80}\n")
-                    f.write(f"ИТОГО: {row['Объем']}\n")
-                    f.write(f"{'='*80}\n")
+                    f.write(f"\n{'='*80}\nИТОГО: {row['Объем']}\n{'='*80}\n")
                 else:
                     f.write(f"\n{row['Наименование']}\n")
             else:
                 f.write(f"\n{row['№ п/п']}. [{row['Код']}] {row['Наименование']}\n")
                 f.write(f"   Ед.изм: {row['Ед.изм']}, Кол-во: {row['Количество']}, Объем: {row['Объем']}\n")
-    
     print(f"Saved TXT: {output_path}")
 
 
 def main():
     parser = argparse.ArgumentParser(description="Extract ВОР from OCR results")
     parser.add_argument("--ocr-json", required=True, help="Path to OCR JSON")
-    parser.add_argument("--type", default="piles", choices=["piles", "concrete", "geology"], help="Work type")
-    parser.add_argument("--output", default="./output/vor.xlsx", help="Output path (.csv or .xlsx)")
+    parser.add_argument("--type", default="all", choices=["piles", "foundations", "slabs", "rebar", "embedded", "all"], help="Work type")
+    parser.add_argument("--output", default="./output/vor", help="Output path prefix")
     args = parser.parse_args()
     
     ocr_path = Path(args.ocr_json)
@@ -338,40 +312,76 @@ def main():
     print(f"Loaded {len(data)} records")
     
     output_path = Path(args.output)
+    output_path.parent.mkdir(parents=True, exist_ok=True)
     
-    if args.type == "piles":
-        specs = extract_pile_specifications(data)
+    if args.type == "all":
+        report = generate_summary_report(data)
         
-        if not specs:
-            print("ERROR: No pile specs found. Check OCR contains 'СБн12-450' etc.", file=sys.stderr)
-            sys.exit(1)
+        print("\n" + "=" * 60)
+        print("📊 ПОЛНЫЙ ОТЧЁТ ПО ЧЕРТЕЖАМ")
+        print("=" * 60)
         
-        print(f"\nFound {len(specs)} pile types:")
-        for spec in specs:
-            print(f"  {spec['mark']}: {spec['count']} шт. (D={spec['diameter_mm']}мм, L={spec['length_m']}м)")
-            print(f"    Бетон: {spec['total_concrete_m3']} м³ | Арм.: {spec['total_rebar_t']} т | Выбурка: {spec['total_soil_extraction_m3']} м³")
+        # Piles
+        if report['piles']:
+            print(f"\n🔩 Сваи: {len(report['piles'])} типов")
+            for s in report['piles']:
+                print(f"  {s['mark']}: {s['count']} шт.")
+            rows, totals = generate_pile_vor(report['piles'])
+            save_vor_csv(rows, output_path.with_suffix('.piles.csv'))
+            save_vor_txt(rows, output_path.with_suffix('.piles.txt'))
         
-        total_count = sum(s['count'] for s in specs)
-        print(f"\nВСЕГО свай: {total_count}")
+        # Foundations
+        if report['foundations']:
+            print(f"\n🏗️ Фундаменты: {len(report['foundations'])} типов")
+            for s in report['foundations']:
+                dims = s.get('dimensions', {})
+                dim_str = f" ({dims['length']}x{dims['width']}x{dims['height']})" if dims else ""
+                print(f"  {s['mark']}{dim_str}")
         
-        rows, totals = generate_pile_vor(specs)
+        # Slabs
+        if report['slabs']:
+            print(f"\n📐 Плиты: {len(report['slabs'])} типов")
+            for s in report['slabs']:
+                print(f"  {s['mark']}")
         
-        # Save all formats
-        save_vor_csv(rows, output_path.with_suffix('.csv'))
-        save_vor_excel(rows, totals, output_path.with_suffix('.xlsx'))
-        save_vor_txt(rows, output_path.with_suffix('.txt'))
+        # Rebar
+        if report['rebar']:
+            print(f"\n🔄 Арматура: {len(report['rebar'])} типов")
+            for s in report['rebar']:
+                print(f"  {s['steel_class']} ⌀{s['diameter']}мм")
+        
+        # Embedded parts
+        if report['embedded']:
+            print(f"\n🔧 Закладные детали: {len(report['embedded'])} типов")
+            for s in report['embedded']:
+                print(f"  {s['mark']}")
+        
+        # Save summary
+        with open(output_path.with_suffix('.summary.txt'), 'w', encoding='utf-8') as f:
+            f.write("ОТЧЁТ ПО РАСПОЗНАВАНИЮ\n")
+            f.write("=" * 60 + "\n\n")
+            for category, items in report.items():
+                if items:
+                    f.write(f"\n{category.upper()}: {len(items)}\n")
+                    for item in items:
+                        f.write(f"  {item}\n")
         
         print(f"\n{'='*60}")
-        print("✅ ВОР СФОРМИРОВАНА")
-        print(f"{'='*60}")
-        print(f"Сваи: {totals['count']} шт.")
-        print(f"Бетон: {round(totals['concrete'], 2)} м³")
-        print(f"Арматура: {round(totals['rebar'], 3)} т")
-        print(f"Выбурка грунта: {round(totals['soil'], 2)} м³")
+        print("✅ ОТЧЁТ СОХРАНЁН")
         print(f"{'='*60}")
         
+    elif args.type == "piles":
+        specs = extract_pile_specifications(data)
+        if not specs:
+            print("ERROR: No pile specs found.", file=sys.stderr)
+            sys.exit(1)
+        rows, totals = generate_pile_vor(specs)
+        save_vor_csv(rows, output_path.with_suffix('.csv'))
+        save_vor_txt(rows, output_path.with_suffix('.txt'))
+        print(f"\n✅ ВОР СФОРМИРОВАНА: {totals['count']} свай")
+    
     else:
-        print(f"Type '{args.type}' not yet implemented", file=sys.stderr)
+        print(f"Type '{args.type}' extraction not yet fully implemented", file=sys.stderr)
         sys.exit(1)
 
 

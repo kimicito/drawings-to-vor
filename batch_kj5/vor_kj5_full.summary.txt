@@ -1,0 +1,43 @@
+ОТЧЁТ ПО РАСПОЗНАВАНИЮ
+============================================================
+
+
+PILES: 1
+  {'mark': 'СБН12-450', 'diameter_mm': 450, 'length_m': 12, 'count': 14, 'volume_per_pile_m3': 1.909, 'total_concrete_m3': 26.72, 'total_burrowing_m3': 26.72, 'total_soil_extraction_m3': 30.73, 'total_rebar_kg': 3206.3, 'total_rebar_t': 3.206}
+
+FOUNDATIONS: 19
+  {'mark': 'ФМ1', 'type': 'foundation', 'dimensions': {}}
+  {'mark': 'ФМ2', 'type': 'foundation', 'dimensions': {}}
+  {'mark': 'ФМ4', 'type': 'foundation', 'dimensions': {}}
+  {'mark': 'ФМ5', 'type': 'foundation', 'dimensions': {}}
+  {'mark': 'ФМ6', 'type': 'foundation', 'dimensions': {}}
+  {'mark': 'ФМ7', 'type': 'foundation', 'dimensions': {}}
+  {'mark': 'ФМ8', 'type': 'foundation', 'dimensions': {}}
+  {'mark': 'ФМ9', 'type': 'foundation', 'dimensions': {}}
+  {'mark': 'ФМ16', 'type': 'foundation', 'dimensions': {}}
+  {'mark': 'ФМ17', 'type': 'foundation', 'dimensions': {}}
+  {'mark': 'ФМ10', 'type': 'foundation', 'dimensions': {}}
+  {'mark': 'ФМ11', 'type': 'foundation', 'dimensions': {}}
+  {'mark': 'ФМ12', 'type': 'foundation', 'dimensions': {}}
+  {'mark': 'ФМ13', 'type': 'foundation', 'dimensions': {}}
+  {'mark': 'ФМ14', 'type': 'foundation', 'dimensions': {}}
+  {'mark': 'ФМ15', 'type': 'foundation', 'dimensions': {}}
+  {'mark': 'ФМ16А', 'type': 'foundation', 'dimensions': {}}
+  {'mark': 'ФМ3', 'type': 'foundation', 'dimensions': {}}
+  {'mark': 'F150', 'type': 'foundation', 'dimensions': {}}
+
+SLABS: 4
+  {'mark': 'П4', 'type': 'slab'}
+  {'mark': 'П5', 'type': 'slab'}
+  {'mark': 'П6', 'type': 'slab'}
+  {'mark': 'П.6', 'type': 'slab'}
+
+REBAR: 8
+  {'steel_class': 'А500С', 'diameter': 13, 'type': 'rebar'}
+  {'steel_class': 'А500С', 'diameter': 14, 'type': 'rebar'}
+  {'steel_class': 'А500С', 'diameter': 12, 'type': 'rebar'}
+  {'steel_class': 'А500С', 'diameter': 10, 'type': 'rebar'}
+  {'steel_class': 'А500С', 'diameter': 8, 'type': 'rebar'}
+  {'steel_class': 'А240', 'diameter': 8, 'type': 'rebar'}
+  {'steel_class': 'А500С', 'diameter': 16, 'type': 'rebar'}
+  {'steel_class': 'А240', 'diameter': 12, 'type': 'rebar'}
