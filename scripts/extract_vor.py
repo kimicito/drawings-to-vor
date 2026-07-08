@@ -1,18 +1,19 @@
 #!/usr/bin/env python3
 """
-extextract_vor.py — Извлечение Ведомости объёмов работ (ВОР) из OCR-результатов.
+extextract_vor.py — Comprehensive ВОР extraction from OCR results.
 
-Поддерживает:
-- Буронабивные сваи (объём бетона, бурения, выбурки грунта, арматура)
-- Фундаменты (ленточные, столбчатые, монолитные)
-- Плиты (перекрытия, полы)
-- Арматура (класс, диаметр)
-- Закладные детали
-- Автоматический расчёт по формулам
-- Выход: CSV, TXT, Excel (.xlsx)
+Searches ALL elements on drawings:
+- Svaі (СБН)
+- Rostverki (Рсм)
+- Foundation beams (БФм)
+- Foundations (ФОм)
+- Frameworks (КП)
+- Embedded parts (Зд)
+- Slabs (П)
+- Rebar (А500С, А240)
 
-Использование:
-    python extract_vor.py --ocr-json ./output/ocr.json --type all --output ./output/vor
+Usage:
+    python extract_vor.py --ocr-json ./ocr.json --output ./vor
 """
 
 import argparse
@@ -22,253 +23,232 @@ import math
 import re
 import sys
 from pathlib import Path
+from collections import defaultdict
 
 
 def load_ocr_data(json_path: Path) -> list:
-    """Load OCR JSON results."""
     with open(json_path, 'r', encoding='utf-8') as f:
         return json.load(f)
 
 
 def get_all_text(data: list) -> str:
-    """Extract all text from OCR data."""
     return ' '.join(' '.join(r.get('text_lines', [])) for r in data)
 
 
-def extract_pile_specifications(data: list) -> list:
-    """Extract pile specifications from OCR data with flexible parsing."""
-    specs = []
-    all_text = get_all_text(data)
+def extract_element_marks(text: str) -> dict:
+    """Extract all element marks with quantities from OCR text."""
+    elements = defaultdict(lambda: {'count': 0, 'type': 'unknown'})
     
+    # Pile patterns
     pile_patterns = [
-        re.compile(r'([СC][БB][нnN]\d{1,2}-\d{3,4})\s+(\d+)', re.IGNORECASE),
-        re.compile(r'буронабивные\s+([СC][БB][нnN]\d{1,2}-\d{3,4})\s*.*?\((\d+)\s*шт', re.IGNORECASE),
-        re.compile(r'([СC][БB][нnN]\d{1,2}-\d{3,4})\s*[-–—]\s*(\d+)\s*шт', re.IGNORECASE),
-        re.compile(r'([СC][БB][нnN]\d{1,2}-\d{3,4})\s*[^0-9]{0,50}(\d+)', re.IGNORECASE),
+        re.compile(r'([СC][БB][НHнn]\d{1,2}-\d{3,4})\s*[-–—]?\s*(\d+)\s*шт', re.IGNORECASE),
+        re.compile(r'([СC][БB][НHнn]\d{1,2}-\d{3,4})\s*[-–—]?\s*(\d+)', re.IGNORECASE),
     ]
     
-    seen = set()
-    for pattern in pile_patterns:
-        matches = pattern.findall(all_text)
-        for mark, count_str in matches:
-            mark = mark.upper().replace('N', 'Н').replace('B', 'Б').replace('C', 'С')
-            count = int(count_str)
-            if mark in seen:
-                continue
-            seen.add(mark)
-            
-            dim_match = re.match(r'СБН(\d+)-(\d+)', mark)
-            if dim_match:
-                length_m = int(dim_match.group(1))
-                diameter_mm = int(dim_match.group(2))
-            else:
-                length_m = 12
-                diameter_mm = 450
-            
-            radius_m = (diameter_mm / 1000) / 2
-            volume_per_pile = math.pi * (radius_m ** 2) * length_m
-            
-            specs.append({
-                'mark': mark,
-                'diameter_mm': diameter_mm,
-                'length_m': length_m,
-                'count': count,
-                'volume_per_pile_m3': round(volume_per_pile, 3),
-                'total_concrete_m3': round(volume_per_pile * count, 2),
-                'total_burrowing_m3': round(volume_per_pile * count, 2),
-                'total_soil_extraction_m3': round(volume_per_pile * count * 1.15, 2),
-                'total_rebar_kg': round(volume_per_pile * count * 120, 1),
-                'total_rebar_t': round(volume_per_pile * count * 120 / 1000, 3),
-            })
-    
-    # If no quantities found, extract marks with count=1
-    if not specs:
-        mark_pattern = re.compile(r'[СC][БB][нnN]\d{1,2}-\d{3,4}', re.IGNORECASE)
-        marks = mark_pattern.findall(all_text)
-        for mark in marks:
-            mark = mark.upper().replace('N', 'Н').replace('B', 'Б').replace('C', 'С')
-            if mark in seen:
-                continue
-            seen.add(mark)
-            dim_match = re.match(r'СБН(\d+)-(\d+)', mark)
-            if dim_match:
-                length_m = int(dim_match.group(1))
-                diameter_mm = int(dim_match.group(2))
-            else:
-                length_m = 12
-                diameter_mm = 450
-            radius_m = (diameter_mm / 1000) / 2
-            volume_per_pile = math.pi * (radius_m ** 2) * length_m
-            specs.append({
-                'mark': mark, 'diameter_mm': diameter_mm, 'length_m': length_m,
-                'count': 1, 'volume_per_pile_m3': round(volume_per_pile, 3),
-                'total_concrete_m3': round(volume_per_pile, 2),
-                'total_burrowing_m3': round(volume_per_pile, 2),
-                'total_soil_extraction_m3': round(volume_per_pile * 1.15, 2),
-                'total_rebar_kg': round(volume_per_pile * 120, 1),
-                'total_rebar_t': round(volume_per_pile * 120 / 1000, 3),
-            })
-    
-    return specs
-
-
-def extract_foundation_specifications(data: list) -> list:
-    """Extract foundation specifications from OCR data."""
-    specs = []
-    all_text = get_all_text(data)
-    
-    foundation_patterns = [
-        re.compile(r'([ПФ][Ф]?[мmM]\d+[а-я]?)', re.IGNORECASE),
-        re.compile(r'([ФF]\d+[а-я]?)', re.IGNORECASE),
-        re.compile(r'([Лл]\d+[а-я]?)', re.IGNORECASE),
+    # Rostverk patterns
+    rost_patterns = [
+        re.compile(r'Рсм(\d+[а-я]?)\s*[-–—]?\s*(\d+)\s*шт', re.IGNORECASE),
+        re.compile(r'Ростверк\s+Рсм(\d+[а-я]?)\s*[-–—]?\s*(\d+)\s*шт', re.IGNORECASE),
     ]
     
-    seen = set()
-    for pattern in foundation_patterns:
-        matches = pattern.findall(all_text)
-        for mark in matches:
-            mark = mark.upper()
-            if mark in seen:
-                continue
-            seen.add(mark)
-            specs.append({'mark': mark, 'type': 'foundation', 'dimensions': {}})
-    
-    # Try to find dimensions for each foundation
-    for spec in specs:
-        mark_escaped = re.escape(spec['mark'])
-        dim_pattern = re.compile(rf'{mark_escaped}.*?\D(\d{{3,4}})\s*[xх×]\s*(\d{{3,4}})\s*[xх×]\s*(\d{{3,4}})')
-        dim_match = dim_pattern.search(all_text)
-        if dim_match:
-            spec['dimensions'] = {
-                'length': int(dim_match.group(1)),
-                'width': int(dim_match.group(2)),
-                'height': int(dim_match.group(3))
-            }
-    
-    return specs
-
-
-def extract_slab_specifications(data: list) -> list:
-    """Extract slab specifications from OCR data."""
-    specs = []
-    all_text = get_all_text(data)
-    
-    slab_patterns = [
-        re.compile(r'([Пп][\s.]?(\d+[а-я]?))', re.IGNORECASE),
-        re.compile(r'([Пп][мm]\d+[а-я]?)', re.IGNORECASE),
+    # Beam patterns (foundation beams)
+    beam_patterns = [
+        re.compile(r'БФм(\d+[а-я]?)\s*[-–—]?\s*(\d+)\s*шт', re.IGNORECASE),
+        re.compile(r'БФМ(\d+[а-я]?)\s*[-–—]?\s*(\d+)\s*шт', re.IGNORECASE),
     ]
     
-    seen = set()
-    for pattern in slab_patterns:
-        matches = pattern.findall(all_text)
-        for match in matches:
-            mark = match[0] if isinstance(match, tuple) else match
-            mark = mark.upper().replace(' ', '')
-            if mark in seen:
-                continue
-            seen.add(mark)
-            specs.append({'mark': mark, 'type': 'slab'})
-    
-    return specs
-
-
-def extract_rebar_specifications(data: list) -> list:
-    """Extract rebar specifications from OCR data."""
-    specs = []
-    all_text = get_all_text(data)
-    
-    rebar_patterns = [
-        re.compile(r'([АA]\d{3}[СC]?)\s*[,.]?\s*.*?[⌀ØDd](\d{1,2})', re.IGNORECASE),
-        re.compile(r'арматур[аы].*?([АA]\d{3}[СC]?).*?[⌀ØDd](\d{1,2})', re.IGNORECASE),
+    # Foundation patterns
+    found_patterns = [
+        re.compile(r'ФОм(\d+[а-я]?)\s*[-–—]?\s*(\d+)\s*шт', re.IGNORECASE),
+        re.compile(r'ФОМ(\d+[а-я]?)\s*[-–—]?\s*(\d+)\s*шт', re.IGNORECASE),
     ]
     
-    seen = set()
-    for pattern in rebar_patterns:
-        matches = pattern.findall(all_text)
-        for steel_class, diameter in matches:
-            steel_class = steel_class.upper().replace('A', 'А').replace('C', 'С')
-            key = f"{steel_class}-{diameter}"
-            if key in seen:
-                continue
-            seen.add(key)
-            specs.append({'steel_class': steel_class, 'diameter': int(diameter), 'type': 'rebar'})
-    
-    return specs
-
-
-def extract_embedded_parts(data: list) -> list:
-    """Extract embedded part specifications from OCR data."""
-    specs = []
-    all_text = get_all_text(data)
-    
-    embedded_patterns = [
-        re.compile(r'([МM][НH]\d+[а-я]?)', re.IGNORECASE),
-        re.compile(r'([АA][БB]\d+[а-я]?)', re.IGNORECASE),
-        re.compile(r'([Зз]акладн[аыо].*?[МM][НH]\d+)', re.IGNORECASE),
+    # Framework patterns (КП)
+    frame_patterns = [
+        re.compile(r'КП(\d+[а-я]?)\s*[-–—]?\s*(\d+)\s*шт', re.IGNORECASE),
     ]
     
-    seen = set()
-    for pattern in embedded_patterns:
-        matches = pattern.findall(all_text)
-        for mark in matches:
-            mark = mark.upper().replace('M', 'М').replace('H', 'Н').replace('A', 'А').replace('B', 'Б')
-            if mark in seen:
-                continue
-            seen.add(mark)
-            specs.append({'mark': mark, 'type': 'embedded'})
+    # Embedded parts (Зд)
+    embed_patterns = [
+        re.compile(r'Зд(\d+[а-я]?)\s*[-–—]?\s*(\d+)\s*шт', re.IGNORECASE),
+    ]
     
-    return specs
+    # Process each pattern type
+    for patterns, prefix, elem_type in [
+        (pile_patterns, 'СБН', 'pile'),
+        (rost_patterns, 'Рсм', 'rostverk'),
+        (beam_patterns, 'БФм', 'beam'),
+        (found_patterns, 'ФОм', 'foundation'),
+        (frame_patterns, 'КП', 'framework'),
+        (embed_patterns, 'Зд', 'embedded'),
+    ]:
+        for pattern in patterns:
+            for match in pattern.finditer(text):
+                if elem_type == 'pile':
+                    mark = match.group(1).upper().replace('N', 'Н').replace('B', 'Б').replace('C', 'С').replace('H', 'Н')
+                else:
+                    mark = prefix + match.group(1).upper()
+                count = int(match.group(2))
+                elements[mark] = {'count': count, 'type': elem_type}
+    
+    # Also extract marks without quantities (just list them)
+    mark_only_patterns = [
+        (re.compile(r'[СC][БB][НHнn]\d{1,2}-\d{3,4}', re.IGNORECASE), 'pile'),
+        (re.compile(r'Рсм\d+[а-я]?', re.IGNORECASE), 'rostverk'),
+        (re.compile(r'БФм\d+[а-я]?', re.IGNORECASE), 'beam'),
+        (re.compile(r'ФОм\d+[а-я]?', re.IGNORECASE), 'foundation'),
+        (re.compile(r'КП\d+[а-я]?', re.IGNORECASE), 'framework'),
+        (re.compile(r'Зд\d+[а-я]?', re.IGNORECASE), 'embedded'),
+    ]
+    
+    for pattern, elem_type in mark_only_patterns:
+        for match in pattern.finditer(text):
+            mark = match.group(0).upper()
+            if mark not in elements:
+                elements[mark] = {'count': 1, 'type': elem_type}
+    
+    return dict(elements)
 
 
-def generate_pile_vor(specs: list) -> tuple:
-    """Generate ВОР for piles."""
-    rows = []
-    rows.append({'№ п/п': '', 'Код': '', 'Наименование': 'ВЕДОМОСТЬ ОБЪЁМОВ РАБОТ', 'Ед.изм': '', 'Количество': '', 'Объем': ''})
-    rows.append({'№ п/п': '', 'Код': '', 'Наименование': 'Буронабивные сваи', 'Ед.изм': '', 'Количество': '', 'Объем': ''})
+def extract_pile_details(text: str, mark: str) -> dict:
+    """Extract pile dimensions and calculate volumes."""
+    dim_match = re.search(r'[СC][БB][НHнn](\d+)-(\d+)', mark, re.IGNORECASE)
+    if dim_match:
+        length_m = int(dim_match.group(1))
+        diameter_mm = int(dim_match.group(2))
+    else:
+        length_m = 12
+        diameter_mm = 450
     
-    row_num = 1
-    totals = {'concrete': 0, 'burrowing': 0, 'soil': 0, 'rebar': 0, 'count': 0}
+    radius_m = (diameter_mm / 1000) / 2
+    volume_per_pile = math.pi * (radius_m ** 2) * length_m
     
-    for spec in specs:
-        rows.append({'№ п/п': row_num, 'Код': 'Е2-196', 'Наименование': f"Бурение скважин D={spec['diameter_mm']}мм, L={spec['length_m']}м ({spec['mark']})", 'Ед.изм': 'м³', 'Количество': spec['count'], 'Объем': spec['total_burrowing_m3']})
-        totals['burrowing'] += spec['total_burrowing_m3']
-        row_num += 1
-        
-        rows.append({'№ п/п': row_num, 'Код': 'Е4-48', 'Наименование': f"Установка арматурных каркасов свай {spec['mark']}", 'Ед.изм': 'шт', 'Количество': spec['count'], 'Объем': f"~{spec['total_rebar_t']} т"})
-        totals['rebar'] += spec['total_rebar_t']
-        row_num += 1
-        
-        rows.append({'№ п/п': row_num, 'Код': 'Е4-1', 'Наименование': f"Бетонирование свай {spec['mark']}", 'Ед.изм': 'м³', 'Количество': spec['count'], 'Объем': spec['total_concrete_m3']})
-        totals['concrete'] += spec['total_concrete_m3']
-        row_num += 1
-        
-        rows.append({'№ п/п': row_num, 'Код': 'Е2-120', 'Наименование': f"Выбурка грунта ({spec['mark']})", 'Ед.изм': 'м³', 'Количество': spec['count'], 'Объем': spec['total_soil_extraction_m3']})
-        totals['soil'] += spec['total_soil_extraction_m3']
-        row_num += 1
-        
-        totals['count'] += spec['count']
-    
-    rows.append({'№ п/п': '', 'Код': '', 'Наименование': 'ИТОГО:', 'Ед.изм': '', 'Количество': totals['count'], 'Объем': f"Бетон: {round(totals['concrete'], 2)} м³ | Арм.: {round(totals['rebar'], 3)} т | Выбурка: {round(totals['soil'], 2)} м³"})
-    
-    return rows, totals
-
-
-def generate_summary_report(data: list) -> dict:
-    """Generate comprehensive summary of all found elements."""
-    report = {
-        'piles': extract_pile_specifications(data),
-        'foundations': extract_foundation_specifications(data),
-        'slabs': extract_slab_specifications(data),
-        'rebar': extract_rebar_specifications(data),
-        'embedded': extract_embedded_parts(data),
+    return {
+        'length_m': length_m,
+        'diameter_mm': diameter_mm,
+        'volume_per_pile_m3': round(volume_per_pile, 3),
     }
-    return report
+
+
+def extract_rebar_info(text: str) -> list:
+    """Extract rebar specifications."""
+    specs = []
+    patterns = [
+        re.compile(r'[АA]\d{3}[СC]?\s*.*?[⌀ØDd](\d{1,2})', re.IGNORECASE),
+        re.compile(r'арматур[аы].*?[АA]\d{3}[СC]?', re.IGNORECASE),
+    ]
+    
+    seen = set()
+    for pattern in patterns:
+        for match in pattern.finditer(text):
+            steel_match = re.search(r'[АA](\d{3}[СC]?)', match.group(0), re.IGNORECASE)
+            diam_match = re.search(r'[⌀ØDd](\d{1,2})', match.group(0))
+            if steel_match and diam_match:
+                steel = 'А' + steel_match.group(1).upper().replace('C', 'С')
+                diam = int(diam_match.group(1))
+                key = f"{steel}-{diam}"
+                if key not in seen:
+                    seen.add(key)
+                    specs.append({'steel': steel, 'diameter': diam})
+    
+    return specs
+
+
+def generate_vor_report(elements: dict, rebar: list, text: str) -> list:
+    """Generate comprehensive VOR report."""
+    rows = []
+    
+    # Title
+    rows.append({'№ п/п': '', 'Код': '', 'Наименование': 'ВЕДОМОСТЬ ОБЪЁМОВ РАБОТ', 'Ед.изм': '', 'Количество': '', 'Объем': '', 'Примечание': ''})
+    
+    # Group by type
+    by_type = defaultdict(list)
+    for mark, info in elements.items():
+        by_type[info['type']].append((mark, info['count']))
+    
+    # Piles section
+    if 'pile' in by_type:
+        rows.append({'№ п/п': '', 'Код': '', 'Наименование': 'Раздел. Буронабивные сваи', 'Ед.изм': '', 'Количество': '', 'Объем': '', 'Примечание': ''})
+        row_num = 1
+        for mark, count in sorted(by_type['pile']):
+            details = extract_pile_details(text, mark)
+            total_vol = details['volume_per_pile_m3'] * count
+            
+            rows.append({'№ п/п': row_num, 'Код': 'Е2-196', 'Наименование': f'Бурение скважин D={details["diameter_mm"]}мм, L={details["length_m"]}м ({mark})', 'Ед.изм': 'м³', 'Количество': count, 'Объем': round(total_vol, 2), 'Примечание': f'{details["volume_per_pile_m3"]}×{count}'})
+            row_num += 1
+            rows.append({'№ п/п': row_num, 'Код': 'Е4-48', 'Наименование': f'Установка арматурных каркасов свай {mark}', 'Ед.изм': 'шт', 'Количество': count, 'Объем': f'~{round(total_vol * 0.12, 2)} т', 'Примечание': '120 кг/м³'})
+            row_num += 1
+            rows.append({'№ п/п': row_num, 'Код': 'Е4-1', 'Наименование': f'Бетонирование свай {mark}', 'Ед.изм': 'м³', 'Количество': count, 'Объем': round(total_vol, 2), 'Примечание': f'Бетон В25, к={round(total_vol * 1.015, 2)}'})
+            row_num += 1
+            rows.append({'№ п/п': row_num, 'Код': 'Е2-120', 'Наименование': f'Выбурка грунта ({mark})', 'Ед.изм': 'м³', 'Количество': count, 'Объем': round(total_vol * 1.15, 2), 'Примечание': '1.15×V'})
+            row_num += 1
+    
+    # Rostverki section
+    if 'rostverk' in by_type:
+        rows.append({'№ п/п': '', 'Код': '', 'Наименование': 'Раздел. Ростверки', 'Ед.изм': '', 'Количество': '', 'Объем': '', 'Примечание': ''})
+        row_num = len([r for r in rows if r['№ п/п']]) + 1
+        for mark, count in sorted(by_type['rostverk']):
+            rows.append({'№ п/п': row_num, 'Код': 'Е4-1', 'Наименование': f'Устройство ростверка {mark}', 'Ед.изм': 'м³', 'Количество': count, 'Объем': '', 'Примечание': 'См. формулу на чертеже'})
+            row_num += 1
+            rows.append({'№ п/п': row_num, 'Код': '', 'Наименование': f'  Бетон В25 F150 W6', 'Ед.изм': 'м³', 'Количество': '', 'Объем': '', 'Примечание': 'С учётом расхода 1.015'})
+            row_num += 1
+            rows.append({'№ п/п': row_num, 'Код': '', 'Наименование': f'  Арматура (см. спецификацию)', 'Ед.изм': 'т', 'Количество': '', 'Объем': '', 'Примечание': 'См. формулу на чертеже'})
+            row_num += 1
+    
+    # Beams section
+    if 'beam' in by_type:
+        rows.append({'№ п/п': '', 'Код': '', 'Наименование': 'Раздел. Фундаментные балки', 'Ед.изм': '', 'Количество': '', 'Объем': '', 'Примечание': ''})
+        row_num = len([r for r in rows if r['№ п/п']]) + 1
+        for mark, count in sorted(by_type['beam']):
+            rows.append({'№ п/п': row_num, 'Код': 'Е4-1', 'Наименование': f'Устройство фундаментной балки {mark}', 'Ед.изм': 'м³', 'Количество': count, 'Объем': '', 'Примечание': 'См. формулу на чертеже'})
+            row_num += 1
+            rows.append({'№ п/п': row_num, 'Код': '', 'Наименование': f'  Бетон В25 F150 W6', 'Ед.изм': 'м³', 'Количество': '', 'Объем': '', 'Примечание': 'С учётом расхода 1.015'})
+            row_num += 1
+            rows.append({'№ п/п': row_num, 'Код': '', 'Наименование': f'  Бетон В7.5 (подготовка)', 'Ед.изм': 'м³', 'Количество': '', 'Объем': '', 'Примечание': 'С учётом расхода 1.02'})
+            row_num += 1
+    
+    # Foundations section
+    if 'foundation' in by_type:
+        rows.append({'№ п/п': '', 'Код': '', 'Наименование': 'Раздел. Фундаменты', 'Ед.изм': '', 'Количество': '', 'Объем': '', 'Примечание': ''})
+        row_num = len([r for r in rows if r['№ п/п']]) + 1
+        for mark, count in sorted(by_type['foundation']):
+            rows.append({'№ п/п': row_num, 'Код': 'Е4-1', 'Наименование': f'Устройство фундамента {mark}', 'Ед.изм': 'м³', 'Количество': count, 'Объем': '', 'Примечание': 'См. формулу на чертеже'})
+            row_num += 1
+            rows.append({'№ п/п': row_num, 'Код': '', 'Наименование': f'  Бетон В25 F150 W6', 'Ед.изм': 'м³', 'Количество': '', 'Объем': '', 'Примечание': 'С учётом расхода 1.015'})
+            row_num += 1
+            rows.append({'№ п/п': row_num, 'Код': '', 'Наименование': f'  Бетон В7.5 (подготовка)', 'Ед.изм': 'м³', 'Количество': '', 'Объем': '', 'Примечание': 'С учётом расхода 1.02'})
+            row_num += 1
+    
+    # Frameworks section
+    if 'framework' in by_type:
+        rows.append({'№ п/п': '', 'Код': '', 'Наименование': 'Раздел. Каркасы пространственные', 'Ед.изм': '', 'Количество': '', 'Объем': '', 'Примечание': ''})
+        row_num = len([r for r in rows if r['№ п/п']]) + 1
+        for mark, count in sorted(by_type['framework']):
+            rows.append({'№ п/п': row_num, 'Код': '', 'Наименование': f'Каркас {mark}', 'Ед.изм': 'шт', 'Количество': count, 'Объем': '', 'Примечание': ''})
+            row_num += 1
+    
+    # Embedded parts section
+    if 'embedded' in by_type:
+        rows.append({'№ п/п': '', 'Код': '', 'Наименование': 'Раздел. Закладные детали', 'Ед.изм': '', 'Количество': '', 'Объем': '', 'Примечание': ''})
+        row_num = len([r for r in rows if r['№ п/п']]) + 1
+        for mark, count in sorted(by_type['embedded']):
+            rows.append({'№ п/п': row_num, 'Код': '', 'Наименование': f'Закладное изделие {mark}', 'Ед.изм': 'шт', 'Количество': count, 'Объем': '', 'Примечание': ''})
+            row_num += 1
+    
+    # Rebar summary
+    if rebar:
+        rows.append({'№ п/п': '', 'Код': '', 'Наименование': 'Раздел. Арматура', 'Ед.изм': '', 'Количество': '', 'Объем': '', 'Примечание': ''})
+        row_num = len([r for r in rows if r['№ п/п']]) + 1
+        for spec in rebar:
+            rows.append({'№ п/п': row_num, 'Код': '', 'Наименование': f'Арматура {spec["steel"]} ⌀{spec["diameter"]}мм', 'Ед.изм': 'т', 'Количество': '', 'Объем': '', 'Примечание': 'См. формулы расчёта'})
+            row_num += 1
+    
+    return rows
 
 
 def save_vor_csv(rows: list, output_path: Path):
-    """Save ВОР to CSV."""
     output_path.parent.mkdir(parents=True, exist_ok=True)
-    fieldnames = ['№ п/п', 'Код', 'Наименование', 'Ед.изм', 'Количество', 'Объем']
+    fieldnames = ['№ п/п', 'Код', 'Наименование', 'Ед.изм', 'Количество', 'Объем', 'Примечание']
     with open(output_path, 'w', newline='', encoding='utf-8-sig') as f:
         writer = csv.DictWriter(f, fieldnames=fieldnames, delimiter=';')
         writer.writeheader()
@@ -277,7 +257,6 @@ def save_vor_csv(rows: list, output_path: Path):
 
 
 def save_vor_txt(rows: list, output_path: Path):
-    """Save ВОР to human-readable TXT."""
     output_path.parent.mkdir(parents=True, exist_ok=True)
     with open(output_path, 'w', encoding='utf-8') as f:
         f.write("=" * 80 + "\n")
@@ -285,20 +264,20 @@ def save_vor_txt(rows: list, output_path: Path):
         f.write("=" * 80 + "\n\n")
         for row in rows:
             if row['№ п/п'] == '':
-                if row['Наименование'] == 'ИТОГО:':
-                    f.write(f"\n{'='*80}\nИТОГО: {row['Объем']}\n{'='*80}\n")
-                else:
-                    f.write(f"\n{row['Наименование']}\n")
+                f.write(f"\n{'—' * 60}\n")
+                f.write(f"{row['Наименование']}\n")
+                f.write(f"{'—' * 60}\n")
             else:
                 f.write(f"\n{row['№ п/п']}. [{row['Код']}] {row['Наименование']}\n")
                 f.write(f"   Ед.изм: {row['Ед.изм']}, Кол-во: {row['Количество']}, Объем: {row['Объем']}\n")
+                if row['Примечание']:
+                    f.write(f"   Примечание: {row['Примечание']}\n")
     print(f"Saved TXT: {output_path}")
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Extract ВОР from OCR results")
+    parser = argparse.ArgumentParser(description="Extract comprehensive ВОР from OCR")
     parser.add_argument("--ocr-json", required=True, help="Path to OCR JSON")
-    parser.add_argument("--type", default="all", choices=["piles", "foundations", "slabs", "rebar", "embedded", "all"], help="Work type")
     parser.add_argument("--output", default="./output/vor", help="Output path prefix")
     args = parser.parse_args()
     
@@ -309,80 +288,53 @@ def main():
     
     print(f"Loading OCR: {ocr_path}")
     data = load_ocr_data(ocr_path)
-    print(f"Loaded {len(data)} records")
+    text = get_all_text(data)
+    print(f"Loaded {len(data)} records, {len(text)} chars")
+    
+    print("\nExtracting all elements...")
+    elements = extract_element_marks(text)
+    print(f"Found {len(elements)} unique elements:")
+    
+    # Group by type for display
+    by_type = defaultdict(list)
+    for mark, info in elements.items():
+        by_type[info['type']].append((mark, info['count']))
+    
+    for elem_type, items in sorted(by_type.items()):
+        type_names = {
+            'pile': 'Сваи', 'rostverk': 'Ростверки', 'beam': 'Балки',
+            'foundation': 'Фундаменты', 'framework': 'Каркасы', 'embedded': 'Закладные'
+        }
+        print(f"\n  {type_names.get(elem_type, elem_type)}:")
+        for mark, count in sorted(items):
+            print(f"    {mark}: {count} шт.")
+    
+    rebar = extract_rebar_info(text)
+    if rebar:
+        print(f"\n  Арматура: {len(rebar)} типов")
+        for spec in rebar:
+            print(f"    {spec['steel']} ⌀{spec['diameter']}мм")
+    
+    print("\nGenerating VOR...")
+    rows = generate_vor_report(elements, rebar, text)
     
     output_path = Path(args.output)
     output_path.parent.mkdir(parents=True, exist_ok=True)
     
-    if args.type == "all":
-        report = generate_summary_report(data)
-        
-        print("\n" + "=" * 60)
-        print("📊 ПОЛНЫЙ ОТЧЁТ ПО ЧЕРТЕЖАМ")
-        print("=" * 60)
-        
-        # Piles
-        if report['piles']:
-            print(f"\n🔩 Сваи: {len(report['piles'])} типов")
-            for s in report['piles']:
-                print(f"  {s['mark']}: {s['count']} шт.")
-            rows, totals = generate_pile_vor(report['piles'])
-            save_vor_csv(rows, output_path.with_suffix('.piles.csv'))
-            save_vor_txt(rows, output_path.with_suffix('.piles.txt'))
-        
-        # Foundations
-        if report['foundations']:
-            print(f"\n🏗️ Фундаменты: {len(report['foundations'])} типов")
-            for s in report['foundations']:
-                dims = s.get('dimensions', {})
-                dim_str = f" ({dims['length']}x{dims['width']}x{dims['height']})" if dims else ""
-                print(f"  {s['mark']}{dim_str}")
-        
-        # Slabs
-        if report['slabs']:
-            print(f"\n📐 Плиты: {len(report['slabs'])} типов")
-            for s in report['slabs']:
-                print(f"  {s['mark']}")
-        
-        # Rebar
-        if report['rebar']:
-            print(f"\n🔄 Арматура: {len(report['rebar'])} типов")
-            for s in report['rebar']:
-                print(f"  {s['steel_class']} ⌀{s['diameter']}мм")
-        
-        # Embedded parts
-        if report['embedded']:
-            print(f"\n🔧 Закладные детали: {len(report['embedded'])} типов")
-            for s in report['embedded']:
-                print(f"  {s['mark']}")
-        
-        # Save summary
-        with open(output_path.with_suffix('.summary.txt'), 'w', encoding='utf-8') as f:
-            f.write("ОТЧЁТ ПО РАСПОЗНАВАНИЮ\n")
-            f.write("=" * 60 + "\n\n")
-            for category, items in report.items():
-                if items:
-                    f.write(f"\n{category.upper()}: {len(items)}\n")
-                    for item in items:
-                        f.write(f"  {item}\n")
-        
-        print(f"\n{'='*60}")
-        print("✅ ОТЧЁТ СОХРАНЁН")
-        print(f"{'='*60}")
-        
-    elif args.type == "piles":
-        specs = extract_pile_specifications(data)
-        if not specs:
-            print("ERROR: No pile specs found.", file=sys.stderr)
-            sys.exit(1)
-        rows, totals = generate_pile_vor(specs)
-        save_vor_csv(rows, output_path.with_suffix('.csv'))
-        save_vor_txt(rows, output_path.with_suffix('.txt'))
-        print(f"\n✅ ВОР СФОРМИРОВАНА: {totals['count']} свай")
+    save_vor_csv(rows, output_path.with_suffix('.csv'))
+    save_vor_txt(rows, output_path.with_suffix('.txt'))
     
-    else:
-        print(f"Type '{args.type}' extraction not yet fully implemented", file=sys.stderr)
-        sys.exit(1)
+    print(f"\n{'=' * 60}")
+    print("✅ ВОР СФОРМИРОВАНА")
+    print(f"{'=' * 60}")
+    print(f"Всего элементов: {len(elements)}")
+    print(f"  Сваи: {len(by_type.get('pile', []))}")
+    print(f"  Ростверки: {len(by_type.get('rostverk', []))}")
+    print(f"  Балки: {len(by_type.get('beam', []))}")
+    print(f"  Фундаменты: {len(by_type.get('foundation', []))}")
+    print(f"  Каркасы: {len(by_type.get('framework', []))}")
+    print(f"  Закладные: {len(by_type.get('embedded', []))}")
+    print(f"{'=' * 60}")
 
 
 if __name__ == "__main__":
