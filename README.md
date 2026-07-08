@@ -11,7 +11,10 @@ TIFF (300 DPI, A1) → tiff_to_pdf.py → PDF (lossless)
                    → preprocess.py → PNG tiles (1000×1000, overlap 100px)
                    → tile_ocr.py (Qwen-VL-OCR) → JSON/TXT/CSV
                    → extract_vor.py → CSV/Excel/TXT → ВОР
+                   → vor_reviewer.py → Report (PASS/FAIL)
 ```
+
+**Цепочка:** OCR → ВОР → **Reviewer** → Готово / Исправить
 
 ## Scripts
 
@@ -75,7 +78,33 @@ python scripts/extract_vor.py \
   --output ./output/vor_piles.xlsx
 ```
 
-## Полный pipeline (TIFF → ВОР)
+### 5. vor_reviewer.py — Автоматическая проверка ВОР
+
+**P0-проверка без API-вызовов.** Валидирует сгенерированную ВОР на ошибки.
+
+**Проверки:**
+- ✅ Все марки из OCR найдены в ВОР (completeness)
+- ✅ Нет лишних марок в ВОР (extra marks)
+- ✅ Все количества > 0 (zero quantity)
+- ✅ Нет дублирующихся марок (duplicates)
+- ✅ Количества в разумных пределах (sanity: <1000)
+
+**Выход:** `PASS` (100%) или `FAIL` с детализацией ошибок.
+
+```bash
+python scripts/vor_reviewer.py \
+  --ocr-json ./output/ocr.json \
+  --vor-csv ./output/vor.csv \
+  --output ./output/vor_review.json
+```
+
+**Пример вывода:**
+```
+РЕЗУЛЬТАТ ПРОВЕРКИ ВОР: PASS
+Оценка: 100.0% (5/5 проверок)
+```
+
+---
 
 ```bash
 # 1. Конвертация
@@ -93,6 +122,20 @@ python scripts/tile_ocr.py --model qwen-vl-ocr \
 # 4. ВОР
 python scripts/extract_vor.py --ocr-json ./output/ocr.json \
   --type piles --output ./output/vor.xlsx
+
+# 5. Проверка ВОР (P0 — без API)
+python scripts/vor_reviewer.py \
+  --ocr-json ./output/ocr.json \
+  --vor-csv ./output/vor.csv \
+  --output ./output/vor_review.json
+```
+
+**Упрощённый pipeline одной командой:**
+```bash
+python scripts/run_pipeline.py \
+  --tiff drawing.tiff \
+  --output-dir ./output \
+  --tile-size 1000 --overlap 100
 ```
 
 ## Установка
