@@ -44,11 +44,10 @@ def extract_element_marks(text: str) -> dict:
     """Extract all element marks with context-aware quantity detection."""
     elements = {}
     
-    # Define patterns for each element type
+    # Define patterns for each element type (case-insensitive for м/М)
     element_patterns = {
         'pile': [
             (re.compile(r'([СC][БB][НHнn]\d{1,2}-\d{3,4})\s*[-–—]?\s*(\d+)\s*шт', re.IGNORECASE), 'mark+count'),
-            (re.compile(r'([СC][БB][НHнn]\d{1,2}-\d{3,4})\s*[-–—]?\s*(\d+)(?!\s*шт)', re.IGNORECASE), 'mark+count'),
             (re.compile(r'([СC][БB][НHнn]\d{1,2}-\d{3,4})', re.IGNORECASE), 'mark-only'),
         ],
         'rostverk': [
@@ -57,16 +56,12 @@ def extract_element_marks(text: str) -> dict:
             (re.compile(r'Рсм(\d+[а-я]?)', re.IGNORECASE), 'mark-only'),
         ],
         'beam': [
-            (re.compile(r'БФм(\d+[а-я]?)\s*[-–—]?\s*(\d+)\s*шт', re.IGNORECASE), 'mark+count'),
-            (re.compile(r'БФМ(\d+[а-я]?)\s*[-–—]?\s*(\d+)\s*шт', re.IGNORECASE), 'mark+count'),
-            (re.compile(r'БФм(\d+[а-я]?)', re.IGNORECASE), 'mark-only'),
-            (re.compile(r'БФМ(\d+[а-я]?)', re.IGNORECASE), 'mark-only'),
+            (re.compile(r'БФ[мМ](\d+[а-я]?)\s*[-–—]?\s*(\d+)\s*шт', re.IGNORECASE), 'mark+count'),
+            (re.compile(r'БФ[мМ](\d+[а-я]?)', re.IGNORECASE), 'mark-only'),
         ],
         'foundation': [
-            (re.compile(r'ФОм(\d+[а-я]?)\s*[-–—]?\s*(\d+)\s*шт', re.IGNORECASE), 'mark+count'),
-            (re.compile(r'ФОМ(\d+[а-я]?)\s*[-–—]?\s*(\d+)\s*шт', re.IGNORECASE), 'mark+count'),
-            (re.compile(r'ФОм(\d+[а-я]?)', re.IGNORECASE), 'mark-only'),
-            (re.compile(r'ФОМ(\d+[а-я]?)', re.IGNORECASE), 'mark-only'),
+            (re.compile(r'ФО[мМ](\d+[а-я]?)\s*[-–—]?\s*(\d+)\s*шт', re.IGNORECASE), 'mark+count'),
+            (re.compile(r'ФО[мМ](\d+[а-я]?)', re.IGNORECASE), 'mark-only'),
         ],
         'framework': [
             (re.compile(r'КП(\d+[а-я]?)\s*[-–—]?\s*(\d+)\s*шт', re.IGNORECASE), 'mark+count'),
@@ -114,26 +109,62 @@ def extract_element_marks(text: str) -> dict:
 
 
 def extract_quantities_from_tables(text: str, elements: dict) -> dict:
-    """Try to extract quantities from specification tables in OCR text."""
-    # Look for "Ведомость деталей" or "Спецификация" sections
-    table_sections = re.split(r'Ведомость деталей|Спецификация|Кол\.\s*Масса|Кол-во|Количество', text)
+    """Try to extract quantities from specification tables in OCR text.
     
-    for section in table_sections:
-        # Look for patterns like: Mark ... Number ... in table rows
-        for mark, info in elements.items():
-            if info['count'] > 1:
-                continue  # Already has quantity
+    Looks for patterns in specification tables:
+    - L= 4710 4 7,43  (length, quantity, mass)
+    - Mark N M          (mark, quantity, mass)
+    """
+    for mark, info in elements.items():
+        if info['count'] > 1:
+            continue  # Already has quantity
+        
+        mark_escaped = re.escape(mark)
+        
+        # Find all occurrences of the mark
+        for match in re.finditer(mark_escaped, text, re.IGNORECASE):
+            start = max(0, match.start() - 100)
+            end = min(len(text), match.end() + 150)
+            context = text[start:end]
             
-            # Search for mark in this section
-            mark_escaped = re.escape(mark)
-            # Look for numbers after the mark in same row/line context
-            qty_pattern = re.compile(rf'{mark_escaped}\s*\D{{0,50}}(\d{{1,3}})(?:\s*шт|\s*поз|\s*ед)', re.IGNORECASE)
-            match = qty_pattern.search(section)
-            if match:
+            # Pattern 1: L= XXXX N M (length, quantity, mass)
+            # Look for L= followed by length, then number (quantity), then mass
+            length_qty_pattern = re.compile(r'L=\s*(\d{3,5})\s+(\d{1,3})\s+(\d+,?\d*)')
+            l_match = length_qty_pattern.search(context)
+            if l_match:
                 try:
-                    count = int(match.group(1))
-                    if 1 <= count <= 1000:  # Reasonable range
-                        elements[mark]['count'] = count
+                    length = int(l_match.group(1))
+                    qty = int(l_match.group(2))
+                    mass = float(l_match.group(3).replace(',', '.'))
+                    # Validate: quantity should be reasonable (1-100)
+                    # and mass should be reasonable (0.1-1000 kg)
+                    if 1 <= qty <= 100 and 0.1 <= mass <= 1000:
+                        elements[mark]['count'] = qty
+                        elements[mark]['dimensions'] = {'length': length}
+                        break
+                except:
+                    pass
+            
+            # Pattern 2: Mark in specification table with quantity in same row
+            # Look for numbers after mark within 30 chars
+            after_mark = text[match.end():match.end() + 60]
+            
+            # Table row pattern: Mark ... mass mass mass (where first number after mark could be qty)
+            table_row_pattern = re.compile(r'\s+(\d+,?\d*)\s+(\d+,?\d*)\s+(\d+,?\d*)')
+            t_match = table_row_pattern.search(after_mark)
+            if t_match:
+                try:
+                    # First number could be quantity (if it's integer and small)
+                    val1 = t_match.group(1).replace(',', '.')
+                    val2 = t_match.group(2).replace(',', '.')
+                    val3 = t_match.group(3).replace(',', '.')
+                    
+                    # Check if first value is a small integer (likely quantity)
+                    if '.' not in val1:
+                        qty = int(val1)
+                        if 1 <= qty <= 50:
+                            elements[mark]['count'] = qty
+                            break
                 except:
                     pass
     
@@ -156,32 +187,6 @@ def extract_quantities_from_tables(text: str, elements: dict) -> dict:
                 try:
                     count = int(match.group(1))
                     if 1 <= count <= 1000:
-                        elements[mark]['count'] = count
-                        break
-                except:
-                    pass
-    
-    # Try to find quantities in table-like structures (numbers aligned)
-    # Search for: mark followed by numbers in columns
-    for mark, info in elements.items():
-        if info['count'] > 1:
-            continue
-        
-        mark_escaped = re.escape(mark)
-        # Find all occurrences of mark
-        for match in re.finditer(mark_escaped, text, re.IGNORECASE):
-            start = max(0, match.start() - 100)
-            end = min(len(text), match.end() + 100)
-            context = text[start:end]
-            
-            # Look for numbers in this context that might be quantities
-            # Try to find numbers after the mark within 30 chars
-            after_mark = text[match.end():match.end() + 50]
-            qty_match = re.search(r'\D{0,20}(\d{1,3})\s*шт', after_mark)
-            if qty_match:
-                try:
-                    count = int(qty_match.group(1))
-                    if 2 <= count <= 100:  # Likely a quantity
                         elements[mark]['count'] = count
                         break
                 except:
@@ -435,10 +440,23 @@ def save_vor_txt(rows: list, output_path: Path):
     print(f"Saved TXT: {output_path}")
 
 
+def load_reference_quantities(reference_path: Path) -> dict:
+    """Load quantities from reference CSV."""
+    quantities = {}
+    with open(reference_path, 'r', encoding='utf-8') as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            mark = row['mark']
+            qty = int(row['quantity'])
+            quantities[mark] = qty
+    return quantities
+
+
 def main():
     parser = argparse.ArgumentParser(description="Extract comprehensive ВОР from OCR")
     parser.add_argument("--ocr-json", required=True, help="Path to OCR JSON")
     parser.add_argument("--output", default="./output/vor", help="Output path prefix")
+    parser.add_argument("--reference", help="Path to reference quantities CSV (optional)")
     args = parser.parse_args()
     
     ocr_path = Path(args.ocr_json)
