@@ -1,0 +1,271 @@
+[
+  {
+    "tile": "page01_tile0000_x00000_y00000.png",
+    "elements": [
+      {
+        "mark": "Рсм1",
+        "quantity": 13,
+        "type": "rostverk"
+      }
+    ],
+    "tokens": 4186
+  },
+  {
+    "tile": "page01_tile0001_x01800_y00000.png",
+    "elements": [
+      {
+        "mark": "Рсм1",
+        "quantity": 13,
+        "type": "rostverk"
+      }
+    ],
+    "tokens": 4186
+  },
+  {
+    "tile": "page01_tile0002_x03600_y00000.png",
+    "elements": [
+      {
+        "mark": "Рсм1",
+        "quantity": 13,
+        "type": "rostverk"
+      }
+    ],
+    "tokens": 4186
+  },
+  {
+    "tile": "page01_tile0003_x05400_y00000.png",
+    "elements": [
+      {
+        "mark": "Рсм1",
+        "quantity": 13,
+        "type": "rostverk"
+      }
+    ],
+    "tokens": 4186
+  },
+  {
+    "tile": "page01_tile0004_x07200_y00000.png",
+    "elements": [
+      {
+        "mark": "Рсм1",
+        "quantity": 13,
+        "type": "rostverk"
+      }
+    ],
+    "tokens": 4186
+  },
+  {
+    "tile": "page01_tile0005_x07853_y00000.png",
+    "elements": [
+      {
+        "mark": "Рсм1",
+        "quantity": 13,
+        "type": "rostverk"
+      }
+    ],
+    "tokens": 4186
+  },
+  {
+    "tile": "page01_tile0006_x00000_y01800.png",
+    "elements": [
+      {
+        "mark": "Рсм1",
+        "quantity": 13,
+        "type": "rostverk"
+      }
+    ],
+    "tokens": 4186
+  },
+  {
+    "tile": "page01_tile0007_x01800_y01800.png",
+    "elements": [
+      {
+        "mark": "Рсм1",
+        "quantity": 13,
+        "type": "rostverk"
+      }
+    ],
+    "tokens": 4186
+  },
+  {
+    "tile": "page01_tile0008_x03600_y01800.png",
+    "elements": [
+      {
+        "mark": "Рсм1",
+        "quantity": 1,
+        "type": "rostverk"
+      },
+      {
+        "mark": "Рсм2",
+        "quantity": 1,
+        "type": "rostverk"
+      }
+    ],
+    "tokens": 4215
+  },
+  {
+    "tile": "page01_tile0009_x05400_y01800.png",
+    "elements": [
+      {
+        "mark": "Рсм1",
+        "quantity": 13,
+        "type": "rostverk"
+      }
+    ],
+    "tokens": 4186
+  },
+  {
+    "tile": "page01_tile0010_x07200_y01800.png",
+    "elements": [
+      {
+        "mark": "Рсм1",
+        "quantity": 13,
+        "type": "rostverk"
+      }
+    ],
+    "tokens": 4186
+  },
+  {
+    "tile": "page01_tile0011_x07853_y01800.png",
+    "elements": [
+      {
+        "mark": "Рсм1",
+        "quantity": 13,
+        "type": "rostverk"
+      }
+    ],
+    "tokens": 4186
+  },
+  {
+    "tile": "page01_tile0012_x00000_y03600.png",
+    "elements": [
+      {
+        "mark": "Рсм1",
+        "quantity": 13,
+        "type": "rostverk"
+      }
+    ],
+    "tokens": 4186
+  },
+  {
+    "tile": "page01_tile0013_x01800_y03600.png",
+    "elements": [
+      {
+        "mark": "Рсм1",
+        "quantity": 13,
+        "type": "rostverk"
+      }
+    ],
+    "tokens": 4186
+  },
+  {
+    "tile": "page01_tile0014_x03600_y03600.png",
+    "elements": [
+      {
+        "mark": "Рсм1",
+        "quantity": 13,
+        "type": "rostverk"
+      }
+    ],
+    "tokens": 4186
+  },
+  {
+    "tile": "page01_tile0015_x05400_y03600.png",
+    "elements": [
+      {
+        "mark": "Рсм1",
+        "quantity": 13,
+        "type": "rostverk"
+      }
+    ],
+    "tokens": 4186
+  },
+  {
+    "tile": "page01_tile0016_x07200_y03600.png",
+    "elements": [
+      {
+        "mark": "Рсм1",
+        "quantity": 13,
+        "type": "rostverk"
+      }
+    ],
+    "tokens": 4186
+  },
+  {
+    "tile": "page01_tile0017_x07853_y03600.png",
+    "elements": [
+      {
+        "mark": "Рсм1",
+        "quantity": 13,
+        "type": "rostverk"
+      }
+    ],
+    "tokens": 4186
+  },
+  {
+    "tile": "page01_tile0018_x00000_y04998.png",
+    "elements": [
+      {
+        "mark": "Рсм1",
+        "quantity": 13,
+        "type": "rostverk"
+      }
+    ],
+    "tokens": 4186
+  },
+  {
+    "tile": "page01_tile0019_x01800_y04998.png",
+    "elements": [
+      {
+        "mark": "Рсм1",
+        "quantity": 13,
+        "type": "rostverk"
+      }
+    ],
+    "tokens": 4186
+  },
+  {
+    "tile": "page01_tile0020_x03600_y04998.png",
+    "elements": [
+      {
+        "mark": "Рсм1",
+        "quantity": 13,
+        "type": "rostverk"
+      }
+    ],
+    "tokens": 4186
+  },
+  {
+    "tile": "page01_tile0021_x05400_y04998.png",
+    "elements": [
+      {
+        "mark": "Рсм1",
+        "quantity": 13,
+        "type": "rostverk"
+      }
+    ],
+    "tokens": 4186
+  },
+  {
+    "tile": "page01_tile0022_x07200_y04998.png",
+    "elements": [
+      {
+        "mark": "Рсм1",
+        "quantity": 13,
+        "type": "rostverk"
+      }
+    ],
+    "tokens": 4186
+  },
+  {
+    "tile": "page01_tile0023_x07853_y04998.png",
+    "elements": [
+      {
+        "mark": "Рсм1",
+        "quantity": 13,
+        "type": "rostverk"
+      }
+    ],
+    "tokens": 4186
+  }
+]

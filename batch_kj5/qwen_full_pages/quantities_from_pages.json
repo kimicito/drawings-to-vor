@@ -1,0 +1,176 @@
+[
+  {
+    "mark": "БФм1",
+    "quantity": 17,
+    "type": "balok",
+    "pages_found": 17
+  },
+  {
+    "mark": "БФм10",
+    "quantity": 11,
+    "type": "balok",
+    "pages_found": 11
+  },
+  {
+    "mark": "БФм11",
+    "quantity": 11,
+    "type": "balok",
+    "pages_found": 11
+  },
+  {
+    "mark": "БФм12",
+    "quantity": 11,
+    "type": "balok",
+    "pages_found": 11
+  },
+  {
+    "mark": "БФм13",
+    "quantity": 12,
+    "type": "balok",
+    "pages_found": 12
+  },
+  {
+    "mark": "БФм14",
+    "quantity": 12,
+    "type": "balok",
+    "pages_found": 12
+  },
+  {
+    "mark": "БФм15",
+    "quantity": 12,
+    "type": "balok",
+    "pages_found": 12
+  },
+  {
+    "mark": "БФм16",
+    "quantity": 12,
+    "type": "balok",
+    "pages_found": 12
+  },
+  {
+    "mark": "БФм17",
+    "quantity": 13,
+    "type": "balok",
+    "pages_found": 13
+  },
+  {
+    "mark": "БФм2",
+    "quantity": 16,
+    "type": "balok",
+    "pages_found": 16
+  },
+  {
+    "mark": "БФм3",
+    "quantity": 16,
+    "type": "balok",
+    "pages_found": 16
+  },
+  {
+    "mark": "БФм4",
+    "quantity": 15,
+    "type": "balok",
+    "pages_found": 15
+  },
+  {
+    "mark": "БФм5",
+    "quantity": 15,
+    "type": "balok",
+    "pages_found": 15
+  },
+  {
+    "mark": "БФм6",
+    "quantity": 14,
+    "type": "balok",
+    "pages_found": 14
+  },
+  {
+    "mark": "БФм7",
+    "quantity": 13,
+    "type": "balok",
+    "pages_found": 13
+  },
+  {
+    "mark": "БФм8",
+    "quantity": 10,
+    "type": "balok",
+    "pages_found": 10
+  },
+  {
+    "mark": "БФм9",
+    "quantity": 10,
+    "type": "balok",
+    "pages_found": 10
+  },
+  {
+    "mark": "Зд1",
+    "quantity": 19,
+    "type": "zaklad",
+    "pages_found": 19
+  },
+  {
+    "mark": "КП4",
+    "quantity": 16,
+    "type": "karos",
+    "pages_found": 16
+  },
+  {
+    "mark": "КП5",
+    "quantity": 16,
+    "type": "karos",
+    "pages_found": 16
+  },
+  {
+    "mark": "КП6",
+    "quantity": 16,
+    "type": "karos",
+    "pages_found": 16
+  },
+  {
+    "mark": "Рсм1",
+    "quantity": 208,
+    "type": "rostverk",
+    "pages_found": 16
+  },
+  {
+    "mark": "Рсм2",
+    "quantity": 41,
+    "type": "rostverk",
+    "pages_found": 3
+  },
+  {
+    "mark": "СБН12-450",
+    "quantity": 19,
+    "type": "saw",
+    "pages_found": 19
+  },
+  {
+    "mark": "ФОм1",
+    "quantity": 8,
+    "type": "фундамент",
+    "pages_found": 8
+  },
+  {
+    "mark": "ФОм2",
+    "quantity": 8,
+    "type": "фундамент",
+    "pages_found": 8
+  },
+  {
+    "mark": "ФОм3",
+    "quantity": 7,
+    "type": "фундамент",
+    "pages_found": 7
+  },
+  {
+    "mark": "ФОм4",
+    "quantity": 7,
+    "type": "фундамент",
+    "pages_found": 7
+  },
+  {
+    "mark": "ФОм5",
+    "quantity": 7,
+    "type": "фундамент",
+    "pages_found": 7
+  }
+]
