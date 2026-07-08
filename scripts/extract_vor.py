@@ -1,16 +1,9 @@
 #!/usr/bin/env python3
 """
-extextract_vor.py — Comprehensive ВОР extraction from OCR results.
+extract_vor.py — Comprehensive ВОР extraction from OCR results.
 
-Searches ALL elements on drawings:
-- Svaі (СБН)
-- Rostverki (Рсм)
-- Foundation beams (БФм)
-- Foundations (ФОм)
-- Frameworks (КП)
-- Embedded parts (Зд)
-- Slabs (П)
-- Rebar (А500С, А240)
+Extracts ALL elements with quantities, dimensions, and materials from drawing OCR.
+Supports: piles, rostverki, beams, foundations, frameworks, embedded parts, rebar.
 
 Usage:
     python extract_vor.py --ocr-json ./ocr.json --output ./vor
@@ -35,212 +28,379 @@ def get_all_text(data: list) -> str:
     return ' '.join(' '.join(r.get('text_lines', [])) for r in data)
 
 
+def get_per_tile_text(data: list) -> list:
+    """Get text grouped by tile for context-aware extraction."""
+    tiles = []
+    for record in data:
+        tile_text = ' '.join(record.get('text_lines', []))
+        tiles.append({
+            'tile_id': record.get('tile_id', ''),
+            'text': tile_text
+        })
+    return tiles
+
+
 def extract_element_marks(text: str) -> dict:
-    """Extract all element marks with quantities from OCR text."""
-    elements = defaultdict(lambda: {'count': 0, 'type': 'unknown'})
+    """Extract all element marks with context-aware quantity detection."""
+    elements = {}
     
-    # Pile patterns
-    pile_patterns = [
-        re.compile(r'([СC][БB][НHнn]\d{1,2}-\d{3,4})\s*[-–—]?\s*(\d+)\s*шт', re.IGNORECASE),
-        re.compile(r'([СC][БB][НHнn]\d{1,2}-\d{3,4})\s*[-–—]?\s*(\d+)', re.IGNORECASE),
-    ]
+    # Define patterns for each element type
+    element_patterns = {
+        'pile': [
+            (re.compile(r'([СC][БB][НHнn]\d{1,2}-\d{3,4})\s*[-–—]?\s*(\d+)\s*шт', re.IGNORECASE), 'mark+count'),
+            (re.compile(r'([СC][БB][НHнn]\d{1,2}-\d{3,4})\s*[-–—]?\s*(\d+)(?!\s*шт)', re.IGNORECASE), 'mark+count'),
+            (re.compile(r'([СC][БB][НHнn]\d{1,2}-\d{3,4})', re.IGNORECASE), 'mark-only'),
+        ],
+        'rostverk': [
+            (re.compile(r'Рсм(\d+[а-я]?)\s*[-–—]?\s*(\d+)\s*шт', re.IGNORECASE), 'mark+count'),
+            (re.compile(r'Ростверк\s+Рсм(\d+[а-я]?)\s*[-–—]?\s*(\d+)\s*шт', re.IGNORECASE), 'mark+count'),
+            (re.compile(r'Рсм(\d+[а-я]?)', re.IGNORECASE), 'mark-only'),
+        ],
+        'beam': [
+            (re.compile(r'БФм(\d+[а-я]?)\s*[-–—]?\s*(\d+)\s*шт', re.IGNORECASE), 'mark+count'),
+            (re.compile(r'БФМ(\d+[а-я]?)\s*[-–—]?\s*(\d+)\s*шт', re.IGNORECASE), 'mark+count'),
+            (re.compile(r'БФм(\d+[а-я]?)', re.IGNORECASE), 'mark-only'),
+            (re.compile(r'БФМ(\d+[а-я]?)', re.IGNORECASE), 'mark-only'),
+        ],
+        'foundation': [
+            (re.compile(r'ФОм(\d+[а-я]?)\s*[-–—]?\s*(\d+)\s*шт', re.IGNORECASE), 'mark+count'),
+            (re.compile(r'ФОМ(\d+[а-я]?)\s*[-–—]?\s*(\d+)\s*шт', re.IGNORECASE), 'mark+count'),
+            (re.compile(r'ФОм(\d+[а-я]?)', re.IGNORECASE), 'mark-only'),
+            (re.compile(r'ФОМ(\d+[а-я]?)', re.IGNORECASE), 'mark-only'),
+        ],
+        'framework': [
+            (re.compile(r'КП(\d+[а-я]?)\s*[-–—]?\s*(\d+)\s*шт', re.IGNORECASE), 'mark+count'),
+            (re.compile(r'КП(\d+[а-я]?)', re.IGNORECASE), 'mark-only'),
+        ],
+        'embedded': [
+            (re.compile(r'Зд(\d+[а-я]?)\s*[-–—]?\s*(\d+)\s*шт', re.IGNORECASE), 'mark+count'),
+            (re.compile(r'Зд(\d+[а-я]?)', re.IGNORECASE), 'mark-only'),
+        ],
+    }
     
-    # Rostverk patterns
-    rost_patterns = [
-        re.compile(r'Рсм(\d+[а-я]?)\s*[-–—]?\s*(\d+)\s*шт', re.IGNORECASE),
-        re.compile(r'Ростверк\s+Рсм(\d+[а-я]?)\s*[-–—]?\s*(\d+)\s*шт', re.IGNORECASE),
-    ]
-    
-    # Beam patterns (foundation beams)
-    beam_patterns = [
-        re.compile(r'БФм(\d+[а-я]?)\s*[-–—]?\s*(\d+)\s*шт', re.IGNORECASE),
-        re.compile(r'БФМ(\d+[а-я]?)\s*[-–—]?\s*(\d+)\s*шт', re.IGNORECASE),
-    ]
-    
-    # Foundation patterns
-    found_patterns = [
-        re.compile(r'ФОм(\d+[а-я]?)\s*[-–—]?\s*(\d+)\s*шт', re.IGNORECASE),
-        re.compile(r'ФОМ(\d+[а-я]?)\s*[-–—]?\s*(\d+)\s*шт', re.IGNORECASE),
-    ]
-    
-    # Framework patterns (КП)
-    frame_patterns = [
-        re.compile(r'КП(\d+[а-я]?)\s*[-–—]?\s*(\d+)\s*шт', re.IGNORECASE),
-    ]
-    
-    # Embedded parts (Зд)
-    embed_patterns = [
-        re.compile(r'Зд(\d+[а-я]?)\s*[-–—]?\s*(\d+)\s*шт', re.IGNORECASE),
-    ]
-    
-    # Process each pattern type
-    for patterns, prefix, elem_type in [
-        (pile_patterns, 'СБН', 'pile'),
-        (rost_patterns, 'Рсм', 'rostverk'),
-        (beam_patterns, 'БФм', 'beam'),
-        (found_patterns, 'ФОм', 'foundation'),
-        (frame_patterns, 'КП', 'framework'),
-        (embed_patterns, 'Зд', 'embedded'),
-    ]:
-        for pattern in patterns:
+    for elem_type, patterns in element_patterns.items():
+        for pattern, mode in patterns:
             for match in pattern.finditer(text):
                 if elem_type == 'pile':
                     mark = match.group(1).upper().replace('N', 'Н').replace('B', 'Б').replace('C', 'С').replace('H', 'Н')
+                elif elem_type == 'rostverk':
+                    mark = 'Рсм' + match.group(1).upper()
+                elif elem_type == 'beam':
+                    mark = 'БФм' + match.group(1).upper()
+                elif elem_type == 'foundation':
+                    mark = 'ФОм' + match.group(1).upper()
+                elif elem_type == 'framework':
+                    mark = 'КП' + match.group(1).upper()
+                elif elem_type == 'embedded':
+                    mark = 'Зд' + match.group(1).upper()
                 else:
-                    mark = prefix + match.group(1).upper()
-                count = int(match.group(2))
-                elements[mark] = {'count': count, 'type': elem_type}
+                    mark = match.group(1)
+                
+                count = 1  # Default
+                if mode == 'mark+count' and len(match.groups()) > 1:
+                    try:
+                        count = int(match.group(2))
+                    except:
+                        pass
+                
+                if mark not in elements:
+                    elements[mark] = {'count': count, 'type': elem_type, 'dimensions': {}}
+                else:
+                    # If we found a better count, update it
+                    if mode == 'mark+count' and count > 1:
+                        elements[mark]['count'] = count
     
-    # Also extract marks without quantities (just list them)
-    mark_only_patterns = [
-        (re.compile(r'[СC][БB][НHнn]\d{1,2}-\d{3,4}', re.IGNORECASE), 'pile'),
-        (re.compile(r'Рсм\d+[а-я]?', re.IGNORECASE), 'rostverk'),
-        (re.compile(r'БФм\d+[а-я]?', re.IGNORECASE), 'beam'),
-        (re.compile(r'ФОм\d+[а-я]?', re.IGNORECASE), 'foundation'),
-        (re.compile(r'КП\d+[а-я]?', re.IGNORECASE), 'framework'),
-        (re.compile(r'Зд\d+[а-я]?', re.IGNORECASE), 'embedded'),
-    ]
-    
-    for pattern, elem_type in mark_only_patterns:
-        for match in pattern.finditer(text):
-            mark = match.group(0).upper()
-            if mark not in elements:
-                elements[mark] = {'count': 1, 'type': elem_type}
-    
-    return dict(elements)
+    return elements
 
 
-def extract_pile_details(text: str, mark: str) -> dict:
-    """Extract pile dimensions and calculate volumes."""
-    dim_match = re.search(r'[СC][БB][НHнn](\d+)-(\d+)', mark, re.IGNORECASE)
-    if dim_match:
-        length_m = int(dim_match.group(1))
-        diameter_mm = int(dim_match.group(2))
-    else:
-        length_m = 12
-        diameter_mm = 450
+def extract_quantities_from_tables(text: str, elements: dict) -> dict:
+    """Try to extract quantities from specification tables in OCR text."""
+    # Look for "Ведомость деталей" or "Спецификация" sections
+    table_sections = re.split(r'Ведомость деталей|Спецификация|Кол\.\s*Масса|Кол-во|Количество', text)
     
-    radius_m = (diameter_mm / 1000) / 2
-    volume_per_pile = math.pi * (radius_m ** 2) * length_m
+    for section in table_sections:
+        # Look for patterns like: Mark ... Number ... in table rows
+        for mark, info in elements.items():
+            if info['count'] > 1:
+                continue  # Already has quantity
+            
+            # Search for mark in this section
+            mark_escaped = re.escape(mark)
+            # Look for numbers after the mark in same row/line context
+            qty_pattern = re.compile(rf'{mark_escaped}\s*\D{{0,50}}(\d{{1,3}})(?:\s*шт|\s*поз|\s*ед)', re.IGNORECASE)
+            match = qty_pattern.search(section)
+            if match:
+                try:
+                    count = int(match.group(1))
+                    if 1 <= count <= 1000:  # Reasonable range
+                        elements[mark]['count'] = count
+                except:
+                    pass
     
-    return {
-        'length_m': length_m,
-        'diameter_mm': diameter_mm,
-        'volume_per_pile_m3': round(volume_per_pile, 3),
-    }
+    # Also search for explicit patterns in full text
+    for mark, info in elements.items():
+        if info['count'] > 1:
+            continue
+        
+        mark_escaped = re.escape(mark)
+        # Pattern: mark - X шт, mark - X, mark X шт
+        patterns = [
+            re.compile(rf'{mark_escaped}\s*[-–—]\s*(\d+)\s*шт', re.IGNORECASE),
+            re.compile(rf'{mark_escaped}\s*[-–—]\s*(\d+)(?!\d)', re.IGNORECASE),
+            re.compile(rf'{mark_escaped}\s*[:;]\s*(\d+)\s*шт', re.IGNORECASE),
+        ]
+        
+        for pattern in patterns:
+            match = pattern.search(text)
+            if match:
+                try:
+                    count = int(match.group(1))
+                    if 1 <= count <= 1000:
+                        elements[mark]['count'] = count
+                        break
+                except:
+                    pass
+    
+    # Try to find quantities in table-like structures (numbers aligned)
+    # Search for: mark followed by numbers in columns
+    for mark, info in elements.items():
+        if info['count'] > 1:
+            continue
+        
+        mark_escaped = re.escape(mark)
+        # Find all occurrences of mark
+        for match in re.finditer(mark_escaped, text, re.IGNORECASE):
+            start = max(0, match.start() - 100)
+            end = min(len(text), match.end() + 100)
+            context = text[start:end]
+            
+            # Look for numbers in this context that might be quantities
+            # Try to find numbers after the mark within 30 chars
+            after_mark = text[match.end():match.end() + 50]
+            qty_match = re.search(r'\D{0,20}(\d{1,3})\s*шт', after_mark)
+            if qty_match:
+                try:
+                    count = int(qty_match.group(1))
+                    if 2 <= count <= 100:  # Likely a quantity
+                        elements[mark]['count'] = count
+                        break
+                except:
+                    pass
+    
+    return elements
+
+
+def extract_dimensions_from_text(text: str, elements: dict) -> dict:
+    """Extract dimensions for each element type."""
+    for mark, info in elements.items():
+        mark_escaped = re.escape(mark)
+        
+        if info['type'] == 'pile':
+            # Already handled in pile details
+            pass
+        
+        elif info['type'] in ['beam', 'rostverk', 'foundation']:
+            # Look for dimensions: L=4300, 4200x300x500, etc.
+            dim_patterns = [
+                re.compile(rf'{mark_escaped}.*?L=\s*(\d{{3,5}})', re.IGNORECASE),
+                re.compile(rf'{mark_escaped}.*?(\d{{3,4}})[xх×](\d{{3,4}})[xх×](\d{{3,4}})', re.IGNORECASE),
+                re.compile(rf'{mark_escaped}.*?(\d{{3,4}})[xх×](\d{{3,4}})', re.IGNORECASE),
+            ]
+            
+            for pattern in dim_patterns:
+                match = pattern.search(text)
+                if match:
+                    if len(match.groups()) == 3:
+                        info['dimensions'] = {
+                            'length': int(match.group(1)),
+                            'width': int(match.group(2)),
+                            'height': int(match.group(3))
+                        }
+                    elif len(match.groups()) == 2:
+                        info['dimensions'] = {
+                            'length': int(match.group(1)),
+                            'width': int(match.group(2))
+                        }
+                    elif len(match.groups()) == 1:
+                        info['dimensions'] = {'length': int(match.group(1))}
+                    break
+    
+    return elements
 
 
 def extract_rebar_info(text: str) -> list:
-    """Extract rebar specifications."""
+    """Extract rebar specifications with quantities."""
     specs = []
-    patterns = [
-        re.compile(r'[АA]\d{3}[СC]?\s*.*?[⌀ØDd](\d{1,2})', re.IGNORECASE),
-        re.compile(r'арматур[аы].*?[АA]\d{3}[СC]?', re.IGNORECASE),
+    seen = set()
+    
+    # Pattern: А500С ⌀16, or А500С, or А500С L=...
+    rebar_patterns = [
+        re.compile(r'([АA]\d{3}[СC]?)\s*.*?[⌀ØDd](\d{1,2})\s*.*?L=\s*(\d+)', re.IGNORECASE),
+        re.compile(r'([АA]\d{3}[СC]?)\s*.*?[⌀ØDd](\d{1,2})', re.IGNORECASE),
+        re.compile(r'арматур[аы].*?([АA]\d{3}[СC]?)', re.IGNORECASE),
     ]
     
-    seen = set()
-    for pattern in patterns:
+    for pattern in rebar_patterns:
         for match in pattern.finditer(text):
             steel_match = re.search(r'[АA](\d{3}[СC]?)', match.group(0), re.IGNORECASE)
             diam_match = re.search(r'[⌀ØDd](\d{1,2})', match.group(0))
-            if steel_match and diam_match:
+            if steel_match:
                 steel = 'А' + steel_match.group(1).upper().replace('C', 'С')
-                diam = int(diam_match.group(1))
-                key = f"{steel}-{diam}"
-                if key not in seen:
-                    seen.add(key)
-                    specs.append({'steel': steel, 'diameter': diam})
+                if diam_match:
+                    diam = int(diam_match.group(1))
+                    key = f"{steel}-{diam}"
+                    if key not in seen:
+                        seen.add(key)
+                        specs.append({'steel': steel, 'diameter': diam})
     
     return specs
 
 
-def generate_vor_report(elements: dict, rebar: list, text: str) -> list:
-    """Generate comprehensive VOR report."""
+def extract_materials_for_element(text: str, mark: str, elem_type: str) -> dict:
+    """Extract materials (concrete, rebar) for a specific element."""
+    materials = {
+        'concrete_b25': 0,
+        'concrete_b7': 0,
+        'rebar': []
+    }
+    
+    mark_escaped = re.escape(mark)
+    
+    # Find context around this element (200 chars before and after)
+    idx = text.find(mark)
+    if idx >= 0:
+        context = text[max(0, idx-200):idx+300]
+        
+        # Look for concrete formulas in context
+        concrete_match = re.search(r'(\d+,?\d*)\s*\*\s*(\d+)', context)
+        if concrete_match:
+            try:
+                base = float(concrete_match.group(1).replace(',', '.'))
+                multiplier = int(concrete_match.group(2))
+                materials['concrete_b25_formula'] = f"{base}*{multiplier}"
+                materials['concrete_b25'] = base * multiplier
+            except:
+                pass
+    
+    return materials
+
+
+def generate_vor_report(elements: dict, rebar: list) -> list:
+    """Generate comprehensive VOR report with all elements."""
     rows = []
     
     # Title
-    rows.append({'№ п/п': '', 'Код': '', 'Наименование': 'ВЕДОМОСТЬ ОБЪЁМОВ РАБОТ', 'Ед.изм': '', 'Количество': '', 'Объем': '', 'Примечание': ''})
+    rows.append({
+        '№ п/п': '', 'Код': '', 'Наименование': 'ВЕДОМОСТЬ ОБЪЁМОВ РАБОТ',
+        'Ед.изм': '', 'Количество': '', 'Объем': '', 'Примечание': ''
+    })
     
     # Group by type
     by_type = defaultdict(list)
     for mark, info in elements.items():
-        by_type[info['type']].append((mark, info['count']))
+        by_type[info['type']].append((mark, info))
     
-    # Piles section
-    if 'pile' in by_type:
-        rows.append({'№ п/п': '', 'Код': '', 'Наименование': 'Раздел. Буронабивные сваи', 'Ед.изм': '', 'Количество': '', 'Объем': '', 'Примечание': ''})
-        row_num = 1
-        for mark, count in sorted(by_type['pile']):
-            details = extract_pile_details(text, mark)
-            total_vol = details['volume_per_pile_m3'] * count
+    type_names = {
+        'pile': 'Буронабивные сваи',
+        'rostverk': 'Ростверки',
+        'beam': 'Фундаментные балки',
+        'foundation': 'Фундаменты',
+        'framework': 'Каркасы пространственные',
+        'embedded': 'Закладные детали'
+    }
+    
+    row_num = 1
+    
+    for elem_type in ['pile', 'rostverk', 'beam', 'foundation', 'framework', 'embedded']:
+        if elem_type not in by_type:
+            continue
+        
+        # Section header
+        rows.append({
+            '№ п/п': '', 'Код': '', 'Наименование': f'Раздел. {type_names.get(elem_type, elem_type)}',
+            'Ед.изм': '', 'Количество': '', 'Объем': '', 'Примечание': ''
+        })
+        
+        for mark, info in sorted(by_type[elem_type]):
+            count = info['count']
+            dims = info.get('dimensions', {})
+            dim_str = ''
+            if dims:
+                if 'length' in dims and 'width' in dims and 'height' in dims:
+                    dim_str = f" {dims['length']}x{dims['width']}x{dims['height']}"
+                elif 'length' in dims:
+                    dim_str = f" L={dims['length']}"
             
-            rows.append({'№ п/п': row_num, 'Код': 'Е2-196', 'Наименование': f'Бурение скважин D={details["diameter_mm"]}мм, L={details["length_m"]}м ({mark})', 'Ед.изм': 'м³', 'Количество': count, 'Объем': round(total_vol, 2), 'Примечание': f'{details["volume_per_pile_m3"]}×{count}'})
+            # Element row
+            type_works = {
+                'pile': ('Е4-1', f'Бетонирование свай {mark}{dim_str}', 'м³'),
+                'rostverk': ('Е4-1', f'Устройство ростверка {mark}{dim_str}', 'м³'),
+                'beam': ('Е4-1', f'Устройство фундаментной балки {mark}{dim_str}', 'м³'),
+                'foundation': ('Е4-1', f'Устройство фундамента {mark}{dim_str}', 'м³'),
+                'framework': ('', f'Установка каркаса {mark}', 'шт'),
+                'embedded': ('', f'Установка закладного изделия {mark}', 'шт'),
+            }
+            
+            code, name, unit = type_works.get(elem_type, ('', mark, ''))
+            
+            rows.append({
+                '№ п/п': row_num, 'Код': code, 'Наименование': name,
+                'Ед.изм': unit, 'Количество': count, 'Объем': '', 'Примечание': 'См. формулу на чертеже'
+            })
             row_num += 1
-            rows.append({'№ п/п': row_num, 'Код': 'Е4-48', 'Наименование': f'Установка арматурных каркасов свай {mark}', 'Ед.изм': 'шт', 'Количество': count, 'Объем': f'~{round(total_vol * 0.12, 2)} т', 'Примечание': '120 кг/м³'})
-            row_num += 1
-            rows.append({'№ п/п': row_num, 'Код': 'Е4-1', 'Наименование': f'Бетонирование свай {mark}', 'Ед.изм': 'м³', 'Количество': count, 'Объем': round(total_vol, 2), 'Примечание': f'Бетон В25, к={round(total_vol * 1.015, 2)}'})
-            row_num += 1
-            rows.append({'№ п/п': row_num, 'Код': 'Е2-120', 'Наименование': f'Выбурка грунта ({mark})', 'Ед.изм': 'м³', 'Количество': count, 'Объем': round(total_vol * 1.15, 2), 'Примечание': '1.15×V'})
-            row_num += 1
+            
+            # Add material rows for concrete elements
+            if elem_type in ['rostverk', 'beam', 'foundation']:
+                rows.append({
+                    '№ п/п': '', 'Код': '', 'Наименование': '  Бетон В25 F150 W6',
+                    'Ед.изм': 'м³', 'Количество': '', 'Объем': '', 'Примечание': 'С учётом расхода 1.015'
+                })
+                rows.append({
+                    '№ п/п': '', 'Код': '', 'Наименование': '  Бетон В7.5 (подготовка)',
+                    'Ед.изм': 'м³', 'Количество': '', 'Объем': '', 'Примечание': 'С учётом расхода 1.02'
+                })
+                rows.append({
+                    '№ п/п': '', 'Код': '', 'Наименование': '  Арматура (см. спецификацию)',
+                    'Ед.изм': 'т', 'Количество': '', 'Объем': '', 'Примечание': 'См. формулу на чертеже'
+                })
+            
+            elif elem_type == 'pile':
+                # Calculate pile volumes
+                dim_match = re.match(r'СБН(\d+)-(\d+)', mark)
+                if dim_match:
+                    length_m = int(dim_match.group(1))
+                    diameter_mm = int(dim_match.group(2))
+                    radius_m = (diameter_mm / 1000) / 2
+                    volume = math.pi * (radius_m ** 2) * length_m * count
+                    
+                    rows.append({
+                        '№ п/п': '', 'Код': 'Е2-196', 'Наименование': f'  Бурение скважин D={diameter_mm}мм',
+                        'Ед.изм': 'м³', 'Количество': count, 'Объем': round(volume, 2), 'Примечание': f'{round(volume/count, 3)}×{count}'
+                    })
+                    rows.append({
+                        '№ п/п': '', 'Код': 'Е4-48', 'Наименование': '  Установка арматурных каркасов',
+                        'Ед.изм': 'шт', 'Количество': count, 'Объем': f'~{round(volume * 0.12, 2)} т', 'Примечание': '120 кг/м³'
+                    })
+                    rows.append({
+                        '№ п/п': '', 'Код': '', 'Наименование': '  Бетон В25',
+                        'Ед.изм': 'м³', 'Количество': '', 'Объем': round(volume * 1.015, 2), 'Примечание': 'С учётом расхода 1.015'
+                    })
+                    rows.append({
+                        '№ п/п': '', 'Код': 'Е2-120', 'Наименование': '  Выбурка грунта',
+                        'Ед.изм': 'м³', 'Количество': count, 'Объем': round(volume * 1.15, 2), 'Примечание': '1.15×V'
+                    })
     
-    # Rostverki section
-    if 'rostverk' in by_type:
-        rows.append({'№ п/п': '', 'Код': '', 'Наименование': 'Раздел. Ростверки', 'Ед.изм': '', 'Количество': '', 'Объем': '', 'Примечание': ''})
-        row_num = len([r for r in rows if r['№ п/п']]) + 1
-        for mark, count in sorted(by_type['rostverk']):
-            rows.append({'№ п/п': row_num, 'Код': 'Е4-1', 'Наименование': f'Устройство ростверка {mark}', 'Ед.изм': 'м³', 'Количество': count, 'Объем': '', 'Примечание': 'См. формулу на чертеже'})
-            row_num += 1
-            rows.append({'№ п/п': row_num, 'Код': '', 'Наименование': f'  Бетон В25 F150 W6', 'Ед.изм': 'м³', 'Количество': '', 'Объем': '', 'Примечание': 'С учётом расхода 1.015'})
-            row_num += 1
-            rows.append({'№ п/п': row_num, 'Код': '', 'Наименование': f'  Арматура (см. спецификацию)', 'Ед.изм': 'т', 'Количество': '', 'Объем': '', 'Примечание': 'См. формулу на чертеже'})
-            row_num += 1
-    
-    # Beams section
-    if 'beam' in by_type:
-        rows.append({'№ п/п': '', 'Код': '', 'Наименование': 'Раздел. Фундаментные балки', 'Ед.изм': '', 'Количество': '', 'Объем': '', 'Примечание': ''})
-        row_num = len([r for r in rows if r['№ п/п']]) + 1
-        for mark, count in sorted(by_type['beam']):
-            rows.append({'№ п/п': row_num, 'Код': 'Е4-1', 'Наименование': f'Устройство фундаментной балки {mark}', 'Ед.изм': 'м³', 'Количество': count, 'Объем': '', 'Примечание': 'См. формулу на чертеже'})
-            row_num += 1
-            rows.append({'№ п/п': row_num, 'Код': '', 'Наименование': f'  Бетон В25 F150 W6', 'Ед.изм': 'м³', 'Количество': '', 'Объем': '', 'Примечание': 'С учётом расхода 1.015'})
-            row_num += 1
-            rows.append({'№ п/п': row_num, 'Код': '', 'Наименование': f'  Бетон В7.5 (подготовка)', 'Ед.изм': 'м³', 'Количество': '', 'Объем': '', 'Примечание': 'С учётом расхода 1.02'})
-            row_num += 1
-    
-    # Foundations section
-    if 'foundation' in by_type:
-        rows.append({'№ п/п': '', 'Код': '', 'Наименование': 'Раздел. Фундаменты', 'Ед.изм': '', 'Количество': '', 'Объем': '', 'Примечание': ''})
-        row_num = len([r for r in rows if r['№ п/п']]) + 1
-        for mark, count in sorted(by_type['foundation']):
-            rows.append({'№ п/п': row_num, 'Код': 'Е4-1', 'Наименование': f'Устройство фундамента {mark}', 'Ед.изм': 'м³', 'Количество': count, 'Объем': '', 'Примечание': 'См. формулу на чертеже'})
-            row_num += 1
-            rows.append({'№ п/п': row_num, 'Код': '', 'Наименование': f'  Бетон В25 F150 W6', 'Ед.изм': 'м³', 'Количество': '', 'Объем': '', 'Примечание': 'С учётом расхода 1.015'})
-            row_num += 1
-            rows.append({'№ п/п': row_num, 'Код': '', 'Наименование': f'  Бетон В7.5 (подготовка)', 'Ед.изм': 'м³', 'Количество': '', 'Объем': '', 'Примечание': 'С учётом расхода 1.02'})
-            row_num += 1
-    
-    # Frameworks section
-    if 'framework' in by_type:
-        rows.append({'№ п/п': '', 'Код': '', 'Наименование': 'Раздел. Каркасы пространственные', 'Ед.изм': '', 'Количество': '', 'Объем': '', 'Примечание': ''})
-        row_num = len([r for r in rows if r['№ п/п']]) + 1
-        for mark, count in sorted(by_type['framework']):
-            rows.append({'№ п/п': row_num, 'Код': '', 'Наименование': f'Каркас {mark}', 'Ед.изм': 'шт', 'Количество': count, 'Объем': '', 'Примечание': ''})
-            row_num += 1
-    
-    # Embedded parts section
-    if 'embedded' in by_type:
-        rows.append({'№ п/п': '', 'Код': '', 'Наименование': 'Раздел. Закладные детали', 'Ед.изм': '', 'Количество': '', 'Объем': '', 'Примечание': ''})
-        row_num = len([r for r in rows if r['№ п/п']]) + 1
-        for mark, count in sorted(by_type['embedded']):
-            rows.append({'№ п/п': row_num, 'Код': '', 'Наименование': f'Закладное изделие {mark}', 'Ед.изм': 'шт', 'Количество': count, 'Объем': '', 'Примечание': ''})
-            row_num += 1
-    
-    # Rebar summary
+    # Rebar section
     if rebar:
-        rows.append({'№ п/п': '', 'Код': '', 'Наименование': 'Раздел. Арматура', 'Ед.изм': '', 'Количество': '', 'Объем': '', 'Примечание': ''})
-        row_num = len([r for r in rows if r['№ п/п']]) + 1
+        rows.append({
+            '№ п/п': '', 'Код': '', 'Наименование': 'Раздел. Арматура',
+            'Ед.изм': '', 'Количество': '', 'Объем': '', 'Примечание': ''
+        })
         for spec in rebar:
-            rows.append({'№ п/п': row_num, 'Код': '', 'Наименование': f'Арматура {spec["steel"]} ⌀{spec["diameter"]}мм', 'Ед.изм': 'т', 'Количество': '', 'Объем': '', 'Примечание': 'См. формулы расчёта'})
+            rows.append({
+                '№ п/п': row_num, 'Код': '', 'Наименование': f'Арматура {spec["steel"]} ⌀{spec["diameter"]}мм',
+                'Ед.изм': 'т', 'Количество': '', 'Объем': '', 'Примечание': 'См. формулы расчёта'
+            })
             row_num += 1
     
     return rows
@@ -291,32 +451,54 @@ def main():
     text = get_all_text(data)
     print(f"Loaded {len(data)} records, {len(text)} chars")
     
-    print("\nExtracting all elements...")
+    print("\nStep 1: Extracting element marks...")
     elements = extract_element_marks(text)
-    print(f"Found {len(elements)} unique elements:")
+    print(f"Found {len(elements)} unique marks")
     
-    # Group by type for display
+    print("\nStep 2: Extracting quantities from tables...")
+    elements = extract_quantities_from_tables(text, elements)
+    
+    print("\nStep 3: Extracting dimensions...")
+    elements = extract_dimensions_from_text(text, elements)
+    
+    print("\nStep 4: Extracting rebar specifications...")
+    rebar = extract_rebar_info(text)
+    
+    # Display summary
     by_type = defaultdict(list)
     for mark, info in elements.items():
-        by_type[info['type']].append((mark, info['count']))
+        by_type[info['type']].append((mark, info))
     
-    for elem_type, items in sorted(by_type.items()):
-        type_names = {
-            'pile': 'Сваи', 'rostverk': 'Ростверки', 'beam': 'Балки',
-            'foundation': 'Фундаменты', 'framework': 'Каркасы', 'embedded': 'Закладные'
-        }
-        print(f"\n  {type_names.get(elem_type, elem_type)}:")
-        for mark, count in sorted(items):
-            print(f"    {mark}: {count} шт.")
+    type_names = {
+        'pile': 'Сваи', 'rostverk': 'Ростверки', 'beam': 'Балки',
+        'foundation': 'Фундаменты', 'framework': 'Каркасы', 'embedded': 'Закладные'
+    }
     
-    rebar = extract_rebar_info(text)
+    print(f"\n{'='*60}")
+    print("ИЗВЛЕЧЕННЫЕ ЭЛЕМЕНТЫ:")
+    print(f"{'='*60}")
+    for elem_type in ['pile', 'rostverk', 'beam', 'foundation', 'framework', 'embedded']:
+        if elem_type not in by_type:
+            continue
+        print(f"\n{type_names.get(elem_type, elem_type)}:")
+        for mark, info in sorted(by_type[elem_type]):
+            dims = info.get('dimensions', {})
+            dim_str = ''
+            if dims:
+                if 'length' in dims and 'width' in dims and 'height' in dims:
+                    dim_str = f" ({dims['length']}×{dims['width']}×{dims['height']})"
+                elif 'length' in dims:
+                    dim_str = f" (L={dims['length']})"
+            print(f"  {mark}: {info['count']} шт.{dim_str}")
+    
     if rebar:
-        print(f"\n  Арматура: {len(rebar)} типов")
+        print(f"\nАрматура: {len(rebar)} типов")
         for spec in rebar:
-            print(f"    {spec['steel']} ⌀{spec['diameter']}мм")
+            print(f"  {spec['steel']} ⌀{spec['diameter']}мм")
     
-    print("\nGenerating VOR...")
-    rows = generate_vor_report(elements, rebar, text)
+    print(f"\n{'='*60}")
+    print("Step 5: Generating VOR...")
+    rows = generate_vor_report(elements, rebar)
     
     output_path = Path(args.output)
     output_path.parent.mkdir(parents=True, exist_ok=True)
@@ -324,9 +506,9 @@ def main():
     save_vor_csv(rows, output_path.with_suffix('.csv'))
     save_vor_txt(rows, output_path.with_suffix('.txt'))
     
-    print(f"\n{'=' * 60}")
+    print(f"\n{'='*60}")
     print("✅ ВОР СФОРМИРОВАНА")
-    print(f"{'=' * 60}")
+    print(f"{'='*60}")
     print(f"Всего элементов: {len(elements)}")
     print(f"  Сваи: {len(by_type.get('pile', []))}")
     print(f"  Ростверки: {len(by_type.get('rostverk', []))}")
@@ -334,7 +516,7 @@ def main():
     print(f"  Фундаменты: {len(by_type.get('foundation', []))}")
     print(f"  Каркасы: {len(by_type.get('framework', []))}")
     print(f"  Закладные: {len(by_type.get('embedded', []))}")
-    print(f"{'=' * 60}")
+    print(f"{'='*60}")
 
 
 if __name__ == "__main__":
